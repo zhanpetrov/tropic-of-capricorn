@@ -145,14 +145,33 @@
       animation: pulseRing 2.6s infinite ease-in-out;
       transform-origin: center;
     }
+
+    /* Miles Davis Trumpet Equalizer Bars */
+    @keyframes milesBarBounce {
+      0%, 100% { transform: scaleY(0.28); }
+      50% { transform: scaleY(1); }
+    }
+    .miles-eq-bar {
+      width: 2.5px;
+      height: 12px;
+      background-color: var(--accent-primary);
+      border-radius: 2px;
+      transform-origin: bottom;
+      transform: scaleY(0.3);
+      transition: transform 0.2s ease;
+    }
+    .miles-playing .miles-eq-bar:nth-child(1) { animation: milesBarBounce 0.85s infinite ease-in-out 0.0s; }
+    .miles-playing .miles-eq-bar:nth-child(2) { animation: milesBarBounce 0.65s infinite ease-in-out 0.18s; }
+    .miles-playing .miles-eq-bar:nth-child(3) { animation: milesBarBounce 0.95s infinite ease-in-out 0.32s; }
+    .miles-playing .miles-eq-bar:nth-child(4) { animation: milesBarBounce 0.72s infinite ease-in-out 0.12s; }
   </style>
 </head>
 <body class="min-h-screen paper-grain flex flex-col justify-between">
 
-  <!-- TOP COSMODEMONIC TELEGRAPH TICKER (VERBATIM LINES FROM THE SCAN) -->
-  <div class="w-full border-b" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+  <!-- TOP COSMODEMONIC TELEGRAPH TICKER & MILES DAVIS SOUNDSCAPE BAR -->
+  <div class="w-full border-b sticky top-0 z-40 backdrop-blur-md" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
     <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs font-typewriter">
-      <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[240px]">
+      <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[220px]">
         <span class="px-2 py-0.5 rounded font-bold uppercase tracking-wider text-white shrink-0" style="background-color: var(--accent-primary);">
           COSMODEMONIC WIRE
         </span>
@@ -161,8 +180,28 @@
         </span>
       </div>
 
-      <!-- Audio & Soundscape Controls -->
-      <div class="flex items-center gap-2 shrink-0">
+      <!-- Audio, Miles Davis Experience & Soundscape Controls -->
+      <div class="flex flex-wrap items-center gap-2 shrink-0">
+        <!-- MILES DAVIS EXPERIENCE PRIMARY PILL -->
+        <div class="flex items-center rounded border overflow-hidden shadow-sm" style="border-color: var(--accent-primary); background-color: var(--bg-card);">
+          <button id="btnMilesQuickPlay" onclick="toggleMilesPlayback()" class="px-2.5 py-1 flex items-center gap-1.5 hover:opacity-85 transition font-bold" style="color: var(--accent-primary);" title="Play or pause Miles Davis while reading">
+            <span id="milesEqIcon" class="inline-flex items-end gap-[2px] h-3">
+              <span class="miles-eq-bar"></span>
+              <span class="miles-eq-bar"></span>
+              <span class="miles-eq-bar"></span>
+              <span class="miles-eq-bar"></span>
+            </span>
+            <span id="milesTopPlayLabel">▶ Miles Davis</span>
+          </button>
+          <button id="btnMilesNextTop" onclick="stepMilesTrack(1)" class="px-1.5 py-1 border-l hover:opacity-80 transition" style="border-color: var(--border-color); color: var(--text-secondary);" title="Next Miles Davis track">
+            ⏭
+          </button>
+          <button id="btnMilesDrawerToggle" onclick="toggleMilesDrawer()" class="px-2 py-1 border-l flex items-center gap-1 hover:opacity-85 transition" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary);" title="Open Miles Davis Reading Lounge &amp; Session Selector">
+            <span id="milesTopTrackShort" class="max-w-[130px] truncate">Session Lounge</span>
+            <span id="milesDrawerChevron">▾</span>
+          </button>
+        </div>
+
         <button id="btnToggleTelegraphSound" onclick="toggleTelegraphClack()" class="px-2.5 py-1 rounded border transition flex items-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-card);">
           <span id="telegraphDot" class="w-2 h-2 rounded-full bg-stone-400"></span>
           <span>Telegraph Key: <strong id="telegraphStatus">OFF</strong></span>
@@ -170,10 +209,121 @@
 
         <button id="btnToggleNocturne" onclick="toggleNocturneDrone()" class="px-2.5 py-1 rounded border transition flex items-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-card);">
           <span id="nocturneDot" class="w-2 h-2 rounded-full bg-stone-400"></span>
-          <span>1927 Brooklyn Nocturne: <strong id="nocturneStatus">OFF</strong></span>
+          <span>1927 Nocturne: <strong id="nocturneStatus">OFF</strong></span>
         </button>
       </div>
     </div>
+
+    <!-- COLLAPSIBLE MILES DAVIS READING EXPERIENCE LOUNGE (PERSISTENT ACROSS ALL TABS) -->
+    <section id="milesLoungeDrawer" class="hidden border-t" style="background-color: var(--bg-card); border-color: var(--border-color);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b pb-3" style="border-color: var(--border-color);">
+          <div>
+            <div class="font-typewriter text-[11px] uppercase tracking-widest font-bold" style="color: var(--accent-primary);">
+              ✦ THE MILES DAVIS READING EXPERIENCE • PERSISTENT SOUNDTRACK
+            </div>
+            <h2 class="font-display text-xl sm:text-2xl font-bold leading-snug">
+              Muted Trumpet &amp; Midnight Modal Sessions for Reading <em>Tropic of Capricorn</em>
+            </h2>
+          </div>
+          <div class="flex items-center gap-2 font-ui text-xs">
+            <button onclick="toggleMilesDrawer()" class="px-3 py-1.5 rounded-lg border font-medium hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              ▲ Hide Lounge (Keep Playing While Reading)
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+          <!-- Left 5 Cols: Active Turntable / Horn Deck -->
+          <div class="lg:col-span-5 p-4 rounded-xl border space-y-3.5" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+            <div class="flex items-start justify-between gap-2">
+              <div class="space-y-0.5">
+                <span id="milesNowAlbum" class="font-typewriter text-[11px] uppercase tracking-wider block" style="color: var(--accent-primary);">
+                  ASCENSEUR POUR L’ÉCHAFAUD • PARIS, DEC 1957
+                </span>
+                <h3 id="milesNowTitle" class="font-display text-2xl font-bold leading-tight">
+                  Générique
+                </h3>
+                <p id="milesNowLineup" class="text-sm italic" style="color: var(--text-secondary);">
+                  Miles Davis (muted trumpet), Barney Wilen, René Urtreger, Pierre Michelot, Kenny Clarke
+                </p>
+              </div>
+              <span id="milesStateBadge" class="font-typewriter text-[10px] uppercase px-2 py-0.5 rounded border shrink-0" style="border-color: var(--border-color); background-color: var(--bg-card);">
+                READY
+              </span>
+            </div>
+
+            <!-- Scrubber / Time Bar -->
+            <div class="space-y-1 font-typewriter text-[11px]">
+              <input
+                id="milesSeekSlider"
+                type="range"
+                min="0"
+                max="1000"
+                value="0"
+                oninput="seekMilesAudio(this.value)"
+                class="w-full accent-red-800 cursor-pointer h-1.5 rounded-lg"
+                aria-label="Seek Miles Davis track" />
+              <div class="flex items-center justify-between" style="color: var(--text-secondary);">
+                <span id="milesCurrentTime">00:00</span>
+                <span id="milesDuration">02:50</span>
+              </div>
+            </div>
+
+            <!-- Transport & Reading Volume Controls -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-1 font-ui text-xs">
+              <div class="flex items-center gap-1.5">
+                <button onclick="stepMilesTrack(-1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Previous track">
+                  ⏮
+                </button>
+                <button id="btnMilesMainPlay" onclick="toggleMilesPlayback()" class="px-4 py-1.5 rounded-lg text-white font-semibold hover:opacity-90 transition" style="background-color: var(--accent-primary);">
+                  ▶ Play Miles
+                </button>
+                <button onclick="stepMilesTrack(1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Next track">
+                  ⏭
+                </button>
+                <button id="btnMilesLoopMode" onclick="toggleMilesLoopMode()" class="px-2.5 py-1.5 rounded-lg border font-typewriter text-[11px] hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Toggle single-track loop vs continuous album flow">
+                  Flow: Continuous
+                </button>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <label for="milesVolumeSlider" class="font-typewriter text-[11px]" style="color: var(--text-secondary);">Vol</label>
+                <input
+                  id="milesVolumeSlider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="65"
+                  oninput="setMilesVolume(this.value)"
+                  class="w-20 accent-red-800 cursor-pointer h-1.5"
+                  aria-label="Miles Davis reading volume" />
+                <span id="milesVolumeLabel" class="font-typewriter text-[11px] w-8 text-right">65%</span>
+              </div>
+            </div>
+
+            <!-- Literary Reading Pairing Link -->
+            <div id="milesPairingBox" class="pt-2.5 border-t text-xs font-typewriter flex flex-wrap items-center justify-between gap-2" style="border-color: var(--border-color);">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+
+          <!-- Right 7 Cols: Curated Moods & Full-Length Session Tracklist -->
+          <div class="lg:col-span-7 space-y-3">
+            <!-- Mood Filter Pills -->
+            <div id="milesMoodFilters" class="flex flex-wrap items-center gap-1.5 font-ui text-xs">
+              <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Scrollable Tracklist -->
+            <div id="milesTracklistContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[235px] overflow-y-auto pr-1">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio id="milesAudioPlayer" preload="none"></audio>
+    </section>
   </div>
 
   <!-- HEADER & OBELISK / FLAMINGO EDITION MASTHEAD -->
@@ -310,6 +460,25 @@
           </p>
         </div>
 
+        <!-- Miles Davis Reading Companion Card -->
+        <div class="p-5 rounded-xl border shadow-sm space-y-3" style="background-color: var(--bg-card); border-color: var(--border-color);">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <span class="font-typewriter text-[10px] uppercase tracking-widest block font-bold" style="color: var(--accent-primary);">READING SOUNDTRACK</span>
+              <h3 class="font-display text-lg font-bold leading-snug">Miles Davis Experience</h3>
+            </div>
+            <button id="btnMilesSidebarPlay" onclick="toggleMilesPlayback()" class="font-ui text-xs px-3 py-1.5 rounded text-white font-medium transition hover:opacity-90 shrink-0" style="background-color: var(--accent-primary);">
+              ▶ Listen
+            </button>
+          </div>
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+            Pair your reading with full-length Miles Davis sessions—<em>Ascenseur pour l’échafaud</em> (Paris, 1957), <em>Kind of Blue</em>, <em>Blue Haze</em>, and <em>In a Silent Way</em>. Music keeps playing across every tab and the 216-page PDF.
+          </p>
+          <button onclick="openMilesDrawer()" class="font-typewriter text-xs underline hover:opacity-80" style="color: var(--accent-primary);">
+            Browse 13 Sessions &amp; Reading Moods ▾
+          </button>
+        </div>
+
       </aside>
 
       <!-- Right Column: Editorial Reading Guide Canvas -->
@@ -427,7 +596,12 @@
       <div class="rounded-2xl border overflow-hidden shadow-lg" style="background-color: var(--bg-card); border-color: var(--border-color);">
         <div class="px-4 py-2.5 border-b flex flex-wrap items-center justify-between gap-2 text-xs font-typewriter" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
           <span id="pdfFrameStatus">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
-          <span>On mobile browsers, tap "Open Direct PDF Link" above for native full-page reading.</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <button id="btnMilesPdfBar" onclick="toggleMilesPlayback()" class="px-2.5 py-1 rounded border font-bold hover:opacity-85 transition" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--accent-primary);">
+              ▶ Pair with Miles Davis
+            </button>
+            <span>On mobile, tap "Open Direct PDF Link" above for native full-page reading.</span>
+          </div>
         </div>
         <div id="pdfFrameMount" class="w-full h-[720px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
           <!-- Mounted on demand when Full PDF tab opens so initial page load stays lightweight on mobile and desktop -->
@@ -1071,6 +1245,7 @@
       selectMapNode(0);
       renderNotebook();
       updatePdfBookmarkUI();
+      initMilesPlayer();
 
       // Rotate verbatim telegraph ticker quote every 8 seconds
       let tickerIdx = 0;
@@ -1702,6 +1877,513 @@
       statusEl.textContent = "ON";
       dotEl.className = "w-2 h-2 rounded-full bg-amber-500";
       showToast("1927 Brooklyn Nocturne Ambient Drone Active");
+    }
+
+    // =========================================================================
+    // 11B. MILES DAVIS READING EXPERIENCE (PERSISTENT MULTI-SESSION PLAYER)
+    // =========================================================================
+    const MILES_MOODS = [
+      { id: "all", label: "All Sessions (13)" },
+      { id: "midnight", label: "Paris & Midnight Ballads" },
+      { id: "kindofblue", label: "Kind of Blue (1959)" },
+      { id: "silentway", label: "In a Silent Way (Deep Focus)" },
+      { id: "electric", label: "Live & Late Nocturne" }
+    ];
+
+    const MILES_TRACKS = [
+      {
+        id: "generique",
+        title: "Générique",
+        album: "Ascenseur pour l’échafaud • Paris, Dec 1957",
+        lineup: "Miles Davis (muted trumpet), Barney Wilen, René Urtreger, Pierre Michelot, Kenny Clarke",
+        durationLabel: "02:50",
+        moods: ["midnight"],
+        pairingLabel: "Pairs with: Start of the Coda on Broadway",
+        pairingPage: LANDMARKS.codaStart,
+        url: "https://ia902803.us.archive.org/13/items/miles-davis-generique-from-ascenseur-pour-lechafaud/Miles%20Davis%20-%20G%C3%A9n%C3%A9rique%20%28From%20%27Ascenseur%20Pour%20L%27%C3%A9chafaud%27%29.mp3",
+        fallbackUrl: "https://ia802803.us.archive.org/13/items/miles-davis-generique-from-ascenseur-pour-lechafaud/Miles%20Davis%20-%20G%C3%A9n%C3%A9rique%20%28From%20%27Ascenseur%20Pour%20L%27%C3%A9chafaud%27%29.mp3"
+      },
+      {
+        id: "blue-in-green",
+        title: "Blue in Green",
+        album: "Kind of Blue • NYC, March 1959",
+        lineup: "Miles Davis (muted trumpet), Bill Evans (piano), John Coltrane, Paul Chambers, Jimmy Cobb",
+        durationLabel: "05:37",
+        moods: ["midnight", "kindofblue"],
+        pairingLabel: "Pairs with: Mara at the Broadway dance hall (2 a.m.)",
+        pairingPage: LANDMARKS.maraDanceHall,
+        url: "https://ia600404.us.archive.org/30/items/04-miles-davis-all-blues/03%20-%20Miles%20Davis%20-%20Blue%20In%20Green.mp3",
+        fallbackUrl: "https://ia800404.us.archive.org/30/items/04-miles-davis-all-blues/03%20-%20Miles%20Davis%20-%20Blue%20In%20Green.mp3"
+      },
+      {
+        id: "flamenco-sketches",
+        title: "Flamenco Sketches",
+        album: "Kind of Blue • NYC, April 1959",
+        lineup: "Miles Davis, John Coltrane, Cannonball Adderley, Bill Evans, Paul Chambers, Jimmy Cobb",
+        durationLabel: "09:26",
+        moods: ["midnight", "kindofblue"],
+        pairingLabel: "Pairs with: Prospect Park evening walks with Ulric",
+        pairingPage: LANDMARKS.prospectPark,
+        url: "https://ia600404.us.archive.org/30/items/04-miles-davis-all-blues/05%20-%20Miles%20Davis%20-%20Flamenco%20Sketches.mp3",
+        fallbackUrl: "https://ia800404.us.archive.org/30/items/04-miles-davis-all-blues/05%20-%20Miles%20Davis%20-%20Flamenco%20Sketches.mp3"
+      },
+      {
+        id: "so-what",
+        title: "So What",
+        album: "Kind of Blue • NYC, March 1959",
+        lineup: "Miles Davis, John Coltrane, Cannonball Adderley, Bill Evans, Paul Chambers, Jimmy Cobb",
+        durationLabel: "09:25",
+        moods: ["kindofblue"],
+        pairingLabel: "Pairs with: Opening of the novel (“Once you have given up the ghost”)",
+        pairingPage: LANDMARKS.opening,
+        url: "https://ia600404.us.archive.org/30/items/04-miles-davis-all-blues/01%20-%20Miles%20Davis%20-%20So%20What.mp3",
+        fallbackUrl: "https://ia800404.us.archive.org/30/items/04-miles-davis-all-blues/01%20-%20Miles%20Davis%20-%20So%20What.mp3"
+      },
+      {
+        id: "all-blues",
+        title: "All Blues",
+        album: "Kind of Blue • NYC, April 1959",
+        lineup: "Miles Davis, John Coltrane, Cannonball Adderley, Bill Evans, Paul Chambers, Jimmy Cobb",
+        durationLabel: "11:35",
+        moods: ["kindofblue"],
+        pairingLabel: "Pairs with: Fillmore Place & Williamsburg memories",
+        pairingPage: LANDMARKS.fillmore,
+        url: "https://ia600404.us.archive.org/30/items/04-miles-davis-all-blues/04%20-%20Miles%20Davis%20-%20All%20Blues.mp3",
+        fallbackUrl: "https://ia800404.us.archive.org/30/items/04-miles-davis-all-blues/04%20-%20Miles%20Davis%20-%20All%20Blues.mp3"
+      },
+      {
+        id: "freddie-freeloader",
+        title: "Freddie Freeloader",
+        album: "Kind of Blue • NYC, March 1959",
+        lineup: "Miles Davis, Wynton Kelly (piano), John Coltrane, Cannonball Adderley, Paul Chambers, Jimmy Cobb",
+        durationLabel: "09:49",
+        moods: ["kindofblue"],
+        pairingLabel: "Pairs with: Sunset Place & Cosmodemonic hiring desk",
+        pairingPage: LANDMARKS.cosmodemonic,
+        url: "https://ia600404.us.archive.org/30/items/04-miles-davis-all-blues/02%20-%20Miles%20Davis%20-%20Freddie%20Freeloader.mp3",
+        fallbackUrl: "https://ia800404.us.archive.org/30/items/04-miles-davis-all-blues/02%20-%20Miles%20Davis%20-%20Freddie%20Freeloader.mp3"
+      },
+      {
+        id: "smooch",
+        title: "Smooch",
+        album: "Blue Haze • NYC, May 1953",
+        lineup: "Miles Davis (muted trumpet), Charles Mingus (piano), John Lewis, Percy Heath, Max Roach",
+        durationLabel: "03:08",
+        moods: ["midnight"],
+        pairingLabel: "Pairs with: Valeska’s portrait",
+        pairingPage: LANDMARKS.valeska,
+        url: "https://ia600102.us.archive.org/24/items/blue-haze/04-Smooch.mp3",
+        fallbackUrl: "https://ia800102.us.archive.org/24/items/blue-haze/04-Smooch.mp3"
+      },
+      {
+        id: "blue-haze-title",
+        title: "Blue Haze",
+        album: "Blue Haze • Hackensack, April 1954",
+        lineup: "Miles Davis (recorded in a darkened studio), Horace Silver, Percy Heath, Art Blakey",
+        durationLabel: "06:13",
+        moods: ["midnight"],
+        pairingLabel: "Pairs with: Start of the Coda (“Dear old Broadway”)",
+        pairingPage: LANDMARKS.codaStart,
+        url: "https://ia600102.us.archive.org/24/items/blue-haze/05-Blue%20Haze.mp3",
+        fallbackUrl: "https://ia800102.us.archive.org/24/items/blue-haze/05-Blue%20Haze.mp3"
+      },
+      {
+        id: "when-lights-are-low",
+        title: "When Lights Are Low",
+        album: "Blue Haze • NYC, May 1953",
+        lineup: "Miles Davis, John Lewis (piano), Percy Heath, Max Roach",
+        durationLabel: "03:31",
+        moods: ["midnight"],
+        pairingLabel: "Pairs with: Prospect Park walks with Ulric",
+        pairingPage: LANDMARKS.prospectPark,
+        url: "https://ia600102.us.archive.org/24/items/blue-haze/06-When%20Lights%20Are%20Low.mp3",
+        fallbackUrl: "https://ia800102.us.archive.org/24/items/blue-haze/06-When%20Lights%20Are%20Low.mp3"
+      },
+      {
+        id: "shhh-peaceful",
+        title: "Shhh / Peaceful",
+        album: "In a Silent Way • NYC, Feb 1969",
+        lineup: "Miles Davis, Wayne Shorter, Herbie Hancock, Chick Corea, Josef Zawinul, John McLaughlin, Dave Holland, Tony Williams",
+        durationLabel: "18:16",
+        moods: ["silentway"],
+        pairingLabel: "Pairs with: Long unbroken reading • Brooklyn Bridge trolley ride",
+        pairingPage: LANDMARKS.ovarianTrolley,
+        url: "https://dn601300.us.archive.org/0/items/1969-miles-davis-in-a-silent-way/1%20Shhh%20-%20Peaceful.mp3",
+        fallbackUrl: "https://archive.org/download/1969-miles-davis-in-a-silent-way/1%20Shhh%20-%20Peaceful.mp3"
+      },
+      {
+        id: "in-a-silent-way",
+        title: "In a Silent Way / It’s About That Time",
+        album: "In a Silent Way • NYC, Feb 1969",
+        lineup: "Miles Davis, Wayne Shorter, Herbie Hancock, Chick Corea, Josef Zawinul, John McLaughlin, Dave Holland, Tony Williams",
+        durationLabel: "19:52",
+        moods: ["silentway"],
+        pairingLabel: "Pairs with: Final page & Villa Seurat dateline",
+        pairingPage: LANDMARKS.villaSeurat,
+        url: "https://dn601300.us.archive.org/0/items/1969-miles-davis-in-a-silent-way/2%20In%20A%20Silent%20Way%20-%20It%27s%20About%20That%20Time.mp3",
+        fallbackUrl: "https://archive.org/download/1969-miles-davis-in-a-silent-way/2%20In%20A%20Silent%20Way%20-%20It%27s%20About%20That%20Time.mp3"
+      },
+      {
+        id: "green-dolphin-live",
+        title: "On Green Dolphin Street (Live)",
+        album: "Konserthuset, Stockholm • March 22, 1960",
+        lineup: "Miles Davis, John Coltrane (tenor sax), Wynton Kelly, Paul Chambers, Jimmy Cobb",
+        durationLabel: "13:42",
+        moods: ["electric"],
+        pairingLabel: "Pairs with: Mara at the Broadway dance hall",
+        pairingPage: LANDMARKS.maraDanceHall,
+        url: "https://dn801309.us.archive.org/0/items/03-miles-davis-john-coltrane-konserthuset-stockholm-march-22-1960/04%20-%20Miles%20DAVIS%20%26%20John%20COLTRANE%20-%20Konserthuset%2C%20Stockholm%20%28March%2022%2C%201960%29%20-%20On%20green%20Dolphin%20Street.mp3",
+        fallbackUrl: "https://archive.org/download/03-miles-davis-john-coltrane-konserthuset-stockholm-march-22-1960/04%20-%20Miles%20DAVIS%20%26%20John%20COLTRANE%20-%20Konserthuset%2C%20Stockholm%20%28March%2022%2C%201960%29%20-%20On%20green%20Dolphin%20Street.mp3"
+      },
+      {
+        id: "sanctuary",
+        title: "Sanctuary",
+        album: "Bitches Brew • NYC, Aug 1969",
+        lineup: "Miles Davis, Wayne Shorter, Bennie Maupin, Chick Corea, John McLaughlin, Jack DeJohnette",
+        durationLabel: "10:53",
+        moods: ["electric"],
+        pairingLabel: "Pairs with: Brooklyn Bridge trolley ride with Hymie",
+        pairingPage: LANDMARKS.ovarianTrolley,
+        url: "https://dn801301.us.archive.org/0/items/1970-miles-davis-bitches-brew/06%20Sanctuary.mp3",
+        fallbackUrl: "https://archive.org/download/1970-miles-davis-bitches-brew/06%20Sanctuary.mp3"
+      }
+    ];
+
+    let milesCurrentIndex = 0;
+    let milesActiveMood = "all";
+    let milesIsPlaying = false;
+    let milesLoopSingle = false;
+    let milesVolume = 65;
+    let milesTriedFallback = false;
+
+    function initMilesPlayer() {
+      const audio = document.getElementById("milesAudioPlayer");
+      if (!audio) return;
+
+      try {
+        const savedTrackId = localStorage.getItem("capricorn_miles_track_v1");
+        if (savedTrackId) {
+          const foundIdx = MILES_TRACKS.findIndex(t => t.id === savedTrackId);
+          if (foundIdx >= 0) milesCurrentIndex = foundIdx;
+        }
+        const savedVol = localStorage.getItem("capricorn_miles_vol_v1");
+        if (savedVol !== null) {
+          milesVolume = Math.max(0, Math.min(100, parseInt(savedVol, 10)));
+        }
+      } catch (e) {}
+
+      audio.volume = milesVolume / 100;
+      const volSlider = document.getElementById("milesVolumeSlider");
+      const volLabel = document.getElementById("milesVolumeLabel");
+      if (volSlider) volSlider.value = String(milesVolume);
+      if (volLabel) volLabel.textContent = `${milesVolume}%`;
+
+      audio.addEventListener("timeupdate", () => {
+        const curEl = document.getElementById("milesCurrentTime");
+        const durEl = document.getElementById("milesDuration");
+        const seekEl = document.getElementById("milesSeekSlider");
+        if (curEl) curEl.textContent = formatAudioSeconds(audio.currentTime);
+        if (audio.duration && isFinite(audio.duration)) {
+          if (durEl) durEl.textContent = formatAudioSeconds(audio.duration);
+          if (seekEl) seekEl.value = String(Math.round((audio.currentTime / audio.duration) * 1000));
+        }
+      });
+
+      audio.addEventListener("playing", () => {
+        milesIsPlaying = true;
+        updateMilesUIState("PLAYING");
+      });
+
+      audio.addEventListener("pause", () => {
+        if (!audio.ended) {
+          milesIsPlaying = false;
+          updateMilesUIState("PAUSED");
+        }
+      });
+
+      audio.addEventListener("waiting", () => {
+        updateMilesUIState("BUFFERING...");
+      });
+
+      audio.addEventListener("ended", () => {
+        if (milesLoopSingle) {
+          audio.currentTime = 0;
+          audio.play().catch(() => {});
+        } else {
+          stepMilesTrack(1, true);
+        }
+      });
+
+      audio.addEventListener("error", () => {
+        const track = MILES_TRACKS[milesCurrentIndex];
+        if (track && !milesTriedFallback && track.fallbackUrl && audio.src !== track.fallbackUrl) {
+          milesTriedFallback = true;
+          audio.src = track.fallbackUrl;
+          if (milesIsPlaying) {
+            audio.play().catch(() => {});
+          }
+        } else {
+          milesIsPlaying = false;
+          updateMilesUIState("STREAM UNAVAILABLE");
+          showToast("Audio stream interrupted — try skipping to the next Miles Davis session");
+        }
+      });
+
+      if ("mediaSession" in navigator) {
+        try {
+          navigator.mediaSession.setActionHandler("play", () => toggleMilesPlayback(true));
+          navigator.mediaSession.setActionHandler("pause", () => toggleMilesPlayback(false));
+          navigator.mediaSession.setActionHandler("previoustrack", () => stepMilesTrack(-1, true));
+          navigator.mediaSession.setActionHandler("nexttrack", () => stepMilesTrack(1, true));
+        } catch (e) {}
+      }
+
+      renderMilesMoodFilters();
+      loadMilesTrackMeta(milesCurrentIndex);
+    }
+
+    function formatAudioSeconds(sec) {
+      if (!sec || !isFinite(sec) || sec < 0) return "00:00";
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }
+
+    function openMilesDrawer() {
+      const drawer = document.getElementById("milesLoungeDrawer");
+      const chev = document.getElementById("milesDrawerChevron");
+      if (drawer && drawer.classList.contains("hidden")) {
+        drawer.classList.remove("hidden");
+        if (chev) chev.textContent = "▴";
+      }
+    }
+
+    function toggleMilesDrawer() {
+      const drawer = document.getElementById("milesLoungeDrawer");
+      const chev = document.getElementById("milesDrawerChevron");
+      if (!drawer) return;
+      const isHidden = drawer.classList.contains("hidden");
+      if (isHidden) {
+        drawer.classList.remove("hidden");
+        if (chev) chev.textContent = "▴";
+      } else {
+        drawer.classList.add("hidden");
+        if (chev) chev.textContent = "▾";
+      }
+    }
+
+    function setMilesMood(moodId) {
+      milesActiveMood = moodId;
+      renderMilesMoodFilters();
+      renderMilesTracklist();
+    }
+
+    function getFilteredMilesIndices() {
+      if (milesActiveMood === "all") {
+        return MILES_TRACKS.map((_, idx) => idx);
+      }
+      return MILES_TRACKS
+        .map((t, idx) => (t.moods.includes(milesActiveMood) ? idx : -1))
+        .filter(idx => idx >= 0);
+    }
+
+    function renderMilesMoodFilters() {
+      const container = document.getElementById("milesMoodFilters");
+      if (!container) return;
+      container.innerHTML = MILES_MOODS.map(m => {
+        const active = m.id === milesActiveMood;
+        return `
+          <button onclick="setMilesMood('${m.id}')"
+            class="px-3 py-1 rounded-full border font-medium transition ${active ? 'text-white shadow-sm' : 'hover:opacity-80'}"
+            style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
+            ${escapeHtml(m.label)}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function renderMilesTracklist() {
+      const container = document.getElementById("milesTracklistContainer");
+      if (!container) return;
+      const indices = getFilteredMilesIndices();
+      container.innerHTML = indices.map(idx => {
+        const t = MILES_TRACKS[idx];
+        const active = idx === milesCurrentIndex;
+        return `
+          <button onclick="selectMilesTrack(${idx}, true)"
+            class="p-2.5 rounded-xl border text-left transition flex items-start justify-between gap-2 ${active ? 'shadow-sm' : 'opacity-85 hover:opacity-100'}"
+            style="background-color: ${active ? 'var(--bg-secondary)' : 'var(--bg-primary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
+            <div class="min-w-0">
+              <div class="font-display font-bold text-base leading-snug truncate">
+                ${active && milesIsPlaying ? '▶ ' : ''}${escapeHtml(t.title)}
+              </div>
+              <div class="font-typewriter text-[10px] truncate" style="color: var(--text-secondary);">
+                ${escapeHtml(t.album)}
+              </div>
+            </div>
+            <span class="font-typewriter text-[11px] shrink-0 pt-0.5" style="color: var(--accent-primary);">
+              ${escapeHtml(t.durationLabel)}
+            </span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function loadMilesTrackMeta(index) {
+      milesCurrentIndex = (index + MILES_TRACKS.length) % MILES_TRACKS.length;
+      milesTriedFallback = false;
+      const track = MILES_TRACKS[milesCurrentIndex];
+
+      try {
+        localStorage.setItem("capricorn_miles_track_v1", track.id);
+      } catch (e) {}
+
+      document.getElementById("milesNowAlbum").textContent = track.album.toUpperCase();
+      document.getElementById("milesNowTitle").textContent = track.title;
+      document.getElementById("milesNowLineup").textContent = track.lineup;
+      document.getElementById("milesDuration").textContent = track.durationLabel;
+      document.getElementById("milesCurrentTime").textContent = "00:00";
+      document.getElementById("milesSeekSlider").value = "0";
+      document.getElementById("milesTopTrackShort").textContent = track.title;
+
+      const pairingBox = document.getElementById("milesPairingBox");
+      if (pairingBox) {
+        pairingBox.innerHTML = `
+          <span style="color: var(--text-secondary);">${escapeHtml(track.pairingLabel)}</span>
+          <div class="flex items-center gap-2">
+            <button onclick="openInPdfTab(${track.pairingPage})" class="underline font-bold hover:opacity-80" style="color: var(--accent-primary);">
+              Read PDF p. ${track.pairingPage} →
+            </button>
+            <a href="${getDirectPdfHref(track.pairingPage)}" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80" style="color: var(--text-secondary);">
+              [Direct PDF ↗]
+            </a>
+          </div>
+        `;
+      }
+
+      if ("mediaSession" in navigator && typeof MediaMetadata !== "undefined") {
+        try {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: track.title,
+            artist: "Miles Davis",
+            album: track.album
+          });
+        } catch (e) {}
+      }
+
+      renderMilesTracklist();
+      updateMilesUIState(milesIsPlaying ? "PLAYING" : "READY");
+    }
+
+    function selectMilesTrack(index, autoPlay = true) {
+      const audio = document.getElementById("milesAudioPlayer");
+      if (!audio) return;
+      loadMilesTrackMeta(index);
+      const track = MILES_TRACKS[milesCurrentIndex];
+      audio.src = track.url;
+      if (autoPlay) {
+        milesIsPlaying = true;
+        updateMilesUIState("BUFFERING...");
+        audio.play().then(() => {
+          showToast(`Miles Davis — "${track.title}"`);
+        }).catch(() => {
+          milesIsPlaying = false;
+          updateMilesUIState("PAUSED");
+        });
+      }
+    }
+
+    function toggleMilesPlayback(forcePlayState = null) {
+      const audio = document.getElementById("milesAudioPlayer");
+      if (!audio) return;
+      const track = MILES_TRACKS[milesCurrentIndex];
+
+      const shouldPlay = forcePlayState !== null ? forcePlayState : audio.paused;
+      if (shouldPlay) {
+        if (!audio.getAttribute("src") || (audio.src !== track.url && audio.src !== track.fallbackUrl)) {
+          audio.src = track.url;
+        }
+        milesIsPlaying = true;
+        updateMilesUIState("BUFFERING...");
+        audio.play().then(() => {
+          showToast(`Now playing Miles Davis — "${track.title}"`);
+        }).catch(() => {
+          milesIsPlaying = false;
+          updateMilesUIState("PAUSED");
+        });
+      } else {
+        audio.pause();
+        milesIsPlaying = false;
+        updateMilesUIState("PAUSED");
+      }
+    }
+
+    function stepMilesTrack(delta, keepPlaying = null) {
+      const audio = document.getElementById("milesAudioPlayer");
+      const wasPlaying = keepPlaying !== null ? keepPlaying : (milesIsPlaying || (audio && !audio.paused));
+      const pool = getFilteredMilesIndices();
+      let nextIndex;
+      if (pool.length > 0 && pool.includes(milesCurrentIndex)) {
+        const pos = pool.indexOf(milesCurrentIndex);
+        nextIndex = pool[(pos + delta + pool.length) % pool.length];
+      } else {
+        nextIndex = (milesCurrentIndex + delta + MILES_TRACKS.length) % MILES_TRACKS.length;
+      }
+      selectMilesTrack(nextIndex, wasPlaying);
+    }
+
+    function seekMilesAudio(sliderVal) {
+      const audio = document.getElementById("milesAudioPlayer");
+      if (!audio || !audio.duration || !isFinite(audio.duration)) return;
+      audio.currentTime = (parseFloat(sliderVal) / 1000) * audio.duration;
+    }
+
+    function setMilesVolume(val) {
+      milesVolume = Math.max(0, Math.min(100, parseInt(val, 10) || 0));
+      const audio = document.getElementById("milesAudioPlayer");
+      if (audio) audio.volume = milesVolume / 100;
+      const lbl = document.getElementById("milesVolumeLabel");
+      if (lbl) lbl.textContent = `${milesVolume}%`;
+      try {
+        localStorage.setItem("capricorn_miles_vol_v1", String(milesVolume));
+      } catch (e) {}
+    }
+
+    function toggleMilesLoopMode() {
+      milesLoopSingle = !milesLoopSingle;
+      const btn = document.getElementById("btnMilesLoopMode");
+      if (btn) {
+        btn.textContent = milesLoopSingle ? "Flow: Loop Track" : "Flow: Continuous";
+      }
+      showToast(milesLoopSingle ? "Looping current Miles Davis track" : "Continuous Miles Davis session flow enabled");
+    }
+
+    function updateMilesUIState(statusLabel) {
+      const track = MILES_TRACKS[milesCurrentIndex];
+      const eq = document.getElementById("milesEqIcon");
+      const topLabel = document.getElementById("milesTopPlayLabel");
+      const mainBtn = document.getElementById("btnMilesMainPlay");
+      const sideBtn = document.getElementById("btnMilesSidebarPlay");
+      const pdfBarBtn = document.getElementById("btnMilesPdfBar");
+      const stateBadge = document.getElementById("milesStateBadge");
+
+      if (stateBadge) stateBadge.textContent = statusLabel;
+
+      if (milesIsPlaying) {
+        if (eq) eq.classList.add("miles-playing");
+        if (topLabel) topLabel.textContent = "⏸ Miles Davis";
+        if (mainBtn) mainBtn.textContent = "⏸ Pause Miles";
+        if (sideBtn) sideBtn.textContent = "⏸ Playing";
+        if (pdfBarBtn) pdfBarBtn.textContent = `⏸ Miles: ${track.title}`;
+      } else {
+        if (eq) eq.classList.remove("miles-playing");
+        if (topLabel) topLabel.textContent = "▶ Miles Davis";
+        if (mainBtn) mainBtn.textContent = "▶ Play Miles";
+        if (sideBtn) sideBtn.textContent = "▶ Listen";
+        if (pdfBarBtn) pdfBarBtn.textContent = "▶ Pair with Miles Davis";
+      }
+
+      renderMilesTracklist();
     }
 
     // =========================================================================
