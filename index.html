@@ -429,13 +429,8 @@
           <span id="pdfFrameStatus">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
           <span>On mobile browsers, tap "Open Direct PDF Link" above for native full-page reading.</span>
         </div>
-        <div id="pdfFrameMount" class="w-full h-[720px] bg-stone-900">
-          <iframe
-            id="pdfViewerFrame"
-            src="./tropic-of-capricorn.pdf#page=3"
-            class="w-full h-full bg-stone-900"
-            title="Henry Miller - Tropic of Capricorn (Flamingo, 1993 Scan, 216 pages)">
-          </iframe>
+        <div id="pdfFrameMount" class="w-full h-[720px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
+          <!-- Mounted on demand when Full PDF tab opens so initial page load stays lightweight on mobile and desktop -->
         </div>
       </div>
 
