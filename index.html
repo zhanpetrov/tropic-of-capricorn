@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TROPIC OF CAPRICORN — Henry Miller | Interactive Contraband Edition</title>
-  <meta name="description" content="Interactive 1939 Obelisk Press literary sanctuary for Henry Miller's Tropic of Capricorn — featuring annotated movements, unabridged PDF reader, 1920s NYC psychogeography map, and automatic writing studio." />
+  <title>TROPIC OF CAPRICORN — Henry Miller | Reading Guide &amp; Full PDF (Flamingo, 1993)</title>
+  <meta name="description" content="Interactive editorial reading guide, 1920s NYC psychogeography map, and unabridged 216-page Flamingo (1993) scan for Henry Miller's Tropic of Capricorn (originally published by Obelisk Press, Paris, 1939)." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f4efe4' stroke='%23991b1b' stroke-width='4'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='34' fill='%23991b1b'%3ETC%3C/text%3E%3C/svg%3E" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -119,13 +119,6 @@
       color: #fff;
     }
 
-    /* Highlighted User Passage */
-    .user-saved-line {
-      background: linear-gradient(120deg, rgba(245, 158, 11, 0.28) 0%, rgba(185, 28, 28, 0.18) 100%);
-      border-left: 3px solid var(--accent-primary);
-      padding-left: 0.5rem;
-    }
-
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
@@ -156,7 +149,7 @@
 </head>
 <body class="min-h-screen paper-grain flex flex-col justify-between">
 
-  <!-- TOP COSMODEMONIC TELEGRAPH TICKER -->
+  <!-- TOP COSMODEMONIC TELEGRAPH TICKER (VERBATIM LINES FROM THE SCAN) -->
   <div class="w-full border-b" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
     <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs font-typewriter">
       <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[240px]">
@@ -164,7 +157,7 @@
           COSMODEMONIC WIRE
         </span>
         <span id="telegraphTickerText" class="truncate italic">
-          "Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos..."
+          "Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos." — Miller, PDF p. 3
         </span>
       </div>
 
@@ -183,17 +176,20 @@
     </div>
   </div>
 
-  <!-- HEADER & OBELISK PRESS MASTHEAD -->
+  <!-- HEADER & OBELISK / FLAMINGO EDITION MASTHEAD -->
   <header class="border-b py-6 px-4 sm:px-8" style="border-color: var(--border-color);">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
       
-      <!-- Title & Obelisk Imprint -->
-      <div class="space-y-1">
-        <div class="flex flex-wrap items-center gap-3">
+      <!-- Title & Edition Credits -->
+      <div class="space-y-1.5">
+        <div class="flex flex-wrap items-center gap-2.5">
           <span class="font-typewriter text-xs uppercase tracking-widest px-2 py-0.5 border rounded" style="border-color: var(--border-color); color: var(--text-secondary);">
-            OBELISK PRESS • 16 PLACE VENDÔME, PARIS (1939)
+            FIRST PUBLISHED: OBELISK PRESS, PARIS, 1939
           </span>
-          <button onclick="openContrabandModal()" class="contraband-stamp px-2.5 py-0.5 text-[11px] font-typewriter font-bold rounded cursor-pointer hover:scale-105 transition" title="Inspect 1939 Customs Ban History">
+          <span class="font-typewriter text-xs uppercase tracking-widest px-2 py-0.5 border rounded" style="border-color: var(--border-color); color: var(--text-secondary);">
+            SITE SCAN: FLAMINGO, 1993 (216 PAGES)
+          </span>
+          <button onclick="openContrabandModal()" class="contraband-stamp px-2.5 py-0.5 text-[11px] font-typewriter font-bold rounded cursor-pointer hover:scale-105 transition" title="Inspect Publication &amp; Edition History">
             NOT TO BE IMPORTED INTO U.S.A. OR GREAT BRITAIN
           </button>
         </div>
@@ -201,11 +197,11 @@
           TROPIC OF CAPRICORN
         </h1>
         <p class="text-lg sm:text-xl italic" style="color: var(--text-secondary);">
-          By <span class="font-semibold" style="color: var(--text-primary);">Henry Miller</span> — <span class="font-typewriter text-sm not-italic">"On the Ovarian Trolley" • Interactive Literary Sanctuary</span>
+          By <span class="font-semibold" style="color: var(--text-primary);">Henry Miller</span> — <span class="font-typewriter text-sm not-italic">"On the Ovarian Trolley" • Editorial Reading Guide &amp; Unabridged Scan</span>
         </p>
       </div>
 
-      <!-- Theme Switcher & Quick PDF Launch -->
+      <!-- Theme Switcher & Font Controls -->
       <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-between lg:justify-end">
         <!-- Reading Theme Selector -->
         <div class="flex items-center rounded-lg p-1 border font-ui text-xs" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
@@ -234,23 +230,23 @@
     <nav class="max-w-7xl mx-auto mt-6 pt-4 border-t flex flex-wrap items-center justify-between gap-2 font-ui text-sm" style="border-color: var(--border-color);">
       <div class="flex flex-wrap gap-1.5 sm:gap-2">
         <button onclick="switchTab('curated')" id="tabBtn-curated" class="tab-btn px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 text-white" style="background-color: var(--accent-primary);">
-          <span>I. Annotated Movements</span>
+          <span>I. Reading Guide</span>
         </button>
         <button onclick="switchTab('pdf')" id="tabBtn-pdf" class="tab-btn px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          <span>II. Full 348-Page PDF & Bookmark</span>
-          <span id="savedPageBadge" class="text-[11px] font-typewriter px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300">Pg. 1</span>
+          <span>II. Full PDF · 216 pages</span>
+          <span id="savedPageBadge" class="text-[11px] font-typewriter px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-800">Pg. 3</span>
         </button>
         <button onclick="switchTab('map')" id="tabBtn-map" class="tab-btn px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <span>III. 1920s NYC Psychogeography Map</span>
         </button>
         <button onclick="switchTab('studio')" id="tabBtn-studio" class="tab-btn px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          <span>IV. Contraband Notebook & Automatic Studio</span>
+          <span>IV. Contraband Notebook &amp; Automatic Studio</span>
           <span id="notesCountBadge" class="text-[11px] font-typewriter px-1.5 py-0.5 rounded border" style="border-color: var(--border-color);">0</span>
         </button>
       </div>
 
-      <a href="./tropic-of-capricorn.pdf" target="_blank" rel="noopener noreferrer" class="font-typewriter text-xs underline hover:opacity-80 flex items-center gap-1 py-1" style="color: var(--accent-primary);">
-        <span>Open Raw Unabridged PDF in New Tab ↗</span>
+      <a id="headerDirectPdfLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="font-typewriter text-xs underline hover:opacity-80 flex items-center gap-1 py-1" style="color: var(--accent-primary);">
+        <span>Open Full PDF (Flamingo, 1993 · 216 pp.) ↗</span>
       </a>
     </nav>
   </header>
@@ -259,18 +255,21 @@
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8">
 
     <!-- ==========================================
-         TAB 1: CURATED ANNOTATED MOVEMENTS READER
+         TAB 1: READING GUIDE & EDITORIAL THEMES
          ========================================== -->
     <section id="tab-curated" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Left Sidebar: Movement Selector & Reading Progress -->
+      <!-- Left Sidebar: Editorial Themes & Verified Scan Annotations -->
       <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-6">
         
-        <!-- Movement Index Card -->
+        <!-- Editorial Themes Index Card -->
         <div class="p-5 rounded-xl border shadow-sm space-y-4" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
-            <h2 class="font-display text-xl font-bold">Symphonic Movements</h2>
-            <span class="font-typewriter text-xs uppercase px-2 py-0.5 rounded" style="background-color: var(--bg-secondary);">4 Key Passages</span>
+            <div>
+              <span class="font-typewriter text-[11px] uppercase tracking-widest block" style="color: var(--accent-primary);">READING GUIDE</span>
+              <h2 class="font-display text-xl font-bold">Editorial Themes</h2>
+            </div>
+            <span class="font-typewriter text-xs uppercase px-2 py-0.5 rounded" style="background-color: var(--bg-secondary);">4 Notes</span>
           </div>
 
           <div id="movementList" class="space-y-2.5">
@@ -278,7 +277,7 @@
           </div>
 
           <div class="pt-3 border-t text-xs font-ui flex items-center justify-between" style="border-color: var(--border-color); color: var(--text-secondary);">
-            <span>Click any <span class="literary-note">underlined phrase</span> for historical annotations.</span>
+            <span>Click any <span class="literary-note">underlined phrase</span> to inspect scan-verified notes.</span>
           </div>
         </div>
 
@@ -286,74 +285,79 @@
         <div id="annotationCard" class="p-5 rounded-xl border shadow-sm space-y-3 transition-all" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
           <div class="flex items-center justify-between">
             <span class="font-typewriter text-xs uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-              ✦ ARCHIVAL MARGINALIA & CONTEXT
+              ✦ SCAN ANNOTATION (FLAMINGO, 1993)
             </span>
-            <span id="annotationRefTag" class="font-typewriter text-xs opacity-70">Note #01</span>
+            <span id="annotationRefTag" class="font-typewriter text-xs opacity-70">Note #01 • PDF p. 3</span>
           </div>
           <h3 id="annotationTitle" class="font-display text-lg font-bold">
-            The Epigraph to "Her" (June Mansfield)
+            Peter Abelard’s Historia Calamitatum
           </h3>
           <p id="annotationBody" class="text-base leading-relaxed" style="color: var(--text-primary);">
-            <em>Tropic of Capricorn</em> opens with the dedication "To Her." Unlike <em>Tropic of Cancer</em> (set in 1930s Paris), <em>Capricorn</em> reaches back into Miller's 1920s Brooklyn and Manhattan years, charting the spiritual paralysis before he met his second wife, June Edith Smith ("Mara" / "Mona"), at Wilson's Dance Hall on Broadway.
+            <!-- Populated dynamically via JS -->
           </p>
         </div>
 
-        <!-- Typewriter Read-Aloud / Cadence Simulator -->
+        <!-- Typewriter Cadence Preview -->
         <div class="p-5 rounded-xl border shadow-sm space-y-3" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="flex items-center justify-between">
-            <span class="font-typewriter text-xs font-bold uppercase tracking-wider">Automatic Typewriter Playback</span>
+            <span class="font-typewriter text-xs font-bold uppercase tracking-wider">Typewriter Cadence Preview</span>
             <button id="btnAutoType" onclick="toggleAutoTypewriter()" class="font-ui text-xs px-3 py-1 rounded text-white font-medium transition" style="background-color: var(--accent-primary);">
-              ▶ Type Out Passage
+              ▶ Type Out Note
             </button>
           </div>
           <p class="text-sm" style="color: var(--text-secondary);">
-            Watch and hear Henry Miller's ferocious high-speed typing cadence clack across the page in real time.
+            Play out this third-person editorial note on a virtual mechanical typewriter, or open the Automatic Studio tab to type your own stream of consciousness.
           </p>
         </div>
 
       </aside>
 
-      <!-- Right Column: The Literary Canvas -->
+      <!-- Right Column: Editorial Reading Guide Canvas -->
       <article class="lg:col-span-8 p-6 sm:p-10 md:p-12 rounded-2xl border shadow-md space-y-6 relative" style="background-color: var(--bg-card); border-color: var(--border-color);">
         
-        <!-- Top Running Header of the Book Page -->
+        <!-- Top Running Header Distinguishing Editorial Commentary from Miller's Scan -->
         <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b font-typewriter text-xs" style="border-color: var(--border-color); color: var(--text-secondary);">
-          <span id="readerRunningHeader">HENRY MILLER • TROPIC OF CAPRICORN (1939)</span>
-          <span id="readerPageCite">PDF PAGES 1–14</span>
+          <span id="readerRunningHeader">READING GUIDE • EDITORIAL COMMENTARY (THIRD-PERSON OVERVIEW)</span>
+          <span id="readerPageCite">SCAN: FLAMINGO, 1993 • PDF PAGE 3</span>
         </div>
 
-        <!-- Movement Title Header -->
+        <!-- Editorial Theme Title Header -->
         <div class="space-y-2 pt-2">
           <div id="movementSubtitle" class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
-            MOVEMENT I • THE BROOKLYN REFUSAL
+            EDITORIAL THEME I
           </div>
           <h2 id="movementMainTitle" class="font-display text-3xl sm:text-4xl font-black leading-tight">
-            "Once you have given up the ghost..."
+            Opening of the novel
           </h2>
           <p id="movementContextDeck" class="italic text-lg" style="color: var(--text-secondary);">
-            Opening pages of the novel: Miller reflects on childhood defiance in Brooklyn's 14th Ward, spiritual death, and absolute inner freedom.
+            <!-- Populated dynamically via JS -->
           </p>
         </div>
 
-        <!-- Main Literary Prose Container -->
-        <div id="literaryProseContainer" class="space-y-6 leading-relaxed pt-4" style="font-size: 21px;">
+        <!-- Main Third-Person Editorial Note Container -->
+        <div id="literaryProseContainer" class="space-y-6 leading-relaxed pt-2" style="font-size: 21px;">
           <!-- Populated dynamically via JS -->
         </div>
 
-        <!-- Bottom Action Bar for Saving Quotes & Navigating Movements -->
-        <div class="pt-8 mt-8 border-t flex flex-wrap items-center justify-between gap-4" style="border-color: var(--border-color);">
+        <!-- Direct Read-in-the-PDF Callout Box -->
+        <div id="themePdfLinksBox" class="p-5 rounded-xl border space-y-3" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Bottom Action Bar for Saving Notes & Navigating Themes -->
+        <div class="pt-6 mt-6 border-t flex flex-wrap items-center justify-between gap-4" style="border-color: var(--border-color);">
           <div class="flex items-center gap-2">
-            <button onclick="saveCurrentMovementQuote()" class="font-ui text-xs sm:text-sm px-4 py-2 rounded-lg border font-medium hover:opacity-80 transition flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <span>✒ Clip Selection / Passage to Contraband Notebook</span>
+            <button onclick="saveCurrentGuideNote()" class="font-ui text-xs sm:text-sm px-4 py-2 rounded-lg border font-medium hover:opacity-80 transition flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              <span>✒ Save Note</span>
             </button>
           </div>
 
           <div class="flex items-center gap-2 font-ui text-xs sm:text-sm">
             <button onclick="stepMovement(-1)" class="px-3.5 py-2 rounded-lg border hover:opacity-80 transition" style="border-color: var(--border-color);">
-              ← Prev Movement
+              ← Prev Theme
             </button>
             <button onclick="stepMovement(1)" class="px-4 py-2 rounded-lg text-white font-medium hover:opacity-90 transition" style="background-color: var(--accent-primary);">
-              Next Movement →
+              Next Theme →
             </button>
           </div>
         </div>
@@ -362,88 +366,77 @@
     </section>
 
     <!-- ==========================================
-         TAB 2: FULL 348-PAGE PDF & BOOKMARK READER
+         TAB 2: FULL PDF · 216 PAGES & BOOKMARK READER
          ========================================== -->
     <section id="tab-pdf" class="hidden space-y-6">
       
-      <!-- Top Bookmark & Page Control Bar -->
+      <!-- Top Bookmark & Edition Attribution Bar -->
       <div class="p-6 rounded-2xl border shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6" style="background-color: var(--bg-card); border-color: var(--border-color);">
         
-        <div class="space-y-1 max-w-2xl">
-          <div class="flex items-center gap-2">
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="flex flex-wrap items-center gap-2">
             <span class="px-2 py-0.5 text-xs font-typewriter font-bold uppercase rounded text-white" style="background-color: var(--accent-primary);">
-              COMPLETE UNABRIDGED TEXT
+              FULL PDF · 216 PAGES
             </span>
             <span class="font-typewriter text-xs" style="color: var(--text-secondary);">
-              Archive Mirror: tropic-of-capricorn.pdf (mrbeland.weebly.com source)
+              First published: Obelisk Press, Paris, 1939 • Scanned edition: Flamingo, 1993
             </span>
           </div>
           <h2 class="font-display text-2xl sm:text-3xl font-bold">
-            Unabridged PDF Reader & Page Tracker
+            Unabridged PDF Reader &amp; Bookmark Tracker
           </h2>
           <p class="text-base" style="color: var(--text-secondary);">
-            Note on archival file naming: Although the original school server URL was named <code class="font-typewriter text-xs px-1.5 py-0.5 rounded" style="background-color: var(--bg-secondary);">tropic_of_cancer.pdf</code>, the unabridged document inside (348 book pages across 216 folio pages) is the complete edition of <strong>Tropic of Capricorn</strong>, hosted directly in this sanctuary for uninterrupted reading. Use the bookmark bar below to jump to any page or save your reading spot.
+            Read Henry Miller’s original text directly in the scanned <strong>Flamingo Modern Classic (1993)</strong> paperback edition (with an introduction by Robert Nye on PDF page 2; Miller’s novel opens on PDF page 3 and concludes with the Villa Seurat dateline on PDF page 216). All page numbers across this site use exact PDF viewer pages (`1–216`).
           </p>
         </div>
 
         <!-- Interactive Page Bookmark Controls -->
         <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto p-4 rounded-xl border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
           <div class="flex flex-col">
-            <label for="pdfPageInput" class="font-typewriter text-[11px] uppercase tracking-wider" style="color: var(--text-secondary);">Current Page (1–216)</label>
+            <label for="pdfPageInput" class="font-typewriter text-[11px] uppercase tracking-wider" style="color: var(--text-secondary);">PDF Viewer Page (1–216)</label>
             <div class="flex items-center gap-1.5 mt-1">
-              <button onclick="changePdfPage(-1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">-</button>
-              <input id="pdfPageInput" type="number" min="1" max="216" value="1" onchange="jumpToPdfPage(this.value)" class="w-20 text-center font-typewriter font-bold py-1.5 rounded border text-base" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
-              <button onclick="changePdfPage(1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">+</button>
+              <button onclick="changePdfPage(-1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Previous PDF page">-</button>
+              <input id="pdfPageInput" type="number" min="1" max="216" value="3" onchange="jumpToPdfPage(this.value)" class="w-20 text-center font-typewriter font-bold py-1.5 rounded border text-base" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
+              <button onclick="changePdfPage(1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Next PDF page">+</button>
             </div>
           </div>
 
           <div class="flex flex-col gap-1.5 pt-3 sm:pt-0">
-            <button onclick="saveReadingBookmark()" class="font-ui text-xs px-4 py-2 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
-              ★ Save Bookmark
-            </button>
-            <a id="directPageLink" href="./tropic-of-capricorn.pdf#page=1" target="_blank" rel="noopener noreferrer" class="font-typewriter text-xs text-center underline hover:opacity-80" style="color: var(--text-primary);">
-              Launch Page in Fullscreen ↗
+            <div class="flex items-center gap-1.5">
+              <button onclick="saveReadingBookmark()" class="font-ui text-xs px-3.5 py-2 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
+                ★ Save Bookmark
+              </button>
+              <button id="btnRestoreBookmark" onclick="restoreSavedBookmark()" class="font-ui text-xs px-3 py-2 rounded-lg border font-medium transition hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Jump to saved bookmark">
+                ↺ Saved (Pg. 3)
+              </button>
+            </div>
+            <a id="directPageLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="font-typewriter text-xs text-center underline hover:opacity-80" style="color: var(--text-primary);">
+              Open Direct PDF Link (#page=3) ↗
             </a>
           </div>
         </div>
 
       </div>
 
-      <!-- Quick Jump Landmarks inside the PDF -->
-      <div class="flex flex-wrap items-center gap-2 font-ui text-xs">
-        <span class="font-typewriter uppercase tracking-wider mr-1" style="color: var(--text-secondary);">Quick Page Jumps:</span>
-        <button onclick="jumpToPdfPage(4)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 4 — Opening ("Once you have given up the ghost")
-        </button>
-        <button onclick="jumpToPdfPage(9)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 9 — The Cosmodemonic Telegraph Co.
-        </button>
-        <button onclick="jumpToPdfPage(34)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 34 — Valeska & Messenger Parade
-        </button>
-        <button onclick="jumpToPdfPage(118)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 118 — "On the Ovarian Trolley"
-        </button>
-        <button onclick="jumpToPdfPage(164)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 164 — Meeting Mara at the Dance Hall
-        </button>
-        <button onclick="jumpToPdfPage(216)" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          Pg. 216 — Final Coda (Villa Seurat, Paris)
-        </button>
+      <!-- Quick Jump Landmarks (Populated from Single Source of Truth LANDMARKS) -->
+      <div id="quickJumpsContainer" class="flex flex-wrap items-center gap-2 font-ui text-xs">
+        <!-- Populated dynamically via JS -->
       </div>
 
-      <!-- Embedded PDF Frame + Fallback Companion Card -->
+      <!-- Embedded PDF Frame -->
       <div class="rounded-2xl border overflow-hidden shadow-lg" style="background-color: var(--bg-card); border-color: var(--border-color);">
         <div class="px-4 py-2.5 border-b flex flex-wrap items-center justify-between gap-2 text-xs font-typewriter" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-          <span id="pdfFrameStatus">EMBEDDED ARCHIVE VIEWER — PAGE 1 OF 216</span>
-          <span>Tip: On mobile browsers, click "Launch Page in Fullscreen ↗" above for native pinch-zoom reading.</span>
+          <span id="pdfFrameStatus">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
+          <span>On mobile browsers, tap "Open Direct PDF Link" above for native full-page reading.</span>
         </div>
-        <iframe
-          id="pdfViewerFrame"
-          src="./tropic-of-capricorn.pdf#page=1"
-          class="w-full h-[720px] bg-stone-900"
-          title="Henry Miller - Tropic of Capricorn Full Text PDF">
-        </iframe>
+        <div id="pdfFrameMount" class="w-full h-[720px] bg-stone-900">
+          <iframe
+            id="pdfViewerFrame"
+            src="./tropic-of-capricorn.pdf#page=3"
+            class="w-full h-full bg-stone-900"
+            title="Henry Miller - Tropic of Capricorn (Flamingo, 1993 Scan, 216 pages)">
+          </iframe>
+        </div>
       </div>
 
     </section>
@@ -458,8 +451,8 @@
         <div class="lg:col-span-7 p-6 rounded-2xl border shadow-md space-y-4" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
-              <span class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">CARTOGRAPHY OF DELIRIUM</span>
-              <h2 class="font-display text-2xl sm:text-3xl font-bold">1920s Brooklyn & Manhattan Psychogeography</h2>
+              <span class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">CARTOGRAPHY OF THE NOVEL</span>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold">1920s Brooklyn &amp; Manhattan Psychogeography</h2>
             </div>
             <span class="font-typewriter text-xs px-2.5 py-1 rounded border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
               Click any node on the map
@@ -499,83 +492,92 @@
               <line x1="268" y1="220" x2="395" y2="235" stroke="#991b1b" stroke-width="2.5" stroke-dasharray="5,5" />
 
               <!-- Connecting Psychogeographic Trajectory Line -->
-              <polyline points="465,225 415,245 205,295 185,155 510,365 560,485"
+              <polyline points="465,225 330,300 205,295 185,155 510,365 560,485"
                         fill="none" stroke="#991b1b" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6" />
 
-              <!-- NODE 1: 14th Ward Williamsburg (Childhood Street) -->
+              <!-- NODE 1: Fillmore Place & 14th Ward Williamsburg -->
               <g class="cursor-pointer" onclick="selectMapNode(0)">
                 <circle cx="465" cy="225" r="18" fill="#991b1b" class="map-pulse" />
                 <circle cx="465" cy="225" r="9" fill="#991b1b" stroke="#fff" stroke-width="2" />
-                <text x="485" y="230" class="font-typewriter text-xs font-bold" fill="currentColor">01. The 14th Ward (Williamsburg)</text>
+                <text x="485" y="230" class="font-typewriter text-xs font-bold" fill="currentColor">01. Fillmore Place (14th Ward)</text>
               </g>
 
-              <!-- NODE 2: Cosmodemonic Telegraph Co. (Lower Manhattan) -->
+              <!-- NODE 2: Cosmodemonic Telegraph Co. (Sunset Place, Lower Manhattan) -->
               <g class="cursor-pointer" onclick="selectMapNode(1)">
                 <circle cx="205" cy="295" r="18" fill="#b45309" class="map-pulse" />
                 <circle cx="205" cy="295" r="9" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="52" y="325" class="font-typewriter text-xs font-bold" fill="currentColor">02. Cosmodemonic Telegraph HQ</text>
+                <text x="46" y="325" class="font-typewriter text-xs font-bold" fill="currentColor">02. Cosmodemonic HQ (Sunset Pl.)</text>
               </g>
 
-              <!-- NODE 3: Roseland / Wilson's Dance Hall (Broadway & Times Square) -->
+              <!-- NODE 3: Broadway Dance Hall (Mara) -->
               <g class="cursor-pointer" onclick="selectMapNode(2)">
                 <circle cx="185" cy="155" r="18" fill="#991b1b" class="map-pulse" />
                 <circle cx="185" cy="155" r="9" fill="#991b1b" stroke="#fff" stroke-width="2" />
                 <text x="48" y="135" class="font-typewriter text-xs font-bold" fill="currentColor">03. Broadway Dance Hall (Mara)</text>
               </g>
 
-              <!-- NODE 4: The Ovarian Trolley (Brooklyn Bridge / Streetcar Line) -->
+              <!-- NODE 4: Brooklyn Bridge Trolley Ride with Hymie -->
               <g class="cursor-pointer" onclick="selectMapNode(3)">
                 <circle cx="330" cy="300" r="16" fill="#b45309" class="map-pulse" />
                 <circle cx="330" cy="300" r="8" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="348" y="322" class="font-typewriter text-xs font-bold" fill="currentColor">04. The Ovarian Trolley</text>
+                <text x="348" y="322" class="font-typewriter text-xs font-bold" fill="currentColor">04. Brooklyn Bridge Trolley</text>
               </g>
 
-              <!-- NODE 5: Park Slope / Remsen & Love Nest -->
+              <!-- NODE 5: Prospect Park (Walks with Ulric) -->
               <g class="cursor-pointer" onclick="selectMapNode(4)">
                 <circle cx="510" cy="365" r="16" fill="#991b1b" class="map-pulse" />
                 <circle cx="510" cy="365" r="8" fill="#991b1b" stroke="#fff" stroke-width="2" />
-                <text x="530" y="370" class="font-typewriter text-xs font-bold" fill="currentColor">05. Brooklyn Heights & Park Slope</text>
+                <text x="530" y="370" class="font-typewriter text-xs font-bold" fill="currentColor">05. Prospect Park (Ulric)</text>
               </g>
 
-              <!-- NODE 6: Coney Island & The Atlantic Edge (Toward Paris) -->
+              <!-- NODE 6: Atlantic Horizon & Villa Seurat Dateline -->
               <g class="cursor-pointer" onclick="selectMapNode(5)">
                 <circle cx="560" cy="485" r="16" fill="#b45309" class="map-pulse" />
                 <circle cx="560" cy="485" r="8" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="430" y="510" class="font-typewriter text-xs font-bold" fill="currentColor">06. Coney Island & Departure to Paris</text>
+                <text x="415" y="510" class="font-typewriter text-xs font-bold" fill="currentColor">06. Coda &amp; Departure to Villa Seurat</text>
               </g>
             </svg>
           </div>
         </div>
 
-        <!-- Right 5 Cols: Selected Map Node Dossier -->
+        <!-- Right 5 Cols: Selected Map Node Editorial Dossier (NO Imitation Quotes) -->
         <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl border shadow-md space-y-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
             <span id="mapNodeCoord" class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
-              LOCUS 01 • 40.7143° N, 73.9566° W
+              LOCUS 01
             </span>
             <span id="mapNodePdfPages" class="font-typewriter text-xs px-2 py-0.5 rounded" style="background-color: var(--bg-secondary);">
-              PDF Pages 4–8, 76–95
+              PDF page 132
             </span>
           </div>
 
           <h3 id="mapNodeTitle" class="font-display text-3xl font-bold">
-            01. The 14th Ward, Williamsburg (Brooklyn)
+            <!-- Populated dynamically via JS -->
           </h3>
 
           <p id="mapNodeDescription" class="text-lg leading-relaxed" style="color: var(--text-secondary);">
-            The mythic cradle of Henry Miller's youth—Fillmore Place and Driggs Avenue. Throughout <em>Tropic of Capricorn</em>, Miller contrasts the raw, tribal camaraderie of his childhood street life against the soulless mechanization of adult America.
+            <!-- Populated dynamically via JS -->
           </p>
 
-          <blockquote id="mapNodeQuote" class="p-4 rounded-xl border-l-4 italic text-lg leading-relaxed" style="background-color: var(--bg-secondary); border-color: var(--accent-primary);">
-            "Even at the age of nine or ten I knew that I was outside the ring, that if I wanted to live I would have to create a world of my own..."
-          </blockquote>
+          <!-- Clearly Labeled Editorial Scene Note (Replacing Former Imitation Excerpt) -->
+          <div class="p-4 rounded-xl border-l-4 space-y-2" style="background-color: var(--bg-secondary); border-color: var(--accent-primary);">
+            <div class="font-typewriter text-[11px] uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
+              EDITORIAL NOTE • IN THE SCAN
+            </div>
+            <p id="mapNodeEditorialNote" class="text-base leading-relaxed" style="color: var(--text-primary);">
+              <!-- Populated dynamically via JS -->
+            </p>
+            <div id="mapNodeDirectLinks" class="pt-1 flex flex-wrap items-center gap-3 text-xs font-typewriter">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
 
-          <div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+          <div class="pt-2 flex flex-wrap items-center justify-between gap-2">
             <button onclick="jumpFromMapToPdf()" class="font-ui text-xs px-4 py-2 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
-              Open Corresponding Page in Full PDF →
+              Open in Site PDF Viewer →
             </button>
-            <button onclick="saveMapQuoteToNotebook()" class="font-ui text-xs px-3.5 py-2 rounded-lg border font-medium transition hover:opacity-80" style="border-color: var(--border-color);">
-              + Save Quote to Notebook
+            <button onclick="saveMapNoteToNotebook()" class="font-ui text-xs px-3.5 py-2 rounded-lg border font-medium transition hover:opacity-80" style="border-color: var(--border-color);">
+              + Save Note
             </button>
           </div>
         </div>
@@ -606,7 +608,7 @@
           </div>
 
           <p class="text-base" style="color: var(--text-secondary);">
-            Miller wrote <em>Tropic of Capricorn</em> at breakneck speed, refusing to blot a line until the torrent subsided. Pick a prompt below—or write unprompted—and let your keyboard clack without self-censorship.
+            Miller drafted long stretches of <em>Tropic of Capricorn</em> in associative sprints. Pick a writing spark below—or write unprompted—and let your keyboard clack without pausing to edit.
           </p>
 
           <!-- Prompt Generator Bar -->
@@ -630,7 +632,7 @@
 
           <div class="flex flex-wrap items-center justify-between gap-3">
             <button onclick="saveStudioEntryToNotebook()" class="font-ui text-xs sm:text-sm px-4 py-2.5 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
-              ✒ Commit Entry to Contraband Notebook
+              ✒ Save Studio Entry to Notebook
             </button>
             <button onclick="clearStudioInput()" class="font-ui text-xs px-3 py-2 rounded-lg border hover:opacity-80" style="border-color: var(--border-color);">
               Clear Page
@@ -638,7 +640,7 @@
           </div>
         </div>
 
-        <!-- Right 6 Cols: Saved Marginalia & Clipped Quotes -->
+        <!-- Right 6 Cols: Saved Notes & Marginalia -->
         <div class="lg:col-span-6 p-6 sm:p-8 rounded-2xl border shadow-md space-y-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
@@ -669,31 +671,34 @@
 
   </main>
 
-  <!-- CONTRABAND HISTORY MODAL -->
+  <!-- PUBLICATION & EDITION HISTORY MODAL -->
   <div id="contrabandModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
     <div class="max-w-xl w-full p-6 sm:p-8 rounded-2xl border shadow-2xl space-y-4 relative" style="background-color: var(--bg-card); border-color: var(--border-color);">
       <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
         <span class="contraband-stamp px-2.5 py-0.5 text-xs font-typewriter font-bold">
-          OBELISK PRESS CONTRABAND DOSSIER
+          EDITION &amp; CENSORSHIP DOSSIER
         </span>
         <button onclick="closeContrabandModal()" class="font-typewriter text-sm px-2.5 py-1 rounded border hover:opacity-80" style="border-color: var(--border-color);">
           ✕ Close
         </button>
       </div>
       <h3 class="font-display text-2xl sm:text-3xl font-bold">
-        Banned for 23 Years: From Paris Smugglers to Grove Press (1939–1962)
+        From Obelisk Press (Paris, 1939) to Flamingo (London, 1993)
       </h3>
       <div class="space-y-3 text-base leading-relaxed" style="color: var(--text-secondary);">
         <p>
-          First published in Paris by Jack Kahane's <strong>Obelisk Press</strong> in February 1939 at 16 Place Vendôme, <em>Tropic of Capricorn</em> bore a stark legal warning on its cover: <em>"NOT TO BE IMPORTED INTO GREAT BRITAIN OR U.S.A."</em>
+          <strong>Original Publication (1939):</strong> Completed at Villa Seurat in September 1938, <em>Tropic of Capricorn</em> was first published in Paris by Jack Kahane’s <strong>Obelisk Press</strong> (16 Place Vendôme) in February 1939 with the cover warning: <em>"NOT TO BE IMPORTED INTO GREAT BRITAIN OR U.S.A."</em>
         </p>
         <p>
-          For over two decades, American and British travelers smuggled green-and-buff paperbound copies past U.S. Customs inside coat linings and false-bottomed suitcases. Only in September 1962—after Barney Rosset's <strong>Grove Press</strong> waged a historic legal battle across dozens of U.S. courts—was <em>Tropic of Capricorn</em> legally published in Henry Miller's homeland.
+          <strong>Censorship &amp; Legal Editions (1962–1964):</strong> Customs bans kept the novel out of English-speaking bookstores for over two decades until <strong>Grove Press</strong> published it in the United States in September 1962 and <strong>John Calder</strong> issued the first British edition in 1964.
+        </p>
+        <p>
+          <strong>Edition Scanned on This Site (1993):</strong> The 216-page PDF hosted here reproduces the unabridged <strong>Flamingo Modern Classic</strong> paperback (HarperCollins, London, 1993, ISBN `0-00-654584-X`), featuring an introduction by <strong>Robert Nye</strong> on PDF page 2, Miller’s opening text on PDF page 3, and the final Villa Seurat dateline on PDF page 216.
         </p>
       </div>
       <div class="pt-2 flex justify-end">
         <button onclick="closeContrabandModal()" class="font-ui text-xs px-4 py-2 rounded-lg text-white font-medium" style="background-color: var(--accent-primary);">
-          Return to Reading Sanctuary
+          Return to Reading Guide
         </button>
       </div>
     </div>
@@ -702,19 +707,19 @@
   <!-- TOAST NOTIFICATION BANNER -->
   <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl border shadow-lg font-ui text-xs sm:text-sm items-center gap-2 transition-all" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--text-primary);">
     <span class="w-2 h-2 rounded-full" style="background-color: var(--accent-primary);"></span>
-    <span id="toastMessage">Saved to Contraband Notebook</span>
+    <span id="toastMessage">Saved note to Contraband Notebook</span>
   </div>
 
   <!-- FOOTER -->
   <footer class="border-t py-6 px-4 sm:px-8 mt-12 text-xs font-typewriter" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-secondary);">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span>HENRY MILLER • <em>TROPIC OF CAPRICORN</em> (PARIS, 1939) — INTERACTIVE LITERARY EDITION</span>
+        <span>HENRY MILLER • <em>TROPIC OF CAPRICORN</em> — FIRST PUBLISHED: OBELISK PRESS, PARIS, 1939 • SCAN: FLAMINGO, 1993</span>
       </div>
       <div class="flex items-center gap-4">
-        <button onclick="switchTab('pdf')" class="underline hover:opacity-80">Full Unabridged PDF</button>
+        <button onclick="switchTab('pdf')" class="underline hover:opacity-80">Full PDF · 216 pages</button>
         <span>•</span>
-        <button onclick="openContrabandModal()" class="underline hover:opacity-80">1939 Obelisk Press History</button>
+        <button onclick="openContrabandModal()" class="underline hover:opacity-80">Edition &amp; Ban History</button>
       </div>
     </div>
   </footer>
@@ -725,226 +730,306 @@
     const TOTAL_PDF_PAGES = 216;
 
     // =========================================================================
-    // 1. CURATED MOVEMENTS & ANNOTATIONS DATA (FROM TROPIC OF CAPRICORN)
+    // SINGLE SOURCE OF TRUTH FOR LANDMARK PDF VIEWER PAGES (FLAMINGO, 1993 SCAN)
+    // =========================================================================
+    const LANDMARKS = Object.freeze({
+      opening: 3,           // Opening of the novel ("Once you have given up the ghost...")
+      cosmodemonic: 10,     // Sunset Place hiring desk at the Cosmodemonic Telegraph Co. (introduced p. 8)
+      prospectPark: 28,     // Evening walks in Prospect Park with Ulric (Paris & D. H. Lawrence)
+      ovarianTrolley: 29,   // Brooklyn Bridge trolley ride with Hymie ("ovaries", dead cat, fetal toenail)
+      valeska: 34,          // Valeska at the telegraph bureau (suicide on p. 45)
+      fillmore: 132,        // Fillmore Place & Williamsburg / 14th Ward transformation (also p. 83, 137)
+      codaStart: 206,       // Start of the coda ("Not long ago I was walking the streets of New York...")
+      maraDanceHall: 211,   // Mara at the Broadway dance hall (Nick the Greek, blue duveteen, Strindberg)
+      villaSeurat: 216      // Final page and "September 1938 Villa Seurat, Paris." dateline
+    });
+
+    function getDirectPdfHref(pageNum) {
+      return `${PDF_BASE_URL}#page=${pageNum}`;
+    }
+
+    function getAbsolutePdfUrl(pageNum) {
+      try {
+        const abs = new URL(PDF_BASE_URL, window.location.href).href;
+        return `${abs}#page=${pageNum}`;
+      } catch (e) {
+        return getDirectPdfHref(pageNum);
+      }
+    }
+
+    // =========================================================================
+    // 1. READING GUIDE — THIRD-PERSON EDITORIAL THEMES & 16 SCAN ANNOTATIONS
     // =========================================================================
     const MOVEMENTS = [
       {
         id: 0,
-        subtitle: "MOVEMENT I • THE BROOKLYN REFUSAL",
-        title: "\"Once you have given up the ghost...\"",
-        pdfPages: "PDF PAGES 4–8",
-        deck: "Opening pages of the novel: Miller reflects on childhood defiance in Brooklyn's 14th Ward, spiritual death, and absolute inner freedom.",
+        subtitle: "EDITORIAL THEME I • OPENING OF THE NOVEL",
+        title: "Giving Up the Ghost: The Opening Refusal",
+        pdfPage: LANDMARKS.opening,
+        pdfRangeLabel: `PDF page ${LANDMARKS.opening}`,
+        primaryLinkLabel: `Read the original passage · PDF page ${LANDMARKS.opening}`,
+        secondaryLinks: [
+          { label: `Fillmore Place & Williamsburg · PDF page ${LANDMARKS.fillmore}`, page: LANDMARKS.fillmore }
+        ],
+        deck: "Editorial note: How Miller opens the novel with inner surrender, indifference to worldly ambition, and hostility toward respectable routine.",
+        summaryForNote: "Miller opens Tropic of Capricorn under Peter Abelard's epigraph by framing survival as 'giving up the ghost' in the midst of chaos—rejecting social striving and tidy domestic postponement ('everything was for tomorrow, but tomorrow never came').",
         paragraphs: [
-          `Once you have <span class="literary-note" onclick="showAnnotation(0, 0)">given up the ghost</span>, everything follows with dead certainty, even in the midst of chaos. From the beginning it was never anything but chaos: it was a fluid which enveloped me, which I breathed in through the gills. Look where you will, there is only flux and disorder. In the <span class="literary-note" onclick="showAnnotation(0, 1)">Fourteenth Ward</span>, where I grew up, nobody ever dreamed of escaping.`,
-          `From the very beginning I must have trained myself not to want anything too badly. Look at the others, I used to say to myself—they are crazy with desire, and what does it get them? Even at the age of nine or ten I knew that I was outside the ring, that if I wanted to live I would have to create a world of my own. I became <span class="literary-note" onclick="showAnnotation(0, 2)">indifferent, callous, fatalistic</span>. Let the world go to smash! I used to say to myself. What is it to me?`,
-          `In the street you learn what human beings really are; otherwise, or columnwise, you learn what people pretend to be. What was not in the street was false, derived, that is to say, literature. Nothing of what is called enhancement crept into my blood until I met Ulric, and later <span class="literary-note" onclick="showAnnotation(0, 3)">Her</span>—to whom this book is dedicated.`
+          `Under <span class="literary-note" onclick="showAnnotation(0, 0)">Peter Abelard’s epigraph</span>, Miller opens the novel by treating spiritual surrender—<span class="literary-note" onclick="showAnnotation(0, 1)">giving up the ghost</span> in the midst of chaos—as the starting point of self-knowledge. Instead of tracing a conventional story of ambition, the narrator recalls wanting to stop struggling even in childhood, finding "successful" people ridiculous, and recognizing that what others mistook for kindness was simply <span class="literary-note" onclick="showAnnotation(0, 2)">indifference and freedom from envy</span>.`,
+          `On the following page, Miller turns that detachment against his tidy German-American upbringing, where dishes, newspapers, and ironed clothes were put away for a tomorrow that never arrived. Only much later in the scan does he circle back to his boyhood street around <span class="literary-note" onclick="showAnnotation(0, 3)">Fillmore Place in Williamsburg</span>, contrasting neighborhood street life with the adult conformity he refused to join.`
         ],
         annotations: [
           {
-            ref: "Note #01 • Page 4",
-            title: "\"Once you have given up the ghost...\"",
-            body: "The famous opening sentence of Tropic of Capricorn. For Miller, 'giving up the ghost' does not mean dying—it means surrendering the false American dream of striving, conformity, and social ambition so that authentic artistic life can begin."
+            ref: `Note #01 • PDF page ${LANDMARKS.opening}`,
+            title: "Peter Abelard’s Historia Calamitatum",
+            body: `In the 1993 Flamingo scan, the novel begins on PDF page ${LANDMARKS.opening} under the section title <em>"On the ovarian trolley"</em> with an epigraph from Peter Abelard’s <em>Foreword to Historia Calamitatum (the story of my misfortunes)</em>. The 1939 Obelisk Press Paris edition also carried a brief dedication page reading <em>"To Her"</em>—referenced on PDF page 6 as <em>"the one for whom this is written."</em>`
           },
           {
-            ref: "Note #02 • Page 5",
-            title: "The Fourteenth Ward (Williamsburg, Brooklyn)",
-            body: "Miller moved with his German-American tailor father and family to 662 Driggs Avenue in Brooklyn's 14th Ward at age one. Throughout his life, he mythologized these pre-Williamsburg Bridge streets as a lost paradise of boyhood rebellion."
+            ref: `Note #02 • PDF page ${LANDMARKS.opening}`,
+            title: "“Once you have given up the ghost…”",
+            body: `Miller’s famous opening sentence appears immediately below Abelard’s epigraph on PDF page ${LANDMARKS.opening}. "Giving up the ghost" here means abandoning the urge to strive, reform, or justify existence inside a society the narrator views as bankrupt.`
           },
           {
-            ref: "Note #03 • Page 6",
-            title: "Rock-Bottom Fatalism & Taoist Joy",
-            body: "Long before discovering formal Zen texts, Miller practiced what he called 'active surrender'—refusing to climb the corporate or social ladder even when destitute."
+            ref: `Note #03 • PDF pages ${LANDMARKS.opening}–4`,
+            title: "Freedom from Envy & Domestic “Tomorrow”",
+            body: `At the bottom of PDF page ${LANDMARKS.opening}, Henry notes that people judged him loyal and generous only because he felt pity rather than envy. On PDF page 4, he indicts respectable family order where every chore served the future: <em>"Everything was for tomorrow, but tomorrow never came."</em>`
           },
           {
-            ref: "Note #04 • Epigraph",
-            title: "\"To Her\" — June Edith Smith (Mara / Mona)",
-            body: "Tropic of Capricorn is dedicated simply 'To Her'—June Mansfield, whom Miller met in 1923 at Wilson's Dance Hall on Broadway. Their tumultuous marriage inspired both Capricorn and The Rosy Crucifixion trilogy."
+            ref: `Note #04 • PDF pages 83 & ${LANDMARKS.fillmore}`,
+            title: "Fillmore Place & Brooklyn’s 14th Ward",
+            body: `Contrary to common summaries, Miller does not mention the 14th Ward on the opening page. His boyhood neighborhood around Fillmore Place in Williamsburg surfaces later—in the street fight between Joey Silverstein and Joe Gerhardt (PDF page 83) and in his account of how the Williamsburg Bridge altered Fillmore Place (PDF page ${LANDMARKS.fillmore}, with the 14th Ward named on PDF page 137).`
           }
         ]
       },
       {
         id: 1,
-        subtitle: "MOVEMENT II • MANHATTAN INFERNO",
-        title: "The Cosmodemonic Telegraph Company",
-        pdfPages: "PDF PAGES 9–45",
-        deck: "As employment manager at Western Union in Manhattan, Miller presides over a human maelstrom of drifters, poets, epileptics, and mutilated messengers.",
+        subtitle: "EDITORIAL THEME II • THE TELEGRAPH BUREAU",
+        title: "Sunset Place & The Cosmodemonic Telegraph Company",
+        pdfPage: LANDMARKS.cosmodemonic,
+        pdfRangeLabel: `PDF pages 8–45`,
+        primaryLinkLabel: `Read the original passage · PDF page ${LANDMARKS.cosmodemonic}`,
+        secondaryLinks: [
+          { label: `First arrival at the bureau · PDF page 8`, page: 8 },
+          { label: `Valeska’s story · PDF page ${LANDMARKS.valeska}`, page: LANDMARKS.valeska }
+        ],
+        deck: "Editorial note: Miller recasts his years as Western Union’s Manhattan employment manager into a portrait of industrial chaos and human desperation.",
+        summaryForNote: "Hired after walking into the Cosmodemonic Telegraph Company for a lowly messenger job, Henry presides over the Sunset Place hiring desk—caught between corporate orders from Twilliger and Carnahan, destitute applicants, and the tragedy of his secretary Valeska.",
         paragraphs: [
-          `Chaos! Chaos! Day and night automated by the click of the key. At the hiring desk of the <span class="literary-note" onclick="showAnnotation(1, 0)">Cosmodemonic Telegraph Company of North America</span> I sat like a little god in a revolving chair, interviewing the sweepings of the streets: the legless, the armless, the epileptic, ex-convicts, unfrocked priests, Hindu nationalists, <span class="literary-note" onclick="showAnnotation(1, 1)">Hymie the bull</span>, and Curley.`,
-          `Vice-President <span class="literary-note" onclick="showAnnotation(1, 2)">Carnegie</span> wanted efficiency; I gave him a circus. When they told me to hire clean-cut Anglo-Saxon youths, I hired Chinamen, dwarfs, poets, and madmen. Every day five hundred human wrecks filed past my desk begging for a uniform and a leather pouch so they could race through the canyons of Wall Street and Broadway for a crust of bread.`,
-          `At night, when the switchboards glowed like ulcers and <span class="literary-note" onclick="showAnnotation(1, 3)">Valeska</span> leaned over the ledger with her bitter, tragic laugh, I saw the whole continent wired together in one vast, senseless nervous breakdown.`
+          `Out of work and looking for the lowest job imaginable, Henry walks into <span class="literary-note" onclick="showAnnotation(1, 0)">the Cosmodemonic Telegraph Company</span> to apply as a messenger boy—only to be promoted after taking his grievance upstairs to <span class="literary-note" onclick="showAnnotation(1, 1)">Carnahan and Vice-President Twilliger</span>. Installed at Sunset Place, he hires and fires at breakneck pace inside what he calls a corporate slaughterhouse, interviewing <span class="literary-note" onclick="showAnnotation(1, 2)">runaways, misfits, and destitute drifters</span> while telegrams float in the sewer and wires snap across the continent.`,
+          `Cautioned by management to be hard, Henry alternates between reckless compliance and impulsive charity—handing out pocket money, cigarettes, and jobs that snarl Manhattan deliveries. Around him revolve switchboard clerk Hymie, company detective O’Rourke, and Henry’s secretary <span class="literary-note" onclick="showAnnotation(1, 3)">Valeska</span>, whose mistreatment by executives and subsequent suicide darken the close of the telegraph episodes.`
         ],
         annotations: [
           {
-            ref: "Note #05 • Page 9",
-            title: "The Cosmodemonic Telegraph Company",
-            body: "Miller's satirical name for the Western Union Telegraph Company in New York, where he worked from 1920 to 1924 as Employment Manager in charge of hiring and firing messenger boys across Manhattan."
+            ref: "Note #05 • PDF page 8",
+            title: "The Cosmodemonic Telegraph Company of North America",
+            body: "Introduced at the bottom of PDF page 8 (and revisited as <em>the Cosmodemonic</em> on PDF pages 9, 15, and 43), this is Miller’s satirical name for the Western Union Telegraph Company in New York, where he worked as employment manager from 1920 to 1924."
           },
           {
-            ref: "Note #06 • Page 16",
-            title: "Hymie & The Messenger Parade",
-            body: "While working at Western Union, Miller planned his first book—Clipped Wings—a series of biographical portraits of twelve messenger boys whose raw lives shocked his literary friends."
+            ref: "Note #06 • PDF pages 9, 20 & 38",
+            title: "Twilliger, Carnahan, and Detective O’Rourke",
+            body: "In the scanned text, the telegraph executives are Vice-President Twilliger (PDF page 9) and General Manager Carnahan (PDF page 20), alongside company detective O’Rourke (PDF pages 38–45), who pursues messengers accused of robbing branch tills."
           },
           {
-            ref: "Note #07 • Page 24",
-            title: "Corporate America as Mechanized Moloch",
-            body: "Miller saw the telegraph network as the ultimate metaphor for modern industrial speed: millions of urgent messages flashing across wires while human souls starved."
+            ref: `Note #07 • PDF pages ${LANDMARKS.cosmodemonic} & 13–15`,
+            title: "Applicants at the Sunset Place Desk",
+            body: `At Sunset Place (PDF page ${LANDMARKS.cosmodemonic}), Henry interviews figures such as Luther Winifred, a Crow Indian from Montana whose tattered coat is pinned together (PDF page 13), and Ferdinand Mish, formerly an attendant at the Grand Concourse Cat and Dog Hospital (PDF page 14). On PDF page 15, Henry recalls giving applicants money or cigarettes whenever jobs ran out.`
           },
           {
-            ref: "Note #08 • Page 34",
+            ref: `Note #08 • PDF pages ${LANDMARKS.valeska}–35 & 45`,
             title: "Valeska",
-            body: "Miller's secretary and confidante at the telegraph company. Her pride, African heritage, and tragic fate form one of the most haunting human portraits in the first third of the book."
+            body: `Introduced on PDF page ${LANDMARKS.cosmodemonic} and profiled on PDF pages ${LANDMARKS.valeska}–35, Valeska is Henry’s intelligent, capable secretary. When an official from the vice-president’s office objects to her African ancestry, Henry is called on the carpet to defend hiring her. On PDF page 45, Miller notes that he met Mara roughly a week before Valeska took her own life.`
           }
         ]
       },
       {
         id: 2,
-        subtitle: "MOVEMENT III • SURREALIST CADENCE",
-        title: "On the Ovarian Trolley",
-        pdfPages: "PDF PAGES 118–145",
-        deck: "Crossing the East River by streetcar, Miller unleashes one of 20th-century literature's wildest surrealist monologues on desire, jazz, and cosmic rebirth.",
+        subtitle: "EDITORIAL THEME III • EAST RIVER MONOLOGUE",
+        title: "The Brooklyn Bridge trolley ride",
+        pdfPage: LANDMARKS.ovarianTrolley,
+        pdfRangeLabel: `PDF pages ${LANDMARKS.ovarianTrolley}–31`,
+        primaryLinkLabel: `Read the original passage · PDF page ${LANDMARKS.ovarianTrolley}`,
+        secondaryLinks: [
+          { label: `Prospect Park walks with Ulric · PDF page ${LANDMARKS.prospectPark}`, page: LANDMARKS.prospectPark }
+        ],
+        deck: "Editorial note: One word spoken aboard a Greenpoint-bound streetcar derails Henry’s bridge reverie and gives the novel its inner subtitle.",
+        summaryForNote: "Hymie’s talk about his wife’s ovaries interrupts Henry’s thoughts. Miller follows the interruption through memories of his commute, a dead cat in a gutter, and the image of a fetal toenail. One word changes the route of the whole passage.",
         paragraphs: [
-          `Riding back and forth across the bridge on the <span class="literary-note" onclick="showAnnotation(2, 0)">Ovarian Trolley</span>, suspended between the iron ribs of Manhattan and the sprawling womb of Brooklyn, my brain began to <span class="literary-note" onclick="showAnnotation(2, 1)">chime like a drunken xylophone</span>. The wheels clicked over the rails, and with every click another layer of civilization peeled away.`,
-          `Everything I had read in books—<span class="literary-note" onclick="showAnnotation(2, 2)">Bergson, Spengler, Blavatsky, Nietzsche, Dostoyevsky</span>—boiled up together with the smell of wet raincoats, hot pastrami, saxophones, and river fog. I was no longer a citizen with a paycheck; I was a <span class="literary-note" onclick="showAnnotation(2, 3)">pre-Socratic monster</span> swimming upward through the primeval mud toward the light of Capricorn.`
+          `<span class="literary-note" onclick="showAnnotation(2, 0)">Hymie’s talk about his wife’s ovaries</span> interrupts Henry’s thoughts. Miller follows the interruption through memories of <span class="literary-note" onclick="showAnnotation(2, 1)">his commute</span>, <span class="literary-note" onclick="showAnnotation(2, 2)">a dead cat in a gutter</span>, and the image of <span class="literary-note" onclick="showAnnotation(2, 3)">a fetal toenail</span>. One word changes the route of the whole passage.`,
+          `Suspended above the East River between Manhattan and Brooklyn, Miller links that biological mystery to Dante and Shakespeare in an icy underworld before bringing "man and bull-frog" down off the "ovarian trolley" at Java or India Street in Greenpoint—declaring on PDF page 31 that only detached, seemingly insignificant objects could unlock his voice.`
         ],
         annotations: [
           {
-            ref: "Note #09 • Page 118",
-            title: "\"On the Ovarian Trolley\"",
-            body: "The original subtitle of Tropic of Capricorn. It refers literally to the Brooklyn trolley cars Miller rode daily across the East River while lost in erotic and philosophical reveries."
+            ref: `Note #09 • PDF pages ${LANDMARKS.prospectPark}–${LANDMARKS.ovarianTrolley}`,
+            title: "Hymie & the Word “Ovaries”",
+            body: `After describing his trancelike "euphorias" on PDF page ${LANDMARKS.prospectPark}, Henry boards a trolley at the Brooklyn Bridge with Hymie toward Greenpoint (PDF page ${LANDMARKS.ovarianTrolley}). Because Hymie does not know what ovaries are, Henry explains the word—and its absurdity detonates his private train of thought.`
           },
           {
-            ref: "Note #10 • Page 124",
-            title: "Automatic Jazz Improvisation in Prose",
-            body: "Critics like Lawrence Durrell and Karl Shapiro compared Miller's mid-book passages to Charlie Parker or Louis Armstrong solos—long, breathless spirals of free association."
+            ref: `Note #10 • PDF page ${LANDMARKS.ovarianTrolley}`,
+            title: "The Bridge Commute & Unwritten “Book of the Hours”",
+            body: `Crossing the Brooklyn Bridge at sunset—where skyscrapers gleam like <em>"phosphorescent cadavers"</em>—reminds Henry of commuting years earlier from Delancey Street to his father’s tailor shop near Murray Hill, silently composing a "book of the hours" out of daily tedium (PDF page ${LANDMARKS.ovarianTrolley}).`
           },
           {
-            ref: "Note #11 • Page 132",
-            title: "The autodidact's fever dream",
-            body: "Unable to afford university beyond a brief stint at City College, Miller devoured philosophy and mysticism on subway rides and in public libraries."
+            ref: "Note #11 • PDF page 30",
+            title: "The Dead Cat Frozen in the Gutter",
+            body: "At the top of PDF page 30, Miller traces this isolated stream of thought back to the first time he walked into the street alone as a child and saw a dead cat frozen in the dirty ice of a gutter—his earliest grasp of death and the separate existence of every object."
           },
           {
-            ref: "Note #12 • Page 145",
-            title: "The Sign of Capricorn",
-            body: "Born December 26, 1891 under Capricorn (the Sea-Goat), Miller saw Capricorn as the sign of resurrection out of winter darkness—the complement to Tropic of Cancer."
+            ref: "Note #12 • PDF pages 30–31",
+            title: "The Fetal Toenail & the “Ovarian Trolley”",
+            body: "On PDF page 30, Miller weighs all the books ever written against a single tiny toenail formed in the womb, written in an undecipherable biological script. Hymie becomes a bull-frog companion beside Dante and Shakespeare until the 'ovarian trolley' deposits both men at Java or India Street, Greenpoint (PDF page 31)."
           }
         ]
       },
       {
         id: 3,
-        subtitle: "MOVEMENT IV • ROSELAND & THE DAWN",
-        title: "Mara & The Departure Toward Paris",
-        pdfPages: "PDF PAGES 164–216",
-        deck: "Under the colored spotlights of a Broadway dance palace, Miller meets Mara (June)—the catalyst who shatters his old life and sets him on the path to become a writer.",
+        subtitle: "EDITORIAL THEME IV • CODA, MARA & VILLA SEURAT",
+        title: "Mara at the Broadway Dance Hall & The Closing Coda",
+        pdfPage: LANDMARKS.maraDanceHall,
+        pdfRangeLabel: `PDF pages ${LANDMARKS.codaStart}–${LANDMARKS.villaSeurat}`,
+        primaryLinkLabel: `Read the original passage · PDF page ${LANDMARKS.maraDanceHall}`,
+        secondaryLinks: [
+          { label: `Start of the coda · PDF page ${LANDMARKS.codaStart}`, page: LANDMARKS.codaStart },
+          { label: `Final page & Villa Seurat dateline · PDF page ${LANDMARKS.villaSeurat}`, page: LANDMARKS.villaSeurat }
+        ],
+        deck: "Editorial note: The closing eleven pages revisit Henry’s first night with Mara on Broadway before signing off from Villa Seurat in Paris.",
+        summaryForNote: "Beginning with the coda on PDF page 206, Miller revisits the red-lit Broadway dance hall where Henry climbed past Nick the Greek's booth to meet Mara (PDF page 211), talked about Strindberg's Henriette until 2 a.m., and brought the book to its September 1938 Villa Seurat close (PDF page 216).",
         paragraphs: [
-          `It was in the dance hall on Broadway, under a revolving globe of <span class="literary-note" onclick="showAnnotation(3, 0)">splintered mirror light</span>, that she walked toward me with a ticket in her hand. Her name was <span class="literary-note" onclick="showAnnotation(3, 1)">Mara</span>, and the moment she spoke the whole cardboard scenery of my previous thirty years collapsed into dust.`,
-          `She came out of the night like a dark comet, speaking a language half-invented, half-remembered from another planet. With her it was always midnight, always the edge of a precipice. Because of her I walked out of the <span class="literary-note" onclick="showAnnotation(3, 2)">Cosmodemonic</span> forever without a backward glance, determined to write or starve in the streets.`,
-          `At the very end, looking back across the ocean at the dark hulk of Brooklyn, I could say at last: <span class="literary-note" onclick="showAnnotation(3, 3)">Tak for sidst!</span>—thanks for the last time! The ghost was dead; the writer was born.`
+          `In <span class="literary-note" onclick="showAnnotation(3, 0)">the closing coda</span>, the narrator walks Broadway at night beneath the red-lit windows of the dance hall where he first met Mara, realizing that the book he is writing has finally grown larger than the past—and that literal truth is only the core of an inexhaustible totality. Returning to the memory of their meeting, he climbs the stairs unpremeditatedly past <span class="literary-note" onclick="showAnnotation(3, 1)">Nick, the Greek’s ticket window</span> and watches Mara cross the dance floor in a tailored blue duveteen suit.`,
+          `After spending nearly the entire evening <span class="literary-note" onclick="showAnnotation(3, 2)">discussing Strindberg’s Henriette</span>, Henry waits on the corner at two in the morning opposite a comfort station and foreign-press kiosk as Mara glides out into Broadway wrapped in fur. Five pages later, Miller closes the novel under <span class="literary-note" onclick="showAnnotation(3, 3)">the Villa Seurat dateline</span>, gazing at a blood-red sun with birth and death behind him.`
         ],
         annotations: [
           {
-            ref: "Note #13 • Page 164",
-            title: "Wilson's / Roseland Dance Hall (1923)",
-            body: "In late summer 1923, Miller bought a string of 10-cent dance tickets at Wilson's Dancing Academy at Broadway and 46th Street, where he met taxi-dancer Juliet Edith Smerth (June Mansfield)."
+            ref: `Note #13 • PDF page ${LANDMARKS.codaStart}`,
+            title: "Start of the Coda (“Dear old Broadway”)",
+            body: `Titled simply <em>"coda"</em> midway down PDF page ${LANDMARKS.codaStart}, the closing section begins with Henry walking Broadway at night beneath an "Oriental blue" sky, wrestling with whether factual truth alone can ever convey <em>"a totality which is inexhaustible."</em>`
           },
           {
-            ref: "Note #14 • Page 178",
-            title: "Mara (Mona in subsequent volumes)",
-            body: "June convinced Miller to quit Western Union in 1924 and dedicate himself full-time to writing—selling his prose poems in speakeasies and eventually funding his passage to Paris."
+            ref: `Note #14 • PDF page ${LANDMARKS.maraDanceHall}`,
+            title: "Nick the Greek & Mara’s Entrance",
+            body: `On PDF page ${LANDMARKS.maraDanceHall}, Henry climbs to the dance hall ticket booth where Nick, the Greek sits with a roll of tickets—his huge hairy hand recalling a childhood nightmare ogre—before Mara approaches <em>"with sails spread"</em> in a tailored blue suit of duveteen, modeled on June Edith Smith (June Mansfield).`
           },
           {
-            ref: "Note #15 • Page 196",
-            title: "Walking Out of the Telegraph Office",
-            body: "One afternoon in 1924, Miller simply put on his hat, walked out of the Western Union office without notice, and never held a conventional 9-to-5 job again."
+            ref: `Note #15 • PDF pages ${LANDMARKS.maraDanceHall}–212`,
+            title: "Strindberg’s Henriette & 2 A.M. on Broadway",
+            body: `Throughout their first evening, Mara talks about herself through the figure of Henriette from August Strindberg’s play (PDF pages ${LANDMARKS.maraDanceHall}–212). Waiting outside under red neon opposite the Broadway comfort station at 2 a.m., Henry watches her emerge in soft fur as <em>"America on foot, winged and sexed"</em> (PDF page 212).`
           },
           {
-            ref: "Note #16 • Page 216",
-            title: "Villa Seurat & \"Tak for sidst!\"",
-            body: "Closing at Villa Seurat, Paris (September 1938), Miller bids farewell to his old American self—the writer reborn across the Atlantic."
+            ref: `Note #16 • PDF page ${LANDMARKS.villaSeurat}`,
+            title: "Final Page & Villa Seurat Dateline",
+            body: `On PDF page ${LANDMARKS.villaSeurat}, the novel ends not with a harbor farewell, but with a blood-red sun compared to Easter Sunday—<em>"Equilibrium is no longer the goal - the scales must be destroyed... We must get going. Tomorrow, tomorrow..."</em>—signed <em>"September 1938 Villa Seurat, Paris."</em>`
           }
         ]
       }
     ];
 
     // =========================================================================
-    // 2. 1920s NEW YORK PSYCHOGEOGRAPHY MAP NODES
+    // 2. 1920s NYC PSYCHOGEOGRAPHY MAP NODES (EDITORIAL NOTES — NO FAKE QUOTES)
     // =========================================================================
     const MAP_NODES = [
       {
-        coord: "LOCUS 01 • 40.7143° N, 73.9566° W",
-        pdfPage: 4,
-        pdfLabel: "PDF Pages 4–8, 76–95",
-        title: "01. The 14th Ward, Williamsburg (Brooklyn)",
-        desc: "The mythic cradle of Henry Miller's youth—Fillmore Place and Driggs Avenue. Throughout Tropic of Capricorn, Miller contrasts the raw, tribal camaraderie of his childhood street life against the soulless mechanization of adult America.",
-        quote: "\"Even at the age of nine or ten I knew that I was outside the ring, that if I wanted to live I would have to create a world of my own...\""
+        coord: "LOCUS 01 • WILLIAMSBURG, BROOKLYN",
+        pdfPage: LANDMARKS.fillmore,
+        pdfLabel: `PDF page ${LANDMARKS.fillmore} (also pp. 83, 137)`,
+        title: "01. Fillmore Place & The 14th Ward (Williamsburg)",
+        desc: "The Williamsburg neighborhood of Miller’s boyhood. In the scan, Miller returns to Fillmore Place to contrast early street camaraderie against the demographic and industrial upheaval of turn-of-the-century New York.",
+        editorialNote: "Miller recounts neighborhood rituals and street fights on Fillmore Place (PDF page 83), describes how the opening of the Williamsburg Bridge transformed his childhood block from Delancey Street across the river (PDF page 132), and revisits the 14th Ward as an adult outsider (PDF page 137).",
+        extraLinks: [
+          { label: "Childhood episode · PDF page 83", page: 83 }
+        ]
       },
       {
-        coord: "LOCUS 02 • 40.7115° N, 74.0092° W",
-        pdfPage: 9,
-        pdfLabel: "PDF Pages 9–45",
-        title: "02. Cosmodemonic Telegraph HQ (Lower Manhattan)",
-        desc: "Modeled on Western Union's main hiring bureau in Lower Manhattan. Here Miller interviewed hundreds of applicants daily—witnessing the desperate underside of the 1920s Jazz Age economic boom.",
-        quote: "\"The Cosmodemonic Telegraph Company of North America! Every day five hundred human wrecks filed past my desk begging for a leather pouch...\""
+        coord: "LOCUS 02 • LOWER MANHATTAN",
+        pdfPage: LANDMARKS.cosmodemonic,
+        pdfLabel: `PDF page ${LANDMARKS.cosmodemonic} (also pp. 8–45)`,
+        title: "02. Cosmodemonic Telegraph HQ (Sunset Place)",
+        desc: "Modeled on Western Union’s Manhattan employment bureau, where Miller worked as hiring manager in the early 1920s.",
+        editorialNote: "Henry walks into the Cosmodemonic Telegraph Company seeking work as a messenger boy (PDF page 8) and soon presides over the Sunset Place hiring desk (PDF page 10), interviewing hundreds of desperate applicants alongside Hymie, detective O’Rourke, and secretary Valeska (PDF pages 13–45).",
+        extraLinks: [
+          { label: "First arrival · PDF page 8", page: 8 },
+          { label: `Valeska · PDF page ${LANDMARKS.valeska}`, page: LANDMARKS.valeska }
+        ]
       },
       {
-        coord: "LOCUS 03 • 40.7589° N, 73.9851° W",
-        pdfPage: 164,
-        pdfLabel: "PDF Pages 164–185",
-        title: "03. Wilson's / Roseland Dance Hall (Broadway)",
-        desc: "The neon-lit Broadway dance hall at 46th Street where Miller met June ('Mara'), a magnetic taxi-dancer who became his muse, obsession, and the subject of his seven-year literary struggle.",
-        quote: "\"She came toward me under the revolving mirror ball, and everything prior to that moment vanished like smoke.\""
+        coord: "LOCUS 03 • MIDTOWN BROADWAY",
+        pdfPage: LANDMARKS.maraDanceHall,
+        pdfLabel: `PDF page ${LANDMARKS.maraDanceHall} (coda from p. ${LANDMARKS.codaStart})`,
+        title: "03. Broadway Dance Hall (Mara)",
+        desc: "Based on Wilson’s Dancing Academy on Broadway, where Miller met taxi-dancer June Edith Smith ('Mara') in 1923.",
+        editorialNote: "Opposite a Broadway comfort station and foreign-newspaper kiosk, Henry climbs past Nick, the Greek’s ticket booth, watches Mara cross the dance floor in a blue duveteen suit, listens to her talk of Strindberg’s Henriette, and waits for her under red lights at 2 a.m. (PDF pages 211–212).",
+        extraLinks: [
+          { label: `Start of the coda · PDF page ${LANDMARKS.codaStart}`, page: LANDMARKS.codaStart }
+        ]
       },
       {
-        coord: "LOCUS 04 • 40.7061° N, 73.9969° W",
-        pdfPage: 118,
-        pdfLabel: "PDF Pages 118–145",
-        title: "04. The Ovarian Trolley (East River Bridge Span)",
-        desc: "The streetcar line rattling between Manhattan and Brooklyn. Suspended high above the East River, Miller entered trancelike states of stream-of-consciousness association that gave the novel its subtitle.",
-        quote: "\"Suspended between Manhattan and Brooklyn on the Ovarian Trolley, my mind unreeled like an incandescent film...\""
+        coord: "LOCUS 04 • BROOKLYN BRIDGE -> GREENPOINT",
+        pdfPage: LANDMARKS.ovarianTrolley,
+        pdfLabel: `PDF pages ${LANDMARKS.ovarianTrolley}–31`,
+        title: "04. The Brooklyn Bridge Trolley Ride",
+        desc: "The streetcar route from the Brooklyn Bridge toward Java and India Streets in Greenpoint that inspires the novel’s section title, 'On the ovarian trolley.'",
+        editorialNote: "Hymie’s talk about his wife’s ovaries interrupts Henry’s thoughts aboard the bridge trolley. Miller follows the interruption through memories of his Delancey-to-Murray Hill commute, a dead cat frozen in a gutter, and a fetal toenail before both men step off in Greenpoint (PDF pages 29–31).",
+        extraLinks: []
       },
       {
-        coord: "LOCUS 05 • 40.6958° N, 73.9936° W",
-        pdfPage: 190,
-        pdfLabel: "PDF Pages 190–208",
-        title: "05. Brooklyn Heights & Remsen Street Sanctuaries",
-        desc: "The brownstone apartments and basement rooms where Miller and Mara lived hand-to-mouth after he abandoned the telegraph company to write full-time.",
-        quote: "\"We lived in a perpetual fever, pawning the overcoat in the morning to buy typewriter ribbons and coffee at midnight.\""
+        coord: "LOCUS 05 • PROSPECT PARK, BROOKLYN",
+        pdfPage: LANDMARKS.prospectPark,
+        pdfLabel: `PDF page ${LANDMARKS.prospectPark}`,
+        title: "05. Prospect Park (Evening Walks with Ulric)",
+        desc: "The Brooklyn park where Henry and his well-traveled friend Ulric walk after dinner, planting the imaginative seed of Paris years before Miller’s departure.",
+        editorialNote: "Strolling through Prospect Park at night, Ulric describes Montmartre, the Tuileries, and twilight along the Rue Laffitte while the two friends debate D. H. Lawrence on empty park benches—nights Miller credits on PDF page 28 with bringing him to Paris.",
+        extraLinks: []
       },
       {
-        coord: "LOCUS 06 • 40.5755° N, 73.9707° W",
-        pdfPage: 216,
-        pdfLabel: "PDF Pages 210–216",
-        title: "06. Coney Island & The Atlantic Horizon (Toward Paris)",
-        desc: "The ocean boundary of Brooklyn looking eastward toward Europe. By the book's final pages, the Brooklyn chrysalis cracks open, propelling Miller toward Paris and the writing of Tropic of Cancer.",
-        quote: "\"Across the black water lay another continent where a man could breathe and write the truth.\""
+        coord: "LOCUS 06 • BROADWAY CODA -> VILLA SEURAT, PARIS",
+        pdfPage: LANDMARKS.villaSeurat,
+        pdfLabel: `PDF page ${LANDMARKS.villaSeurat} (coda pp. ${LANDMARKS.codaStart}–${LANDMARKS.villaSeurat})`,
+        title: "06. Closing Horizon & Villa Seurat Dateline",
+        desc: "The transatlantic endpoint from which the entire Brooklyn and Manhattan narrative is remembered and written.",
+        editorialNote: "Opening the coda on Broadway (PDF page 206) and closing under a blood-red sun on PDF page 216, Miller leaves equilibrium behind—'We must get going. Tomorrow, tomorrow...'—signing the final line 'September 1938 Villa Seurat, Paris.'",
+        extraLinks: [
+          { label: `Start of the coda · PDF page ${LANDMARKS.codaStart}`, page: LANDMARKS.codaStart }
+        ]
       }
     ];
 
     // =========================================================================
-    // 3. TELEGRAPH WIRE QUOTES & AUTOMATIC WRITING PROMPTS
+    // 3. QUICK-JUMP LANDMARKS (REUSING SINGLE-SOURCE LANDMARKS)
+    // =========================================================================
+    const QUICK_JUMPS = [
+      { label: `Pg. ${LANDMARKS.opening} — Opening of the novel`, page: LANDMARKS.opening },
+      { label: `Pg. ${LANDMARKS.cosmodemonic} — Sunset Place (Cosmodemonic)`, page: LANDMARKS.cosmodemonic },
+      { label: `Pg. ${LANDMARKS.ovarianTrolley} — Brooklyn Bridge trolley ride with Hymie`, page: LANDMARKS.ovarianTrolley },
+      { label: `Pg. ${LANDMARKS.codaStart} — Start of the coda`, page: LANDMARKS.codaStart },
+      { label: `Pg. ${LANDMARKS.maraDanceHall} — Mara at the Broadway dance hall`, page: LANDMARKS.maraDanceHall },
+      { label: `Pg. ${LANDMARKS.villaSeurat} — Final page & Villa Seurat dateline`, page: LANDMARKS.villaSeurat }
+    ];
+
+    // =========================================================================
+    // 4. VERBATIM TELEGRAPH WIRE QUOTES (VERIFIED AGAINST FLAMINGO 1993 SCAN)
     // =========================================================================
     const TELEGRAPH_QUOTES = [
-      "\"Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos...\"",
-      "\"In the street you learn what human beings really are; otherwise, or columnwise, you learn what people pretend to be.\"",
-      "\"To be joyous is to be a madman in a world of sad ghosts.\"",
-      "\"Every man with a bellyful of the classics is an enemy to the human race.\"",
-      "\"Chaos is the score upon which reality is written.\"",
-      "\"From the very beginning I must have trained myself not to want anything too badly.\""
+      `"Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos." — Miller, PDF p. ${LANDMARKS.opening}`,
+      `"From the very beginning I must have trained myself not to want anything too badly." — Miller, PDF p. 4`,
+      `"Everything was for tomorrow, but tomorrow never came." — Miller, PDF p. 4`,
+      `"Only the object haunted me, the separate detached, insignificant thing." — Miller, PDF p. 31`,
+      `"Truth is only the core of a totality which is inexhaustible." — Miller, PDF p. ${LANDMARKS.codaStart}`,
+      `"Equilibrium is no longer the goal - the scales must be destroyed." — Miller, PDF p. ${LANDMARKS.villaSeurat}`
     ];
 
     const STUDIO_PROMPTS = [
       "Prompt: \"Begin with a street corner you walked down ten years ago when everything seemed impossible...\"",
       "Prompt: \"Describe the most chaotic workplace or room you ever sat inside without stopping for punctuation...\"",
       "Prompt: \"Write a portrait of an eccentric friend from your youth whose laugh you can still hear...\"",
-      "Prompt: \"Start with the words: 'Once I stopped trying to impress the world, the city opened up like...'\"",
-      "Prompt: \"Describe a late-night train or bus ride across town where time seemed to stand still...\""
+      "Prompt: \"Start with a single unexpected word overheard on a train or bus and follow wherever it leads...\"",
+      "Prompt: \"Describe a late-night walk across town where time seemed to stand still...\""
     ];
 
     // =========================================================================
-    // 4. APPLICATION STATE & LOCALSTORAGE PERSISTENCE
+    // 5. APPLICATION STATE & LOCALSTORAGE PERSISTENCE
     // =========================================================================
     let currentMovementIndex = 0;
     let readerFontSize = 21;
-    let currentPdfPage = 1;
+    let currentPdfPage = LANDMARKS.opening;
+    let savedBookmarkPage = LANDMARKS.opening;
+    let activeTab = "curated";
     let selectedMapNodeIndex = 0;
     let autoTypeInterval = null;
     let studioPromptIndex = 0;
@@ -956,52 +1041,43 @@
     let nocturnePlaying = false;
     let nocturneNodes = [];
 
-    // Load Saved State
+    // Load User Notebook (Strip Legacy Preloaded Fake Quotes, Preserve All User Entries)
     let savedNotebook = [];
     try {
       const rawNotes = localStorage.getItem("capricorn_notebook_v1");
       if (rawNotes) {
-        savedNotebook = JSON.parse(rawNotes);
-      } else {
-        savedNotebook = [
-          {
-            id: Date.now() - 10000,
-            source: "Movement I • Page 4",
-            text: "\"Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos.\"",
-            date: "1939 Obelisk Archive"
-          },
-          {
-            id: Date.now() - 5000,
-            source: "Movement II • The Cosmodemonic",
-            text: "\"Chaos is the score upon which reality is written.\"",
-            date: "1939 Obelisk Archive"
+        const parsed = JSON.parse(rawNotes);
+        if (Array.isArray(parsed)) {
+          const filtered = parsed.filter(item => item && item.date !== "1939 Obelisk Archive");
+          savedNotebook = filtered;
+          if (filtered.length !== parsed.length) {
+            localStorage.setItem("capricorn_notebook_v1", JSON.stringify(filtered));
           }
-        ];
+        }
       }
 
       const savedPage = localStorage.getItem("capricorn_pdf_page_v1");
       if (savedPage) {
-        currentPdfPage = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(savedPage, 10) || 1));
+        const clamped = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(savedPage, 10) || LANDMARKS.opening));
+        currentPdfPage = clamped;
+        savedBookmarkPage = clamped;
       }
     } catch (err) {
       console.warn("Storage access restricted:", err);
     }
 
     // =========================================================================
-    // 5. CORE INITIALIZATION & RENDERING
+    // 6. CORE INITIALIZATION & RENDERING
     // =========================================================================
     window.addEventListener("DOMContentLoaded", () => {
+      renderQuickJumps();
       renderMovementSidebar();
       loadMovement(0);
       selectMapNode(0);
       renderNotebook();
       updatePdfBookmarkUI();
-      if (currentPdfPage !== 1) {
-        const iframe = document.getElementById("pdfViewerFrame");
-        if (iframe) iframe.src = `${PDF_BASE_URL}?p=${currentPdfPage}#page=${currentPdfPage}`;
-      }
 
-      // Rotate telegraph ticker quote every 8 seconds
+      // Rotate verbatim telegraph ticker quote every 8 seconds
       let tickerIdx = 0;
       setInterval(() => {
         tickerIdx = (tickerIdx + 1) % TELEGRAPH_QUOTES.length;
@@ -1013,8 +1089,20 @@
       }, 8000);
     });
 
+    function renderQuickJumps() {
+      const container = document.getElementById("quickJumpsContainer");
+      if (!container) return;
+      const buttonsHtml = QUICK_JUMPS.map(j => `
+        <button onclick="jumpToPdfPage(${j.page})" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
+          ${escapeHtml(j.label)}
+        </button>
+      `).join("");
+      container.innerHTML = `<span class="font-typewriter uppercase tracking-wider mr-1" style="color: var(--text-secondary);">Quick Page Jumps:</span>${buttonsHtml}`;
+    }
+
     // Switch Main Navigation Tabs
     function switchTab(tabName) {
+      activeTab = tabName;
       const tabs = ["curated", "pdf", "map", "studio"];
       tabs.forEach(t => {
         const section = document.getElementById(`tab-${t}`);
@@ -1031,7 +1119,28 @@
           btn.style.borderColor = "var(--border-color)";
         }
       });
+
+      const badge = document.getElementById("savedPageBadge");
+      if (badge) {
+        if (tabName === "pdf") {
+          badge.className = "text-[11px] font-typewriter px-1.5 py-0.5 rounded bg-white/20 text-white";
+        } else {
+          badge.className = "text-[11px] font-typewriter px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-800";
+        }
+      }
+
+      if (tabName === "pdf") {
+        mountPdfIframe(currentPdfPage);
+      }
+
       if (telegraphSoundEnabled) playTelegraphClick(520, 0.04);
+    }
+
+    function openInPdfTab(pageNum) {
+      currentPdfPage = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(pageNum, 10) || LANDMARKS.opening));
+      updatePdfBookmarkUI();
+      switchTab("pdf");
+      showToast(`Opened PDF viewer at page ${currentPdfPage} of ${TOTAL_PDF_PAGES}`);
     }
 
     // Switch Aesthetic Theme
@@ -1066,7 +1175,7 @@
       if (indicator) indicator.textContent = `${readerFontSize}px`;
     }
 
-    // Render Sidebar Movement Buttons
+    // Render Sidebar Editorial Theme Buttons
     function renderMovementSidebar() {
       const listEl = document.getElementById("movementList");
       if (!listEl) return;
@@ -1076,16 +1185,16 @@
           <button onclick="loadMovement(${idx})" class="w-full text-left p-3.5 rounded-xl border transition flex flex-col gap-1 ${active ? 'shadow-sm' : 'opacity-80 hover:opacity-100'}"
             style="background-color: ${active ? 'var(--bg-secondary)' : 'transparent'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
             <div class="flex items-center justify-between text-[11px] font-typewriter uppercase" style="color: var(--accent-primary);">
-              <span>${m.subtitle}</span>
-              <span>${m.pdfPages}</span>
+              <span>Theme 0${idx + 1}</span>
+              <span>${escapeHtml(m.pdfRangeLabel)}</span>
             </div>
-            <div class="font-display font-bold text-lg leading-snug">${m.title}</div>
+            <div class="font-display font-bold text-lg leading-snug">${escapeHtml(m.title)}</div>
           </button>
         `;
       }).join("");
     }
 
-    // Load a Movement into the Reader Canvas
+    // Load an Editorial Theme into the Reading Guide Canvas
     function loadMovement(index) {
       stopAutoTypewriter();
       currentMovementIndex = index;
@@ -1094,12 +1203,41 @@
       document.getElementById("movementSubtitle").textContent = m.subtitle;
       document.getElementById("movementMainTitle").textContent = m.title;
       document.getElementById("movementContextDeck").textContent = m.deck;
-      document.getElementById("readerPageCite").textContent = m.pdfPages;
+      document.getElementById("readerPageCite").textContent = `SCAN: FLAMINGO, 1993 • ${m.pdfRangeLabel.toUpperCase()}`;
 
       const proseContainer = document.getElementById("literaryProseContainer");
       proseContainer.innerHTML = m.paragraphs.map((p, idx) => `
         <p class="${idx === 0 ? 'dropcap' : ''} leading-relaxed">${p}</p>
       `).join("");
+
+      const pdfLinksBox = document.getElementById("themePdfLinksBox");
+      const secondaryHtml = (m.secondaryLinks || []).map(link => `
+        <a href="${getDirectPdfHref(link.page)}" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80" style="color: var(--text-primary);">
+          ${escapeHtml(link.label)} ↗
+        </a>
+        <button onclick="openInPdfTab(${link.page})" class="underline hover:opacity-80" style="color: var(--text-secondary);">
+          [View in tab]
+        </button>
+      `).join('<span class="opacity-40">•</span>');
+
+      pdfLinksBox.innerHTML = `
+        <div class="font-typewriter text-[11px] uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
+          READ HENRY MILLER’S ORIGINAL TEXT IN THE SCANNED EDITION
+        </div>
+        <div class="flex flex-wrap items-center gap-3 pt-0.5">
+          <a href="${getDirectPdfHref(m.pdfPage)}" target="_blank" rel="noopener noreferrer"
+             class="font-ui text-xs sm:text-sm px-4 py-2 rounded-lg text-white font-medium transition hover:opacity-90 inline-flex items-center gap-1.5"
+             style="background-color: var(--accent-primary);">
+            <span>${escapeHtml(m.primaryLinkLabel)} ↗</span>
+          </a>
+          <button onclick="openInPdfTab(${m.pdfPage})"
+                  class="font-ui text-xs sm:text-sm px-3.5 py-2 rounded-lg border font-medium transition hover:opacity-80"
+                  style="background-color: var(--bg-card); border-color: var(--border-color);">
+            Open in Site PDF Tab (Pg. ${m.pdfPage}) →
+          </button>
+        </div>
+        ${secondaryHtml ? `<div class="pt-1 flex flex-wrap items-center gap-2 text-xs font-typewriter">${secondaryHtml}</div>` : ""}
+      `;
 
       renderMovementSidebar();
       if (m.annotations && m.annotations.length > 0) {
@@ -1113,7 +1251,7 @@
       loadMovement(next);
     }
 
-    // Display Historical/Biographical Footnote in Sidebar
+    // Display Scan-Verified Annotation in Sidebar
     function showAnnotation(movementIdx, noteIdx) {
       const m = MOVEMENTS[movementIdx];
       if (!m || !m.annotations[noteIdx]) return;
@@ -1121,7 +1259,7 @@
 
       document.getElementById("annotationRefTag").textContent = note.ref;
       document.getElementById("annotationTitle").textContent = note.title;
-      document.getElementById("annotationBody").textContent = note.body;
+      document.getElementById("annotationBody").innerHTML = note.body;
 
       const card = document.getElementById("annotationCard");
       card.style.borderColor = "var(--accent-primary)";
@@ -1133,7 +1271,7 @@
     }
 
     // =========================================================================
-    // 6. AUTOMATIC TYPEWRITER PLAYBACK EFFECT
+    // 7. TYPEWRITER CADENCE PREVIEW (EDITORIAL NOTE)
     // =========================================================================
     function toggleAutoTypewriter() {
       if (autoTypeInterval) {
@@ -1168,7 +1306,7 @@
         } else {
           stopAutoTypewriter();
         }
-      }, 28);
+      }, 24);
     }
 
     function stopAutoTypewriter() {
@@ -1177,20 +1315,32 @@
         autoTypeInterval = null;
       }
       const btn = document.getElementById("btnAutoType");
-      if (btn) btn.textContent = "▶ Type Out Passage";
+      if (btn) btn.textContent = "▶ Type Out Note";
     }
 
     // =========================================================================
-    // 7. FULL UNABRIDGED PDF INTEGRATION & BOOKMARK TRACKER
+    // 8. FULL PDF · 216 PAGES VIEWER & BOOKMARK TRACKER
     // =========================================================================
+    function mountPdfIframe(pageNum) {
+      const mount = document.getElementById("pdfFrameMount");
+      if (!mount) return;
+      const cleanPage = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(pageNum, 10) || LANDMARKS.opening));
+      mount.innerHTML = `
+        <iframe
+          id="pdfViewerFrame"
+          src="${PDF_BASE_URL}?v=${cleanPage}#page=${cleanPage}"
+          class="w-full h-full bg-stone-900"
+          title="Henry Miller - Tropic of Capricorn (Flamingo, 1993 Scan, Page ${cleanPage} of ${TOTAL_PDF_PAGES})">
+        </iframe>
+      `;
+    }
+
     function jumpToPdfPage(pageVal) {
       const pageNum = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(pageVal, 10) || 1));
       currentPdfPage = pageNum;
       updatePdfBookmarkUI();
-
-      const iframe = document.getElementById("pdfViewerFrame");
-      if (iframe) {
-        iframe.src = `${PDF_BASE_URL}?p=${pageNum}#page=${pageNum}`;
+      if (activeTab === "pdf") {
+        mountPdfIframe(pageNum);
       }
     }
 
@@ -1199,27 +1349,48 @@
     }
 
     function saveReadingBookmark() {
+      savedBookmarkPage = currentPdfPage;
       try {
-        localStorage.setItem("capricorn_pdf_page_v1", String(currentPdfPage));
+        localStorage.setItem("capricorn_pdf_page_v1", String(savedBookmarkPage));
       } catch (e) {}
       updatePdfBookmarkUI();
-      showToast(`Bookmark saved at Page ${currentPdfPage} of ${TOTAL_PDF_PAGES}`);
+      showToast(`Bookmark saved at PDF page ${savedBookmarkPage} of ${TOTAL_PDF_PAGES}`);
+    }
+
+    function restoreSavedBookmark() {
+      try {
+        const stored = localStorage.getItem("capricorn_pdf_page_v1");
+        if (stored) {
+          savedBookmarkPage = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(stored, 10) || savedBookmarkPage));
+        }
+      } catch (e) {}
+      jumpToPdfPage(savedBookmarkPage);
+      showToast(`Restored bookmark at PDF page ${savedBookmarkPage}`);
     }
 
     function updatePdfBookmarkUI() {
       const inputEl = document.getElementById("pdfPageInput");
       const badgeEl = document.getElementById("savedPageBadge");
+      const restoreBtn = document.getElementById("btnRestoreBookmark");
       const statusEl = document.getElementById("pdfFrameStatus");
       const directLink = document.getElementById("directPageLink");
+      const headerLink = document.getElementById("headerDirectPdfLink");
 
       if (inputEl) inputEl.value = currentPdfPage;
-      if (badgeEl) badgeEl.textContent = `Pg. ${currentPdfPage}`;
-      if (statusEl) statusEl.textContent = `EMBEDDED ARCHIVE VIEWER — PAGE ${currentPdfPage} OF ${TOTAL_PDF_PAGES}`;
-      if (directLink) directLink.href = `${PDF_BASE_URL}#page=${currentPdfPage}`;
+      if (badgeEl) badgeEl.textContent = `Pg. ${savedBookmarkPage}`;
+      if (restoreBtn) restoreBtn.textContent = `↺ Saved (Pg. ${savedBookmarkPage})`;
+      if (statusEl) statusEl.textContent = `FLAMINGO (1993) SCAN VIEWER — PDF PAGE ${currentPdfPage} OF ${TOTAL_PDF_PAGES}`;
+      if (directLink) {
+        directLink.href = getDirectPdfHref(currentPdfPage);
+        directLink.textContent = `Open Direct PDF Link (#page=${currentPdfPage}) ↗`;
+      }
+      if (headerLink) {
+        headerLink.href = getDirectPdfHref(currentPdfPage);
+      }
     }
 
     // =========================================================================
-    // 8. 1920s NEW YORK PSYCHOGEOGRAPHY MAP CONTROLLER
+    // 9. 1920s NEW YORK PSYCHOGEOGRAPHY MAP CONTROLLER
     // =========================================================================
     function selectMapNode(index) {
       selectedMapNodeIndex = index;
@@ -1230,7 +1401,22 @@
       document.getElementById("mapNodePdfPages").textContent = node.pdfLabel;
       document.getElementById("mapNodeTitle").textContent = node.title;
       document.getElementById("mapNodeDescription").textContent = node.desc;
-      document.getElementById("mapNodeQuote").textContent = node.quote;
+      document.getElementById("mapNodeEditorialNote").textContent = node.editorialNote;
+
+      const linksEl = document.getElementById("mapNodeDirectLinks");
+      const extraHtml = (node.extraLinks || []).map(l => `
+        <span class="opacity-40">•</span>
+        <a href="${getDirectPdfHref(l.page)}" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80" style="color: var(--text-secondary);">
+          ${escapeHtml(l.label)} ↗
+        </a>
+      `).join("");
+
+      linksEl.innerHTML = `
+        <a href="${getDirectPdfHref(node.pdfPage)}" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:opacity-80" style="color: var(--accent-primary);">
+          Read the original passage · PDF page ${node.pdfPage} ↗
+        </a>
+        ${extraHtml}
+      `;
 
       if (telegraphSoundEnabled) playTelegraphClick(700, 0.035);
     }
@@ -1238,44 +1424,52 @@
     function jumpFromMapToPdf() {
       const node = MAP_NODES[selectedMapNodeIndex];
       if (!node) return;
-      switchTab("pdf");
-      jumpToPdfPage(node.pdfPage);
-      showToast(`Jumped to ${node.title} (Page ${node.pdfPage})`);
+      openInPdfTab(node.pdfPage);
     }
 
-    function saveMapQuoteToNotebook() {
+    function saveMapNoteToNotebook() {
       const node = MAP_NODES[selectedMapNodeIndex];
       if (!node) return;
-      addNotebookEntry(node.title, node.quote);
+      addNotebookEntry(
+        `Map Note • ${node.title}`,
+        node.editorialNote,
+        node.pdfPage
+      );
     }
 
     // =========================================================================
-    // 9. CONTRABAND MARGINALIA NOTEBOOK & AUTOMATIC STUDIO
+    // 10. CONTRABAND MARGINALIA NOTEBOOK & AUTOMATIC STUDIO
     // =========================================================================
-    function addNotebookEntry(sourceLabel, quoteText) {
+    function addNotebookEntry(sourceLabel, noteText, pdfPage = null) {
       const entry = {
         id: Date.now(),
         source: sourceLabel,
-        text: quoteText,
+        text: noteText,
+        pdfPage: pdfPage,
+        pdfUrl: pdfPage ? getAbsolutePdfUrl(pdfPage) : null,
         date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
       };
       savedNotebook.unshift(entry);
       persistNotebook();
       renderNotebook();
-      showToast("Saved to Contraband Notebook");
+      showToast("Saved note to Contraband Notebook");
     }
 
-    function saveCurrentMovementQuote() {
+    function saveCurrentGuideNote() {
       const selection = window.getSelection().toString().trim();
       const m = MOVEMENTS[currentMovementIndex];
       if (selection.length > 5) {
-        addNotebookEntry(`${m.subtitle} (Highlighted)`, `"${selection}"`);
+        addNotebookEntry(
+          `Reading Guide • ${m.title} (Selected Note)`,
+          selection,
+          m.pdfPage
+        );
       } else {
-        // Save first sentence of current movement if nothing is highlighted
-        const tmp = document.createElement("div");
-        tmp.innerHTML = m.paragraphs[0];
-        const plain = (tmp.textContent || "").split(".")[0] + ".";
-        addNotebookEntry(`${m.subtitle} (${m.pdfPages})`, `"${plain}"`);
+        addNotebookEntry(
+          `Reading Guide • ${m.title}`,
+          m.summaryForNote,
+          m.pdfPage
+        );
       }
     }
 
@@ -1300,24 +1494,38 @@
       if (savedNotebook.length === 0) {
         listEl.innerHTML = `
           <div class="p-6 rounded-xl border text-center italic" style="border-color: var(--border-color); color: var(--text-secondary);">
-            Your contraband notebook is empty. Highlight any sentence in the reader or compose in the Automatic Studio to add marginalia.
+            Your notebook has no saved entries yet. Click "Save Note" in the Reading Guide or Map (each note includes a direct PDF page link), or write your own entry in the Automatic Studio.
           </div>
         `;
         return;
       }
 
-      listEl.innerHTML = savedNotebook.map(item => `
-        <div class="p-4 rounded-xl border space-y-2 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-          <div class="flex items-center justify-between text-xs font-typewriter" style="color: var(--accent-primary);">
-            <span>${escapeHtml(item.source)}</span>
-            <div class="flex items-center gap-2">
-              <span class="opacity-70">${escapeHtml(item.date)}</span>
-              <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline text-red-600">Remove</button>
-            </div>
+      listEl.innerHTML = savedNotebook.map(item => {
+        const pageNum = item.pdfPage ? parseInt(item.pdfPage, 10) : null;
+        const linkHref = pageNum ? getDirectPdfHref(pageNum) : (item.pdfUrl || null);
+        const linkHtml = linkHref ? `
+          <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-typewriter">
+            <a href="${escapeHtml(linkHref)}" target="_blank" rel="noopener noreferrer" class="underline font-bold hover:opacity-80" style="color: var(--accent-primary);">
+              Read the original passage${pageNum ? ` · PDF page ${pageNum}` : ""} ↗
+            </a>
+            ${pageNum ? `<button onclick="openInPdfTab(${pageNum})" class="underline hover:opacity-80" style="color: var(--text-secondary);">[Open in site PDF tab]</button>` : ""}
           </div>
-          <p class="text-base leading-relaxed font-serif">${escapeHtml(item.text)}</p>
-        </div>
-      `).join("");
+        ` : "";
+
+        return `
+          <div class="p-4 rounded-xl border space-y-2 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+            <div class="flex items-center justify-between gap-2 text-xs font-typewriter" style="color: var(--accent-primary);">
+              <span class="font-bold">${escapeHtml(item.source)}</span>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="opacity-70">${escapeHtml(item.date)}</span>
+                <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline text-red-600">Remove</button>
+              </div>
+            </div>
+            <p class="text-base leading-relaxed font-serif">${escapeHtml(item.text)}</p>
+            ${linkHtml}
+          </div>
+        `;
+      }).join("");
     }
 
     // Automatic Studio Typing Cadence & Clack
@@ -1353,10 +1561,10 @@
       const input = document.getElementById("automaticStudioInput");
       const text = input.value.trim();
       if (!text) {
-        showToast("Type a passage first before committing to your notebook");
+        showToast("Type a passage first before saving to your notebook");
         return;
       }
-      addNotebookEntry("Automatic Writing Studio", text);
+      addNotebookEntry("Personal Automatic Writing Studio", text, null);
       input.value = "";
       studioStartTime = null;
       document.getElementById("wordCountStudio").textContent = "0 words";
@@ -1370,11 +1578,21 @@
       document.getElementById("wpmCounter").textContent = "0 WPM";
     }
 
+    function formatNotebookForExport() {
+      if (savedNotebook.length === 0) return "No saved notes yet.";
+      return savedNotebook.map(n => {
+        const linkLine = n.pdfUrl
+          ? `\nRead in the PDF${n.pdfPage ? ` (PDF page ${n.pdfPage})` : ""}: ${n.pdfUrl}`
+          : (n.pdfPage ? `\nRead in the PDF (PDF page ${n.pdfPage}): ${getAbsolutePdfUrl(n.pdfPage)}` : "");
+        return `[${n.source} — ${n.date}]\n${n.text}${linkLine}`;
+      }).join("\n\n---\n\n");
+    }
+
     function copyNotebookToClipboard() {
-      const formatted = savedNotebook.map(n => `[${n.source} — ${n.date}]\n${n.text}`).join("\n\n---\n\n") || "No saved notes yet.";
+      const formatted = formatNotebookForExport();
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(formatted).then(() => {
-          showToast("Copied all Contraband Notebook entries to clipboard");
+          showToast("Copied all notebook entries to clipboard");
         }).catch(() => fallbackCopyText(formatted));
       } else {
         fallbackCopyText(formatted);
@@ -1388,24 +1606,24 @@
       tempArea.select();
       document.execCommand("copy");
       document.body.removeChild(tempArea);
-      showToast("Copied all Contraband Notebook entries to clipboard");
+      showToast("Copied all notebook entries to clipboard");
     }
 
     function exportNotebookFile() {
-      const formatted = "HENRY MILLER • TROPIC OF CAPRICORN — CONTRABAND NOTEBOOK\n=========================================================\n\n" +
-        savedNotebook.map(n => `[${n.source} — ${n.date}]\n${n.text}`).join("\n\n---------------------------------------------------------\n\n");
+      const formatted = "HENRY MILLER • TROPIC OF CAPRICORN — CONTRABAND NOTEBOOK\nFirst published: Obelisk Press, Paris, 1939 | Site scan: Flamingo, 1993 (216 PDF pages)\n=======================================================================================\n\n" +
+        formatNotebookForExport();
       const blob = new Blob([formatted], { type: "text/plain;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "tropic-of-capricorn-marginalia.txt";
+      a.download = "tropic-of-capricorn-notes.txt";
       a.click();
       URL.revokeObjectURL(url);
       showToast("Downloaded Contraband Notebook (.TXT)");
     }
 
     // =========================================================================
-    // 10. WEB AUDIO API: TELEGRAPH KEY & 1927 BROOKLYN NOCTURNE SOUNDSCAPE
+    // 11. WEB AUDIO API: TELEGRAPH KEY & 1927 BROOKLYN NOCTURNE SOUNDSCAPE
     // =========================================================================
     function ensureAudioContext() {
       if (!audioCtx) {
@@ -1470,7 +1688,7 @@
         return;
       }
 
-      // Create warm smoky 1920s nocturnal chord (D minor 9th warm low-pass drone)
+      // Warm 1920s nocturnal D minor 9th ambient chord
       const freqs = [146.83, 220.0, 261.63, 329.63];
       const masterGain = audioCtx.createGain();
       masterGain.gain.setValueAtTime(0.035, audioCtx.currentTime);
@@ -1492,7 +1710,7 @@
     }
 
     // =========================================================================
-    // 11. MODAL & UTILITIES
+    // 12. MODAL & UTILITIES
     // =========================================================================
     function openContrabandModal() {
       const m = document.getElementById("contrabandModal");
