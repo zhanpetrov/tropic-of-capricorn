@@ -3,133 +3,224 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TROPIC OF CAPRICORN — Henry Miller | Reading Guide &amp; Full PDF (Flamingo, 1993)</title>
-  <meta name="description" content="Interactive editorial reading guide, 1920s NYC psychogeography map, and unabridged 216-page Flamingo (1993) scan for Henry Miller's Tropic of Capricorn (originally published by Obelisk Press, Paris, 1939)." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f4efe4' stroke='%23991b1b' stroke-width='4'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='34' fill='%23991b1b'%3ETC%3C/text%3E%3C/svg%3E" />
+  <title>Tropic of Capricorn — Henry Miller | Reading Guide, Audiobooks &amp; Full PDF</title>
+  <meta name="description" content="Apple-crafted editorial reading guide, Cosmodemonic Wire, Audiobooks (Tropic of Capricorn &amp; Tropic of Cancer), Miles Davis soundtrack, and unabridged 216-page Flamingo (1993) scan for Henry Miller's Tropic of Capricorn (Obelisk Press, Paris, 1939)." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d1d1f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23f5f5f7'%3ETC%3C/text%3E%3C/svg%3E" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts for 1939 Letterpress Serif, Typewriter Mono, and Avant-Garde Display -->
+  <!-- Editorial Serif & Sans Fonts Paired with Native Apple SF System Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-primary: #f4efe4;
-      --bg-secondary: #eae2d1;
-      --bg-card: #faf6ed;
-      --text-primary: #1c1917;
-      --text-secondary: #575047;
-      --accent-primary: #991b1b;
-      --accent-secondary: #b45309;
-      --border-color: #d4c8b4;
-      --highlight-bg: rgba(180, 83, 9, 0.16);
-      --stamp-red: #8b1e1e;
-    }
-
-    /* Theme: Brooklyn Midnight (Noir Typewriter) */
-    [data-theme="midnight"] {
-      --bg-primary: #111113;
-      --bg-secondary: #19191d;
-      --bg-card: #1f1f24;
-      --text-primary: #e7e2d8;
-      --text-secondary: #9ca3af;
-      --accent-primary: #f59e0b;
-      --accent-secondary: #ef4444;
-      --border-color: #2e2e36;
-      --highlight-bg: rgba(245, 158, 11, 0.2);
-      --stamp-red: #ef4444;
-    }
-
-    /* Theme: Villa Seurat Watercolor (Expressive Artistic Palette) */
-    [data-theme="watercolor"] {
-      --bg-primary: #f2f5f3;
-      --bg-secondary: #e3ebe6;
+      /* Apple Books Paper Light (Default) */
+      --bg-primary: #f5f5f7;
+      --bg-secondary: #ededf2;
+      --bg-tertiary: #e4e4eb;
       --bg-card: #ffffff;
-      --text-primary: #17252a;
-      --text-secondary: #3a506b;
+      --bg-glass: rgba(255, 255, 255, 0.78);
+      --text-primary: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --accent-primary: #a11d24;
+      --accent-secondary: #b45309;
+      --accent-soft: rgba(161, 29, 36, 0.09);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.14);
+      --highlight-bg: rgba(161, 29, 36, 0.08);
+      --card-shadow: 0 8px 28px -6px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.025);
+      --hero-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.08), 0 4px 14px -3px rgba(0, 0, 0, 0.035);
+    }
+
+    /* Theme: Midnight Dark (Apple Pro Dark Mode) */
+    [data-theme="midnight"] {
+      --bg-primary: #000000;
+      --bg-secondary: #1c1c1e;
+      --bg-tertiary: #2c2c2e;
+      --bg-card: #131315;
+      --bg-glass: rgba(24, 24, 27, 0.80);
+      --text-primary: #f5f5f7;
+      --text-secondary: #98989d;
+      --accent-primary: #ff9f0a;
+      --accent-secondary: #ff453a;
+      --accent-soft: rgba(255, 159, 10, 0.15);
+      --border-color: rgba(255, 255, 255, 0.11);
+      --border-strong: rgba(255, 255, 255, 0.20);
+      --highlight-bg: rgba(255, 159, 10, 0.16);
+      --card-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.65);
+      --hero-shadow: 0 24px 58px -12px rgba(0, 0, 0, 0.80);
+    }
+
+    /* Theme: Warm Sepia / Villa Seurat (Apple Books Calm Paper) */
+    [data-theme="watercolor"] {
+      --bg-primary: #f6f1e7;
+      --bg-secondary: #ebe3d3;
+      --bg-tertiary: #dfd5c2;
+      --bg-card: #fffdf9;
+      --bg-glass: rgba(252, 248, 240, 0.82);
+      --text-primary: #211f1c;
+      --text-secondary: #696258;
       --accent-primary: #0f766e;
-      --accent-secondary: #c2410c;
-      --border-color: #cbd5e1;
-      --highlight-bg: rgba(15, 118, 110, 0.14);
-      --stamp-red: #be123c;
+      --accent-secondary: #b45309;
+      --accent-soft: rgba(15, 118, 110, 0.11);
+      --border-color: rgba(33, 31, 28, 0.09);
+      --border-strong: rgba(33, 31, 28, 0.16);
+      --highlight-bg: rgba(15, 118, 110, 0.12);
+      --card-shadow: 0 10px 30px -6px rgba(45, 35, 20, 0.06);
+      --hero-shadow: 0 22px 48px -12px rgba(45, 35, 20, 0.09);
     }
 
     body {
       background-color: var(--bg-primary);
       color: var(--text-primary);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      transition: background-color 0.35s ease, color 0.35s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.011em;
+      transition: background-color 0.3s ease, color 0.3s ease;
       overflow-x: hidden;
     }
 
     .font-display {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: "Playfair Display", "New York", Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+
+    .font-prose {
+      font-family: "Cormorant Garamond", "New York", Georgia, serif;
+      letter-spacing: 0;
     }
 
     .font-typewriter {
-      font-family: 'Courier Prime', monospace;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: 0.01em;
     }
 
     .font-ui {
-      font-family: 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+      letter-spacing: -0.011em;
     }
 
-    /* Subtle Vintage Paper Grain Overlay */
-    .paper-grain {
-      background-image: radial-gradient(rgba(0,0,0,0.035) 1px, transparent 0);
-      background-size: 24px 24px;
+    /* Frosted Translucent Glass Surface */
+    .apple-glass {
+      background-color: var(--bg-glass);
+      backdrop-filter: saturate(180%) blur(24px);
+      -webkit-backdrop-filter: saturate(180%) blur(24px);
     }
 
-    /* Contraband Rubber Stamp Styling */
-    .contraband-stamp {
-      border: 2.5px solid var(--stamp-red);
-      color: var(--stamp-red);
-      transform: rotate(-2.5deg);
-      box-shadow: inset 0 0 0 1px var(--stamp-red);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+    /* Elevated Bento Surfaces */
+    .apple-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      border-radius: 24px;
     }
 
-    /* Custom Literary Dropcap */
+    .apple-hero-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--hero-shadow);
+      border-radius: 28px;
+    }
+
+    .apple-subcard {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+    }
+
+    /* Apple iOS/macOS Segmented Control */
+    .apple-segmented {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 3px;
+    }
+
+    .apple-seg-btn {
+      border-radius: 9999px;
+      transition: all 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .apple-seg-btn-active {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0.5px 1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Refined Apple Interactive Pill */
+    .apple-pill {
+      border-radius: 9999px;
+      transition: transform 0.16s ease, opacity 0.18s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .apple-pill:active {
+      transform: scale(0.97);
+    }
+
+    /* Refined Literary Dropcap */
     .dropcap::first-letter {
       float: left;
-      font-family: 'Playfair Display', serif;
-      font-size: 4.4rem;
-      line-height: 0.82;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 4.1rem;
+      line-height: 0.84;
       padding-top: 4px;
       padding-right: 12px;
       padding-bottom: 4px;
       color: var(--accent-primary);
-      font-weight: 900;
+      font-weight: 700;
     }
 
-    /* Annotated Footnote Trigger */
+    /* Apple Books Highlighted Annotation Phrase */
     .literary-note {
-      border-bottom: 1.5px dashed var(--accent-primary);
+      border-bottom: 1.5px solid var(--accent-primary);
       cursor: pointer;
-      padding: 0 2px;
-      transition: all 0.2s ease;
+      padding: 0 3px;
+      transition: all 0.18s ease;
       background-color: var(--highlight-bg);
-      border-radius: 3px;
+      border-radius: 4px;
     }
 
     .literary-note:hover {
       background-color: var(--accent-primary);
-      color: #fff;
+      color: #ffffff;
     }
 
-    /* Custom Scrollbar */
+    /* Sleek Apple Music Range Sliders */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--bg-tertiary);
+      height: 5px;
+      border-radius: 9999px;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Subtle Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
+      background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--border-color);
-      border-radius: 4px;
+      background: var(--border-strong);
+      border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent-primary);
@@ -138,7 +229,7 @@
     /* Pulsing Map Node */
     @keyframes pulseRing {
       0% { transform: scale(0.95); opacity: 0.85; }
-      50% { transform: scale(1.35); opacity: 0.3; }
+      50% { transform: scale(1.35); opacity: 0.25; }
       100% { transform: scale(0.95); opacity: 0.85; }
     }
     .map-pulse {
@@ -146,7 +237,7 @@
       transform-origin: center;
     }
 
-    /* Miles Davis Trumpet Equalizer Bars */
+    /* Audio Equalizer Bars */
     @keyframes milesBarBounce {
       0%, 100% { transform: scaleY(0.28); }
       50% { transform: scaleY(1); }
@@ -155,108 +246,125 @@
       width: 2.5px;
       height: 12px;
       background-color: var(--accent-primary);
-      border-radius: 2px;
+      border-radius: 9999px;
       transform-origin: bottom;
-      transform: scaleY(0.3);
+      transform: scaleY(0.32);
       transition: transform 0.2s ease;
     }
     .miles-playing .miles-eq-bar:nth-child(1) { animation: milesBarBounce 0.85s infinite ease-in-out 0.0s; }
     .miles-playing .miles-eq-bar:nth-child(2) { animation: milesBarBounce 0.65s infinite ease-in-out 0.18s; }
     .miles-playing .miles-eq-bar:nth-child(3) { animation: milesBarBounce 0.95s infinite ease-in-out 0.32s; }
     .miles-playing .miles-eq-bar:nth-child(4) { animation: milesBarBounce 0.72s infinite ease-in-out 0.12s; }
+
+    /* Compact state for persistent Audiobook glass dock */
+    .audiobook-dock-compact #audiobookPlayerWrap {
+      width: 176px;
+      height: 99px;
+      margin: 0 auto;
+    }
+    .audiobook-dock-compact #audiobookDockTabs,
+    .audiobook-dock-compact #audiobookDockFooter {
+      display: none;
+    }
   </style>
 </head>
-<body class="min-h-screen paper-grain flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between">
 
-  <!-- PERSISTENT STICKY TOP BAR: BRAND HOME, MILES DAVIS PILL & SITE MENU BUTTON -->
-  <div class="w-full border-b sticky top-0 z-40 backdrop-blur-md" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-2.5 flex items-center justify-between gap-3 text-xs font-typewriter">
-      <!-- Left: Brand Return to Home + Active View Breadcrumb -->
+  <!-- PERSISTENT FROSTED-GLASS APPLE NAVIGATION BAR -->
+  <div class="w-full border-b sticky top-0 z-40 apple-glass" style="border-color: var(--border-color);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-14 flex items-center justify-between gap-3 text-xs font-ui">
+      <!-- Left: Brand Home + Active View Breadcrumb -->
       <div class="flex items-center gap-2.5 min-w-0">
-        <button onclick="switchTab('home')" class="flex items-center gap-2 font-bold tracking-wider uppercase hover:opacity-80 transition shrink-0" title="Return to Home — Cosmodemonic Wire &amp; Miles Davis">
+        <button onclick="switchTab('home')" class="flex items-center gap-2 hover:opacity-75 transition shrink-0" title="Return to Home — Cosmodemonic Wire, Audiobooks &amp; Miles Davis">
           <span class="w-2 h-2 rounded-full" style="background-color: var(--accent-primary);"></span>
-          <span class="font-display text-sm sm:text-base font-black tracking-tight normal-case">TROPIC OF CAPRICORN</span>
+          <span class="font-display text-base sm:text-lg font-bold tracking-tight">Tropic of Capricorn</span>
         </button>
-        <span class="opacity-30 hidden sm:inline">/</span>
-        <span id="activeSectionBreadcrumb" class="hidden sm:inline-block truncate px-2 py-0.5 rounded border text-[11px]" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);">
-          Home • Cosmodemonic Wire
+        <span class="opacity-25 hidden md:inline">/</span>
+        <span id="activeSectionBreadcrumb" class="hidden md:inline-block truncate px-2.5 py-0.5 rounded-full text-[11px] font-medium" style="background-color: var(--bg-secondary); color: var(--text-secondary);">
+          Home · Wire &amp; Audio
         </span>
-        <button id="btnBackHomeTop" onclick="switchTab('home')" class="hidden px-2.5 py-1 rounded border font-bold hover:opacity-85 transition shrink-0" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--accent-primary);">
-          ← Home Wire
+        <button id="btnBackHomeTop" onclick="switchTab('home')" class="hidden apple-pill px-3 py-1 border text-[11px] font-semibold hover:opacity-85 shrink-0" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--accent-primary);">
+          ← Home
         </button>
       </div>
 
-      <!-- Right: Persistent Miles Davis Mini-Pill & Clean Menu Trigger -->
+      <!-- Right: Persistent Audiobooks Pill, Miles Davis Pill & Clean Menu Pill -->
       <div class="flex items-center gap-2 shrink-0">
-        <!-- MILES DAVIS PERSISTENT PILL -->
-        <div class="flex items-center rounded-lg border overflow-hidden shadow-sm" style="border-color: var(--accent-primary); background-color: var(--bg-card);">
-          <button id="btnMilesQuickPlay" onclick="toggleMilesPlayback()" class="px-2.5 py-1.5 flex items-center gap-1.5 hover:opacity-85 transition font-bold" style="color: var(--accent-primary);" title="Play or pause Miles Davis">
+        <!-- AUDIOBOOKS QUICK PILL -->
+        <button id="btnTopAudiobook" onclick="handleTopAudiobookClick()" class="apple-pill px-3 py-1.5 border flex items-center gap-1.5 font-medium hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" title="Open Audiobooks — Tropic of Capricorn &amp; Tropic of Cancer">
+          <span id="topAudiobookDot" class="w-1.5 h-1.5 rounded-full" style="background-color: var(--accent-primary);"></span>
+          <span id="topAudiobookLabel">Audiobooks</span>
+        </button>
+
+        <!-- MILES DAVIS PERSISTENT APPLE MUSIC PILL -->
+        <div class="flex items-center rounded-full border overflow-hidden" style="border-color: var(--border-strong); background-color: var(--bg-card);">
+          <button id="btnMilesQuickPlay" onclick="toggleMilesPlayback()" class="px-3 py-1.5 flex items-center gap-1.5 hover:opacity-80 transition font-semibold" style="color: var(--accent-primary);" title="Play or pause Miles Davis">
             <span id="milesEqIcon" class="inline-flex items-end gap-[2px] h-3">
               <span class="miles-eq-bar"></span>
               <span class="miles-eq-bar"></span>
               <span class="miles-eq-bar"></span>
               <span class="miles-eq-bar"></span>
             </span>
-            <span id="milesTopPlayLabel">▶ Miles Davis</span>
+            <span id="milesTopPlayLabel">▶ Miles</span>
           </button>
-          <button id="btnMilesNextTop" onclick="stepMilesTrack(1)" class="px-2 py-1.5 border-l hover:opacity-80 transition hidden sm:inline-block" style="border-color: var(--border-color); color: var(--text-secondary);" title="Next Miles Davis session">
+          <button id="btnMilesNextTop" onclick="stepMilesTrack(1)" class="px-2 py-1.5 border-l hover:opacity-75 transition hidden sm:inline-block text-[11px]" style="border-color: var(--border-color); color: var(--text-secondary);" title="Next Miles Davis session">
             ⏭
           </button>
-          <button id="btnMilesDrawerToggle" onclick="handleTopMilesLoungeClick()" class="px-2.5 py-1.5 border-l hidden md:flex items-center gap-1 hover:opacity-85 transition" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary);" title="Open Miles Davis Session Selector">
-            <span id="milesTopTrackShort" class="max-w-[125px] truncate">Générique</span>
-            <span id="milesDrawerChevron">▾</span>
+          <button id="btnMilesDrawerToggle" onclick="handleTopMilesLoungeClick()" class="px-2.5 py-1.5 border-l hidden lg:flex items-center gap-1 hover:opacity-80 transition text-[11px] font-medium" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary);" title="Open Miles Davis Session Selector">
+            <span id="milesTopTrackShort" class="max-w-[110px] truncate">Générique</span>
+            <span id="milesDrawerChevron" class="opacity-60">▾</span>
           </button>
         </div>
 
-        <!-- SITE MENU BUTTON -->
-        <button id="btnSiteMenuToggle" onclick="toggleSiteMenu()" class="px-3.5 py-1.5 rounded-lg border font-ui text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-sm hover:opacity-90 transition" style="background-color: var(--accent-primary); border-color: var(--accent-primary); color: #ffffff;" aria-label="Open site menu">
+        <!-- SITE MENU PILL -->
+        <button id="btnSiteMenuToggle" onclick="toggleSiteMenu()" class="apple-pill px-3.5 py-1.5 text-xs font-semibold flex items-center gap-1.5 hover:opacity-90" style="background-color: var(--text-primary); color: var(--bg-card);" aria-label="Open site menu">
           <span>☰</span>
           <span>Menu</span>
         </button>
       </div>
     </div>
 
-    <!-- COLLAPSIBLE MILES DAVIS SESSION LOUNGE (FOR INNER TABS: READING GUIDE, PDF, MAP, NOTEBOOK) -->
+    <!-- COLLAPSIBLE MILES DAVIS SESSION LOUNGE (FOR INNER TABS) -->
     <section id="milesLoungeDrawer" class="hidden border-t" style="background-color: var(--bg-card); border-color: var(--border-color);">
       <div class="max-w-7xl mx-auto px-4 sm:px-8 py-5 space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b pb-3" style="border-color: var(--border-color);">
           <div>
-            <div class="font-typewriter text-[11px] uppercase tracking-widest font-bold" style="color: var(--accent-primary);">
-              ✦ THE MILES DAVIS READING EXPERIENCE • PERSISTENT SOUNDTRACK
+            <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+              Miles Davis Reading Soundtrack · Persistent Audio
             </div>
             <h2 class="font-display text-xl sm:text-2xl font-bold leading-snug">
-              Muted Trumpet &amp; Midnight Modal Sessions for Reading <em>Tropic of Capricorn</em>
+              Muted Trumpet &amp; Modal Sessions for <em>Tropic of Capricorn</em>
             </h2>
           </div>
           <div class="flex items-center gap-2 font-ui text-xs">
-            <button onclick="toggleMilesDrawer()" class="px-3 py-1.5 rounded-lg border font-medium hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              ▲ Hide Lounge (Keep Playing While Reading)
+            <button onclick="toggleMilesDrawer()" class="apple-pill px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              Done
             </button>
           </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <!-- Left 5 Cols: Active Turntable / Horn Deck -->
-          <div class="lg:col-span-5 p-4 rounded-xl border space-y-3.5" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <!-- Left 5 Cols: Active Turntable -->
+          <div class="lg:col-span-5 p-4 apple-subcard space-y-3.5">
             <div class="flex items-start justify-between gap-2">
               <div class="space-y-0.5">
-                <span id="milesNowAlbum" class="font-typewriter text-[11px] uppercase tracking-wider block" style="color: var(--accent-primary);">
+                <span id="milesNowAlbum" class="text-[11px] uppercase tracking-wider font-semibold block" style="color: var(--accent-primary);">
                   ASCENSEUR POUR L’ÉCHAFAUD • PARIS, DEC 1957
                 </span>
                 <h3 id="milesNowTitle" class="font-display text-2xl font-bold leading-tight">
                   Générique
                 </h3>
-                <p id="milesNowLineup" class="text-sm italic" style="color: var(--text-secondary);">
+                <p id="milesNowLineup" class="text-xs leading-relaxed" style="color: var(--text-secondary);">
                   Miles Davis (muted trumpet), Barney Wilen, René Urtreger, Pierre Michelot, Kenny Clarke
                 </p>
               </div>
-              <span id="milesStateBadge" class="font-typewriter text-[10px] uppercase px-2 py-0.5 rounded border shrink-0" style="border-color: var(--border-color); background-color: var(--bg-card);">
+              <span id="milesStateBadge" class="font-typewriter text-[10px] uppercase px-2.5 py-0.5 rounded-full border shrink-0" style="border-color: var(--border-color); background-color: var(--bg-card);">
                 READY
               </span>
             </div>
 
-            <!-- Scrubber / Time Bar -->
-            <div class="space-y-1 font-typewriter text-[11px]">
+            <!-- Scrubber -->
+            <div class="space-y-1.5 font-typewriter text-[11px]">
               <input
                 id="milesSeekSlider"
                 type="range"
@@ -264,7 +372,7 @@
                 max="1000"
                 value="0"
                 oninput="seekMilesAudio(this.value)"
-                class="w-full accent-red-800 cursor-pointer h-1.5 rounded-lg"
+                class="w-full cursor-pointer"
                 aria-label="Seek Miles Davis track" />
               <div class="flex items-center justify-between" style="color: var(--text-secondary);">
                 <span id="milesCurrentTime">00:00</span>
@@ -272,25 +380,25 @@
               </div>
             </div>
 
-            <!-- Transport & Reading Volume Controls -->
-            <div class="flex flex-wrap items-center justify-between gap-3 pt-1 font-ui text-xs">
+            <!-- Transport & Volume -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-0.5 font-ui text-xs">
               <div class="flex items-center gap-1.5">
-                <button onclick="stepMilesTrack(-1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Previous track">
+                <button onclick="stepMilesTrack(-1)" class="apple-pill px-2.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Previous track">
                   ⏮
                 </button>
-                <button id="btnMilesMainPlay" onclick="toggleMilesPlayback()" class="px-4 py-1.5 rounded-lg text-white font-semibold hover:opacity-90 transition" style="background-color: var(--accent-primary);">
+                <button id="btnMilesMainPlay" onclick="toggleMilesPlayback()" class="apple-pill px-4 py-1.5 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
                   ▶ Play Miles
                 </button>
-                <button onclick="stepMilesTrack(1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Next track">
+                <button onclick="stepMilesTrack(1)" class="apple-pill px-2.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Next track">
                   ⏭
                 </button>
-                <button id="btnMilesLoopMode" onclick="toggleMilesLoopMode()" class="px-2.5 py-1.5 rounded-lg border font-typewriter text-[11px] hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Toggle single-track loop vs continuous album flow">
+                <button id="btnMilesLoopMode" onclick="toggleMilesLoopMode()" class="apple-pill px-3 py-1.5 border text-[11px] font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Toggle single-track loop vs continuous album flow">
                   Flow: Continuous
                 </button>
               </div>
 
               <div class="flex items-center gap-2">
-                <label for="milesVolumeSlider" class="font-typewriter text-[11px]" style="color: var(--text-secondary);">Vol</label>
+                <label for="milesVolumeSlider" class="text-[11px]" style="color: var(--text-secondary);">Vol</label>
                 <input
                   id="milesVolumeSlider"
                   type="range"
@@ -298,19 +406,18 @@
                   max="100"
                   value="65"
                   oninput="setMilesVolume(this.value)"
-                  class="w-20 accent-red-800 cursor-pointer h-1.5"
+                  class="w-20 cursor-pointer"
                   aria-label="Miles Davis reading volume" />
                 <span id="milesVolumeLabel" class="font-typewriter text-[11px] w-8 text-right">65%</span>
               </div>
             </div>
 
-            <!-- Literary Reading Pairing Link -->
-            <div id="milesPairingBox" class="pt-2.5 border-t text-xs font-typewriter flex flex-wrap items-center justify-between gap-2" style="border-color: var(--border-color);">
+            <div id="milesPairingBox" class="pt-2.5 border-t text-xs flex flex-wrap items-center justify-between gap-2" style="border-color: var(--border-color);">
               <!-- Populated dynamically via JS -->
             </div>
           </div>
 
-          <!-- Right 7 Cols: Curated Moods & Full-Length Session Tracklist -->
+          <!-- Right 7 Cols: Moods & Session Tracklist -->
           <div class="lg:col-span-7 space-y-3">
             <div id="milesMoodFilters" class="flex flex-wrap items-center gap-1.5 font-ui text-xs">
               <!-- Populated dynamically via JS -->
@@ -328,128 +435,146 @@
   </div>
 
   <!-- =========================================================
-       SLIDE-OVER SITE MENU DRAWER (ALL SECTIONS & SETTINGS)
+       APPLE FROSTED SLIDE-OVER MENU SHEET
        ========================================================= -->
   <div id="siteMenuOverlay" class="fixed inset-0 z-50 hidden">
-    <!-- Backdrop -->
-    <div onclick="closeSiteMenu()" class="absolute inset-0 bg-black/60 backdrop-blur-xs transition-opacity"></div>
+    <!-- Soft Translucent Backdrop -->
+    <div onclick="closeSiteMenu()" class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"></div>
 
-    <!-- Drawer Panel -->
-    <aside class="relative ml-auto w-full max-w-md h-full overflow-y-auto border-l shadow-2xl p-6 sm:p-7 flex flex-col justify-between gap-6" style="background-color: var(--bg-card); border-color: var(--border-color);">
+    <!-- Sheet Panel -->
+    <aside class="relative ml-auto w-full max-w-md h-full overflow-y-auto border-l shadow-2xl p-6 sm:p-7 flex flex-col justify-between gap-6 apple-glass" style="border-color: var(--border-color);">
       <div class="space-y-6">
-        <!-- Drawer Header -->
+        <!-- Sheet Header -->
         <div class="flex items-center justify-between border-b pb-4" style="border-color: var(--border-color);">
           <div>
-            <span class="font-typewriter text-[10px] uppercase tracking-widest block font-bold" style="color: var(--accent-primary);">
-              OBELISK PRESS (1939) • FLAMINGO SCAN (1993)
+            <span class="text-[11px] uppercase tracking-wider block font-semibold" style="color: var(--accent-primary);">
+              Obelisk Press (1939) · Flamingo (1993)
             </span>
-            <h2 class="font-display text-2xl font-black">Edition Menu</h2>
+            <h2 class="font-display text-2xl font-bold">Edition Menu</h2>
           </div>
-          <button onclick="closeSiteMenu()" class="font-typewriter text-xs px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-            ✕ Close
+          <button onclick="closeSiteMenu()" class="apple-pill text-xs font-medium px-3.5 py-1.5 border hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">
+            Done
           </button>
         </div>
 
         <!-- Primary Navigation Sections -->
         <nav class="space-y-2 font-ui text-sm" aria-label="Main Edition Navigation">
-          <div class="font-typewriter text-[11px] uppercase tracking-wider pb-1" style="color: var(--text-secondary);">
-            Sections &amp; Reading Tools
+          <div class="text-[11px] uppercase tracking-wider font-semibold pb-1" style="color: var(--text-secondary);">
+            Sections &amp; Reader
           </div>
 
-          <button onclick="switchTab('home')" id="tabBtn-home" class="tab-btn w-full text-left px-4 py-3 rounded-xl font-semibold transition flex items-center justify-between gap-2 border text-white" style="background-color: var(--accent-primary); border-color: var(--accent-primary);">
+          <button onclick="switchTab('home')" id="tabBtn-home" class="tab-btn w-full text-left px-4 py-3 rounded-2xl font-semibold transition flex items-center justify-between gap-2 border text-white" style="background-color: var(--accent-primary); border-color: var(--accent-primary);">
             <div>
-              <div class="text-sm font-bold">✦ Home — Cosmodemonic Wire &amp; Miles Davis</div>
-              <div class="text-xs opacity-85 font-normal">Main Telegraph Showcase &amp; Reading Soundtrack</div>
+              <div class="text-sm font-semibold">Home — Wire, Audiobooks &amp; Miles Davis</div>
+              <div class="text-xs opacity-85 font-normal">Cosmodemonic Wire Showcase &amp; Listening Studio</div>
             </div>
           </button>
 
-          <button onclick="switchTab('curated')" id="tabBtn-curated" class="tab-btn w-full text-left px-4 py-3 rounded-xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <button onclick="switchTab('curated')" id="tabBtn-curated" class="tab-btn w-full text-left px-4 py-3 rounded-2xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
             <div>
               <div class="text-sm font-semibold">I. Reading Guide</div>
-              <div class="text-xs opacity-75 font-normal">4 Editorial Themes &amp; 16 Scan-Verified Annotations</div>
+              <div class="text-xs opacity-70 font-normal">4 Editorial Themes &amp; 16 Scan-Verified Notes</div>
             </div>
           </button>
 
-          <button onclick="switchTab('pdf')" id="tabBtn-pdf" class="tab-btn w-full text-left px-4 py-3 rounded-xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <button onclick="switchTab('pdf')" id="tabBtn-pdf" class="tab-btn w-full text-left px-4 py-3 rounded-2xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
             <div>
               <div class="text-sm font-semibold">II. Full PDF · 216 pages</div>
-              <div class="text-xs opacity-75 font-normal">Unabridged Flamingo (1993) Scan &amp; Bookmark</div>
+              <div class="text-xs opacity-70 font-normal">Unabridged Flamingo (1993) Scan &amp; Bookmark</div>
             </div>
-            <span id="savedPageBadge" class="text-[11px] font-typewriter px-2 py-0.5 rounded bg-amber-500/20 text-amber-800 shrink-0">Pg. 3</span>
+            <span id="savedPageBadge" class="text-[11px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-700 shrink-0">Pg. 3</span>
           </button>
 
-          <button onclick="switchTab('map')" id="tabBtn-map" class="tab-btn w-full text-left px-4 py-3 rounded-xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <button onclick="switchTab('map')" id="tabBtn-map" class="tab-btn w-full text-left px-4 py-3 rounded-2xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
             <div>
               <div class="text-sm font-semibold">III. 1920s NYC Psychogeography Map</div>
-              <div class="text-xs opacity-75 font-normal">Brooklyn Bridge Trolley, Sunset Place &amp; Broadway</div>
+              <div class="text-xs opacity-70 font-normal">Brooklyn Bridge Trolley, Sunset Place &amp; Broadway</div>
             </div>
           </button>
 
-          <button onclick="switchTab('studio')" id="tabBtn-studio" class="tab-btn w-full text-left px-4 py-3 rounded-xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <button onclick="switchTab('studio')" id="tabBtn-studio" class="tab-btn w-full text-left px-4 py-3 rounded-2xl font-medium transition flex items-center justify-between gap-2 border" style="background-color: var(--bg-card); border-color: var(--border-color);">
             <div>
-              <div class="text-sm font-semibold">IV. Contraband Notebook &amp; Automatic Studio</div>
-              <div class="text-xs opacity-75 font-normal">Stream-of-Consciousness Studio &amp; Saved Notes</div>
+              <div class="text-sm font-semibold">IV. Contraband Notebook &amp; Studio</div>
+              <div class="text-xs opacity-70 font-normal">Stream-of-Consciousness Writing &amp; Saved Notes</div>
             </div>
-            <span id="notesCountBadge" class="text-[11px] font-typewriter px-2 py-0.5 rounded border shrink-0" style="border-color: var(--border-color);">0</span>
+            <span id="notesCountBadge" class="text-[11px] font-typewriter px-2.5 py-0.5 rounded-full border shrink-0" style="border-color: var(--border-color);">0</span>
           </button>
         </nav>
 
-        <!-- Direct PDF & Customs Dossier Links -->
+        <!-- Quick Audiobooks Read & Listen Launcher -->
         <div class="pt-3 border-t space-y-2.5" style="border-color: var(--border-color);">
-          <div class="font-typewriter text-[11px] uppercase tracking-wider" style="color: var(--text-secondary);">
-            Quick Scan &amp; Archive Access
+          <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--text-secondary);">
+            Audiobooks · Read &amp; Listen
           </div>
-          <div class="flex flex-col gap-2 font-typewriter text-xs">
-            <a id="headerDirectPdfLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg border underline font-bold hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--accent-primary);">
-              <span>Open Full PDF (Flamingo, 1993 · 216 pp.)</span>
-              <span>↗</span>
-            </a>
-            <button onclick="closeSiteMenu(); openContrabandModal();" class="px-3.5 py-2.5 rounded-lg border text-left hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <span>1939 Customs Ban &amp; Edition History</span>
-              <span>→</span>
+          <div class="grid grid-cols-1 gap-1.5 text-xs font-ui">
+            <button onclick="closeSiteMenu(); readAndListenAudiobook('capricorn-pt1');" class="px-3.5 py-2.5 rounded-2xl border text-left hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-card); border-color: var(--border-color);">
+              <span><strong>Tropic of Capricorn · Part 1</strong> <span class="opacity-65">(26:22 · PDF p. 3)</span></span>
+              <span style="color: var(--accent-primary);">▶</span>
+            </button>
+            <button onclick="closeSiteMenu(); readAndListenAudiobook('capricorn-pt2');" class="px-3.5 py-2.5 rounded-2xl border text-left hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-card); border-color: var(--border-color);">
+              <span><strong>Tropic of Capricorn · Part 2</strong> <span class="opacity-65">(46:05 · PDF p. 29)</span></span>
+              <span style="color: var(--accent-primary);">▶</span>
+            </button>
+            <button onclick="closeSiteMenu(); playAudiobook('cancer-full');" class="px-3.5 py-2.5 rounded-2xl border text-left hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-card); border-color: var(--border-color);">
+              <span><strong>Tropic of Cancer</strong> <span class="opacity-65">(Companion · 1:18:11)</span></span>
+              <span style="color: var(--accent-primary);">▶</span>
             </button>
           </div>
         </div>
 
-        <!-- Visual Palette, Font Size & Ambient Soundscape Controls -->
-        <div class="pt-3 border-t space-y-4" style="border-color: var(--border-color);">
-          <div class="font-typewriter text-[11px] uppercase tracking-wider" style="color: var(--text-secondary);">
-            Theme, Typography &amp; Soundscape
+        <!-- Direct PDF & Edition History -->
+        <div class="pt-3 border-t space-y-2" style="border-color: var(--border-color);">
+          <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--text-secondary);">
+            Archive &amp; Dossier
+          </div>
+          <div class="flex flex-col gap-1.5 text-xs font-ui">
+            <a id="headerDirectPdfLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-2xl border font-semibold hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--accent-primary);">
+              <span>Open Full PDF Scan (Flamingo, 1993 · 216 pp.)</span>
+              <span>↗</span>
+            </a>
+            <button onclick="closeSiteMenu(); openContrabandModal();" class="px-3.5 py-2.5 rounded-2xl border text-left font-medium hover:opacity-85 flex items-center justify-between" style="background-color: var(--bg-card); border-color: var(--border-color);">
+              <span>1939 Customs Ban &amp; Edition History</span>
+              <span>›</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Appearance, Typography & Ambient Soundscape -->
+        <div class="pt-3 border-t space-y-3.5" style="border-color: var(--border-color);">
+          <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--text-secondary);">
+            Appearance &amp; Soundscape
           </div>
 
-          <!-- Reading Theme Selector -->
           <div class="space-y-1.5">
-            <span class="font-ui text-xs block" style="color: var(--text-secondary);">Color Palette</span>
-            <div class="grid grid-cols-3 gap-1.5 rounded-xl p-1 border font-ui text-xs" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <button onclick="setTheme('obelisk')" id="themeBtn-obelisk" class="px-2.5 py-1.5 rounded-lg font-medium transition shadow-sm text-center" style="background-color: var(--bg-card); color: var(--text-primary);">
-                Obelisk 1939
+            <div class="grid grid-cols-3 gap-1 apple-segmented text-xs font-medium">
+              <button onclick="setTheme('obelisk')" id="themeBtn-obelisk" class="apple-seg-btn apple-seg-btn-active px-2.5 py-1.5 text-center">
+                Paper Light
               </button>
-              <button onclick="setTheme('midnight')" id="themeBtn-midnight" class="px-2.5 py-1.5 rounded-lg font-medium transition opacity-70 hover:opacity-100 text-center">
-                Brooklyn Noir
+              <button onclick="setTheme('midnight')" id="themeBtn-midnight" class="apple-seg-btn px-2.5 py-1.5 opacity-70 hover:opacity-100 text-center">
+                Midnight
               </button>
-              <button onclick="setTheme('watercolor')" id="themeBtn-watercolor" class="px-2.5 py-1.5 rounded-lg font-medium transition opacity-70 hover:opacity-100 text-center">
-                Villa Seurat
+              <button onclick="setTheme('watercolor')" id="themeBtn-watercolor" class="apple-seg-btn px-2.5 py-1.5 opacity-70 hover:opacity-100 text-center">
+                Warm Sepia
               </button>
             </div>
           </div>
 
-          <!-- Font Size & Ambient Audio Row -->
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center rounded-lg p-1 border font-ui text-xs" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <span class="px-2 text-[11px]" style="color: var(--text-secondary);">Guide Text</span>
-              <button onclick="adjustReaderFont(-2)" class="px-2.5 py-1 rounded hover:opacity-80 font-bold border" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Decrease font size">A-</button>
-              <span id="fontSizeIndicator" class="px-2 font-typewriter">21px</span>
-              <button onclick="adjustReaderFont(2)" class="px-2.5 py-1 rounded hover:opacity-80 font-bold border" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Increase font size">A+</button>
+          <div class="flex items-center justify-between gap-2 px-3 py-2 rounded-2xl border text-xs" style="background-color: var(--bg-card); border-color: var(--border-color);">
+            <span style="color: var(--text-secondary);">Reading Guide Text Size</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="adjustReaderFont(-2)" class="apple-pill px-2.5 py-1 border font-semibold hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Decrease font size">A−</button>
+              <span id="fontSizeIndicator" class="px-1.5 font-typewriter text-[11px]">21px</span>
+              <button onclick="adjustReaderFont(2)" class="apple-pill px-2.5 py-1 border font-semibold hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Increase font size">A+</button>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-2 font-typewriter text-xs">
-            <button id="btnToggleTelegraphSound" onclick="toggleTelegraphClack()" class="px-3 py-2 rounded-lg border transition flex items-center justify-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-secondary);">
+          <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+            <button id="btnToggleTelegraphSound" onclick="toggleTelegraphClack()" class="px-3 py-2.5 rounded-2xl border transition flex items-center justify-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-card);">
               <span id="telegraphDot" class="w-2 h-2 rounded-full bg-stone-400"></span>
               <span>Telegraph: <strong id="telegraphStatus">OFF</strong></span>
             </button>
 
-            <button id="btnToggleNocturne" onclick="toggleNocturneDrone()" class="px-3 py-2 rounded-lg border transition flex items-center justify-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-secondary);">
+            <button id="btnToggleNocturne" onclick="toggleNocturneDrone()" class="px-3 py-2.5 rounded-2xl border transition flex items-center justify-center gap-1.5 hover:opacity-80" style="border-color: var(--border-color); background-color: var(--bg-card);">
               <span id="nocturneDot" class="w-2 h-2 rounded-full bg-stone-400"></span>
               <span>1927 Nocturne: <strong id="nocturneStatus">OFF</strong></span>
             </button>
@@ -457,142 +582,146 @@
         </div>
       </div>
 
-      <div class="pt-4 border-t text-[11px] font-typewriter" style="border-color: var(--border-color); color: var(--text-secondary);">
-        Miles Davis playback continues uninterrupted across all sections.
+      <div class="pt-4 border-t text-[11px]" style="border-color: var(--border-color); color: var(--text-secondary);">
+        Audiobooks and Miles Davis sessions continue seamlessly while you read across every section.
       </div>
     </aside>
   </div>
 
   <!-- MAIN WORKSPACE -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-5 sm:py-6">
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-8">
 
     <!-- ==========================================================
-         HOME SCREEN: MASTHEAD + COSMODEMONIC WIRE + MILES DAVIS
+         HOME SCREEN: APPLE EDITORIAL MASTHEAD + COSMODEMONIC WIRE + LISTENING STUDIO
          ========================================================== -->
-    <section id="tab-home" class="space-y-5">
+    <section id="tab-home" class="space-y-6">
 
-      <!-- Compact Editorial Masthead -->
-      <header class="pb-4 border-b space-y-2" style="border-color: var(--border-color);">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="font-typewriter text-[11px] uppercase tracking-widest px-2.5 py-0.5 border rounded" style="border-color: var(--border-color); color: var(--text-secondary);">
-            FIRST PUBLISHED: OBELISK PRESS, PARIS, 1939
+      <!-- Apple Editorial Masthead -->
+      <header class="pb-5 border-b space-y-3" style="border-color: var(--border-color);">
+        <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium">
+          <span class="px-3 py-1 rounded-full border" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);">
+            Obelisk Press · Paris, 1939
           </span>
-          <span class="font-typewriter text-[11px] uppercase tracking-widest px-2.5 py-0.5 border rounded" style="border-color: var(--border-color); color: var(--text-secondary);">
-            SITE SCAN: FLAMINGO, 1993 (216 PAGES)
+          <span class="px-3 py-1 rounded-full border" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);">
+            Flamingo Scan · 1993 · 216 Pages
           </span>
-          <button onclick="openContrabandModal()" class="contraband-stamp px-2.5 py-0.5 text-[11px] font-typewriter font-bold rounded cursor-pointer hover:scale-105 transition" title="Inspect Publication &amp; Edition History">
-            NOT TO BE IMPORTED INTO U.S.A. OR GREAT BRITAIN
+          <button onclick="openContrabandModal()" class="apple-pill px-3 py-1 border font-semibold flex items-center gap-1.5 hover:opacity-85" style="background-color: var(--accent-soft); border-color: transparent; color: var(--accent-primary);" title="Inspect 1939 Paris Publication &amp; Customs Ban History">
+            <span>Not to Be Imported into U.S.A. or Great Britain · History ›</span>
           </button>
         </div>
 
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pt-0.5">
-          <div>
-            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none">
-              TROPIC OF CAPRICORN
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <h1 class="font-display text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.04]">
+              Tropic of Capricorn
             </h1>
-            <p class="text-base sm:text-lg italic pt-1" style="color: var(--text-secondary);">
-              By <span class="font-semibold" style="color: var(--text-primary);">Henry Miller</span> — <span class="font-typewriter text-xs sm:text-sm not-italic">"On the Ovarian Trolley" • Unabridged Scan &amp; Telegraph Edition</span>
+            <p class="text-base sm:text-lg" style="color: var(--text-secondary);">
+              <span class="font-semibold" style="color: var(--text-primary);">Henry Miller</span> · <span class="italic font-prose text-lg sm:text-xl">“On the Ovarian Trolley”</span> — Unabridged Scan, Audiobooks &amp; Telegraph Edition
             </p>
           </div>
 
-          <button onclick="openSiteMenu()" class="self-start lg:self-auto shrink-0 px-3.5 py-1.5 rounded-lg border font-ui text-xs font-medium hover:opacity-85 transition flex items-center gap-1.5" style="background-color: var(--bg-card); border-color: var(--border-color);">
-            <span>☰ Menu · Guide, PDF, Map &amp; Notebook</span>
-          </button>
+          <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto shrink-0 text-xs font-medium">
+            <button onclick="openInPdfTab(3)" class="apple-pill px-4 py-2 text-white font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm" style="background-color: var(--accent-primary);">
+              <span>Read Full PDF · 216 pp.</span>
+            </button>
+            <button onclick="openSiteMenu()" class="apple-pill px-4 py-2 border font-medium hover:opacity-80 flex items-center gap-1.5" style="background-color: var(--bg-card); border-color: var(--border-strong);">
+              <span>☰ Guide, Map &amp; Notebook</span>
+            </button>
+          </div>
         </div>
       </header>
 
-      <!-- MAIN HERO STAGE: COSMODEMONIC WIRE (DOMINANT 8 COLS) + MILES DAVIS DECK (4 COLS) -->
+      <!-- MAIN BENTO GRID: COSMODEMONIC WIRE (7 COLS MAIN HERO) + AUDIOBOOKS & MILES STUDIO (5 COLS) -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-7 items-stretch">
 
-        <!-- DOMINANT CENTERPIECE (8 OF 12 COLS): COSMODEMONIC WIRE HERO SHOWCASE -->
-        <article class="lg:col-span-8 rounded-2xl border-2 shadow-lg p-6 sm:p-8 md:p-9 flex flex-col justify-between gap-5 relative overflow-hidden" style="background-color: var(--bg-card); border-color: var(--accent-primary);">
-          
-          <!-- Top Telegraph Header Tape -->
-          <div class="flex flex-wrap items-center justify-between gap-2 pb-3.5 border-b font-typewriter text-[11px]" style="border-color: var(--border-color);">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="px-2.5 py-1 rounded font-bold uppercase tracking-widest text-white shadow-xs" style="background-color: var(--accent-primary);">
-                COSMODEMONIC WIRE
+        <!-- DOMINANT HERO CARD (7 OF 12 COLS): COSMODEMONIC WIRE -->
+        <article class="lg:col-span-7 apple-hero-card p-6 sm:p-8 md:p-10 flex flex-col justify-between gap-6 relative overflow-hidden">
+
+          <!-- Top Wire Status Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b text-xs" style="border-color: var(--border-color);">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="apple-pill px-3 py-1 font-semibold text-white text-[11px] tracking-wide uppercase flex items-center gap-1.5" style="background-color: var(--accent-primary);">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                <span>Cosmodemonic Wire</span>
               </span>
-              <span id="wireCounterLabel" class="uppercase tracking-wider font-bold" style="color: var(--text-secondary);">
+              <span id="wireCounterLabel" class="font-typewriter text-[11px] uppercase tracking-wider font-medium" style="color: var(--text-secondary);">
                 DISPATCH 01 / 09 • SUNSET PLACE DESK
               </span>
             </div>
 
-            <div class="flex flex-wrap items-center gap-1.5">
-              <button id="btnWireAutoCycle" onclick="toggleWireAutoCycle()" class="px-2.5 py-1 rounded border hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Pause or resume automatic 10-second wire rotation">
-                Auto-Wire: <strong id="wireAutoStatus">ON</strong>
+            <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-medium">
+              <button id="btnWireAutoCycle" onclick="toggleWireAutoCycle()" class="apple-pill px-3 py-1 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Pause or resume automatic 10-second wire rotation">
+                Auto: <strong id="wireAutoStatus">ON</strong>
               </button>
-              <button id="btnHomeTelegraphSound" onclick="toggleTelegraphClack()" class="px-2.5 py-1 rounded border hover:opacity-80 transition flex items-center gap-1.5" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Toggle mechanical telegraph key audio">
-                <span id="homeTelegraphDot" class="w-2 h-2 rounded-full bg-stone-400"></span>
-                <span>Telegraph Key: <strong id="homeTelegraphStatus">OFF</strong></span>
+              <button id="btnHomeTelegraphSound" onclick="toggleTelegraphClack()" class="apple-pill px-3 py-1 border hover:opacity-80 flex items-center gap-1.5" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Toggle mechanical telegraph key audio">
+                <span id="homeTelegraphDot" class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>
+                <span>Key: <strong id="homeTelegraphStatus">OFF</strong></span>
               </button>
             </div>
           </div>
 
-          <!-- Spacious Full-Length Verbatim Miller Quote Stage (NEVER Truncated) -->
-          <div class="py-2 sm:py-4 flex-1 flex flex-col justify-center space-y-4">
-            <div id="wireLocusLabel" class="font-typewriter text-xs uppercase tracking-widest font-bold" style="color: var(--accent-primary);">
+          <!-- Spacious Full-Length Verbatim Miller Quote Stage -->
+          <div class="py-3 sm:py-5 flex-1 flex flex-col justify-center space-y-4">
+            <div id="wireLocusLabel" class="text-[11px] uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
               OPENING OF THE NOVEL • “ON THE OVARIAN TROLLEY”
             </div>
 
-            <blockquote id="homeWireQuote" class="font-display text-2xl sm:text-3xl md:text-[33px] leading-[1.38] italic transition-opacity duration-200" style="color: var(--text-primary);">
+            <blockquote id="homeWireQuote" class="font-display text-2xl sm:text-3xl md:text-[32px] leading-[1.38] italic transition-opacity duration-200" style="color: var(--text-primary);">
               “Once you have given up the ghost, everything follows with dead certainty, even in the midst of chaos. From the beginning it was never anything but chaos: it was a fluid which enveloped me, which I breathed in through the gills.”
             </blockquote>
 
-            <div class="flex flex-wrap items-center gap-2 pt-1 font-typewriter text-xs" style="color: var(--text-secondary);">
-              <span class="px-2 py-0.5 rounded border uppercase text-[10px] font-bold" style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);">
-                VERBATIM FROM THE SCAN
+            <div class="flex flex-wrap items-center gap-2 pt-1 text-xs" style="color: var(--text-secondary);">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider" style="background-color: var(--bg-secondary); color: var(--text-primary);">
+                Verbatim Scan
               </span>
               <span id="wireScanCitation">
-                Henry Miller, <em>Tropic of Capricorn</em> • Flamingo (1993), PDF page 3
+                Henry Miller, <em>Tropic of Capricorn</em> · Flamingo (1993), PDF page 3
               </span>
             </div>
           </div>
 
-          <!-- Progress Hairline + Interactive Telegraph Transport & Direct PDF Jump -->
-          <div class="space-y-3.5 pt-3.5 border-t" style="border-color: var(--border-color);">
-            <!-- Subtle Wire Progress Hairline -->
+          <!-- Progress Hairline + Apple Pill Controls & Passage Actions -->
+          <div class="space-y-4 pt-4 border-t" style="border-color: var(--border-color);">
             <div class="w-full h-1 rounded-full overflow-hidden" style="background-color: var(--bg-secondary);">
-              <div id="wireProgressFill" class="h-full transition-all duration-300" style="width: 11.1%; background-color: var(--accent-primary);"></div>
+              <div id="wireProgressFill" class="h-full rounded-full transition-all duration-300" style="width: 11.1%; background-color: var(--accent-primary);"></div>
             </div>
 
-            <!-- Prev / Dots / Next / Teletype Row -->
-            <div class="flex flex-wrap items-center justify-between gap-2.5 font-typewriter text-xs">
+            <!-- Prev / Next / Teletype / Dispatch Pills -->
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-medium">
               <div class="flex items-center gap-1.5">
-                <button onclick="stepHomeWire(-1)" class="px-3 py-1.5 rounded-lg border font-bold hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-                  ← Prev Wire
+                <button onclick="stepHomeWire(-1)" class="apple-pill px-3.5 py-1.5 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                  ← Prev
                 </button>
-                <button onclick="stepHomeWire(1)" class="px-3 py-1.5 rounded-lg border font-bold hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-                  Next Wire →
+                <button onclick="stepHomeWire(1)" class="apple-pill px-3.5 py-1.5 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                  Next →
                 </button>
-                <button id="btnWireTeletype" onclick="toggleWireTeletype()" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Type this dispatch out character-by-character">
-                  ⚡ Teletype Wire
+                <button id="btnWireTeletype" onclick="toggleWireTeletype()" class="apple-pill px-3.5 py-1.5 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Type this dispatch out character-by-character">
+                  ⚡ Teletype
                 </button>
               </div>
 
-              <!-- 9 Dispatch Selector Pills -->
               <div id="wireDotsContainer" class="flex flex-wrap items-center gap-1">
                 <!-- Populated dynamically via JS -->
               </div>
             </div>
 
-            <!-- Primary Passage Links & Paired Miles Session Action Row -->
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5 font-ui text-xs">
+            <!-- Primary Passage Links & Audio Pairing Row -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5 text-xs font-medium">
               <div class="flex flex-wrap items-center gap-2">
-                <a id="wireDirectPdfBtn" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg text-white font-semibold hover:opacity-90 transition inline-flex items-center gap-1.5" style="background-color: var(--accent-primary);">
+                <a id="wireDirectPdfBtn" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="apple-pill px-4 py-2 text-white font-semibold hover:opacity-90 inline-flex items-center gap-1.5" style="background-color: var(--accent-primary);">
                   <span>Read Original Passage · PDF page 3 ↗</span>
                 </a>
-                <button id="wireOpenPdfTabBtn" onclick="openInPdfTab(3)" class="px-3 py-2 rounded-lg border font-medium hover:opacity-80 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-                  Open in PDF Viewer →
+                <button id="wireOpenPdfTabBtn" onclick="openInPdfTab(3)" class="apple-pill px-3.5 py-2 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                  Open in Reader →
                 </button>
               </div>
 
               <div class="flex flex-wrap items-center gap-1.5">
-                <button id="wirePairMilesBtn" onclick="playWirePairedMiles()" class="px-3 py-2 rounded-lg border font-typewriter text-xs font-bold hover:opacity-85 transition" style="background-color: var(--bg-secondary); border-color: var(--accent-primary); color: var(--accent-primary);">
+                <button id="wirePairMilesBtn" onclick="playWirePairedMiles()" class="apple-pill px-3.5 py-2 border font-semibold hover:opacity-85" style="background-color: var(--accent-soft); border-color: transparent; color: var(--accent-primary);">
                   ♪ Pair: So What
                 </button>
-                <button onclick="saveCurrentWireNote()" class="px-3 py-2 rounded-lg border font-medium hover:opacity-80 transition" style="border-color: var(--border-color);" title="Save dispatch link to Contraband Notebook">
-                  ✒ Save Note
+                <button onclick="saveCurrentWireNote()" class="apple-pill px-3.5 py-2 border hover:opacity-80" style="border-color: var(--border-color);" title="Save dispatch link to Contraband Notebook">
+                  Save Note
                 </button>
               </div>
             </div>
@@ -600,107 +729,148 @@
 
         </article>
 
-        <!-- PAIRED COMPANION COLUMN (4 OF 12 COLS): MILES DAVIS EXPERIENCE CONSOLE -->
-        <aside id="homeMilesCard" class="lg:col-span-4 rounded-2xl border shadow-md p-5 flex flex-col justify-between gap-3.5 transition-all" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          <div class="space-y-3">
-            <!-- Header -->
-            <div class="flex items-center justify-between gap-2 border-b pb-2.5" style="border-color: var(--border-color);">
-              <div class="flex items-center gap-2">
-                <span id="homeMilesEqIcon" class="inline-flex items-end gap-[2px] h-3.5">
-                  <span class="miles-eq-bar"></span>
-                  <span class="miles-eq-bar"></span>
-                  <span class="miles-eq-bar"></span>
-                  <span class="miles-eq-bar"></span>
-                </span>
+        <!-- COMPANION LISTENING STUDIO (5 OF 12 COLS): AUDIOBOOKS + MILES DAVIS -->
+        <aside id="homeMilesCard" class="lg:col-span-5 apple-card p-5 sm:p-6 flex flex-col justify-between gap-4 transition-all">
+          <div class="space-y-4">
+            <!-- Studio Header + Apple Segmented Control -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
                 <div>
-                  <span class="font-typewriter text-[10px] uppercase tracking-widest block font-bold" style="color: var(--accent-primary);">
-                    READING SOUNDTRACK
+                  <span class="text-[11px] uppercase tracking-wider block font-semibold" style="color: var(--accent-primary);">
+                    Read &amp; Listen Companion
                   </span>
-                  <h2 class="font-display text-xl font-bold leading-none">
-                    Miles Davis Experience
+                  <h2 class="font-display text-2xl font-bold leading-tight">
+                    Listening Studio
                   </h2>
                 </div>
+                <span class="text-[11px] px-2.5 py-1 rounded-full font-medium" style="background-color: var(--bg-secondary); color: var(--text-secondary);">
+                  Plays Across Tabs
+                </span>
               </div>
-              <span id="homeMilesStateBadge" class="font-typewriter text-[10px] uppercase px-2 py-0.5 rounded border shrink-0" style="border-color: var(--border-color); background-color: var(--bg-secondary);">
-                READY
-              </span>
+
+              <!-- Segmented Switcher: Audiobooks vs Miles Davis -->
+              <div class="grid grid-cols-2 apple-segmented text-xs font-semibold" role="tablist" aria-label="Listening Studio Mode">
+                <button id="segBtnAudiobooks" onclick="setListeningStudioTab('audiobooks')" role="tab" aria-selected="true" class="apple-seg-btn apple-seg-btn-active py-2 px-3 flex items-center justify-center gap-1.5">
+                  <span>🎧 Audiobooks (3)</span>
+                </button>
+                <button id="segBtnMiles" onclick="setListeningStudioTab('miles')" role="tab" aria-selected="false" class="apple-seg-btn py-2 px-3 opacity-75 hover:opacity-100 flex items-center justify-center gap-1.5">
+                  <span>🎺 Miles Davis (13)</span>
+                </button>
+              </div>
             </div>
 
-            <!-- Active Session Turntable Box -->
-            <div class="p-3.5 rounded-xl border space-y-2.5" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <div class="space-y-0.5">
-                <span id="homeMilesNowAlbum" class="font-typewriter text-[10px] uppercase tracking-wider block" style="color: var(--accent-primary);">
-                  ASCENSEUR POUR L’ÉCHAFAUD • PARIS, DEC 1957
-                </span>
-                <h3 id="homeMilesNowTitle" class="font-display text-2xl font-bold leading-tight">
-                  Générique
-                </h3>
-                <p id="homeMilesNowLineup" class="text-xs italic leading-snug" style="color: var(--text-secondary);">
-                  Miles Davis (muted trumpet), Barney Wilen, René Urtreger, Pierre Michelot, Kenny Clarke
-                </p>
+            <!-- PANE A: AUDIOBOOKS (TROPIC OF CAPRICORN PT 1 & 2 + TROPIC OF CANCER) -->
+            <div id="homeAudiobooksPane" class="space-y-3">
+              <p class="text-xs leading-relaxed" style="color: var(--text-secondary);">
+                Listen to <em>Tropic of Capricorn</em> (Parts 1 &amp; 2) or Miller’s Paris companion novel <em>Tropic of Cancer</em>. Tap <strong>Read &amp; Listen</strong> to open the floating glass player right beside the 216-page scan.
+              </p>
+
+              <div id="homeAudiobooksList" class="space-y-2.5">
+                <!-- Populated dynamically via JS from AUDIOBOOKS -->
               </div>
 
-              <!-- Scrubber -->
-              <div class="space-y-1 font-typewriter text-[11px]">
-                <input
-                  id="homeMilesSeekSlider"
-                  type="range"
-                  min="0"
-                  max="1000"
-                  value="0"
-                  oninput="seekMilesAudio(this.value)"
-                  class="w-full accent-red-800 cursor-pointer h-1.5 rounded-lg"
-                  aria-label="Seek Miles Davis session" />
-                <div class="flex items-center justify-between" style="color: var(--text-secondary);">
-                  <span id="homeMilesCurrentTime">00:00</span>
-                  <span id="homeMilesDuration">02:50</span>
+              <!-- 1-Tap Layer Miles Davis Behind Audiobook -->
+              <div class="p-3 rounded-2xl border flex items-center justify-between gap-2 text-xs" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                <div class="min-w-0">
+                  <div class="font-semibold truncate">Layer Soft Miles Davis Trumpet</div>
+                  <div class="text-[11px] truncate" style="color: var(--text-secondary);">Gentle 22% jazz backing behind narration</div>
                 </div>
+                <button id="btnLayerMilesBacking" onclick="layerMilesBehindAudiobook()" class="apple-pill px-3 py-1.5 border font-semibold shrink-0 hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--accent-primary);">
+                  + Layer Miles
+                </button>
               </div>
+            </div>
 
-              <!-- Transport & Volume -->
-              <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5 font-ui text-xs">
-                <div class="flex items-center gap-1.5">
-                  <button onclick="stepMilesTrack(-1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Previous session">
-                    ⏮
-                  </button>
-                  <button id="btnHomeMilesPlay" onclick="toggleMilesPlayback()" class="px-3.5 py-1.5 rounded-lg text-white font-semibold hover:opacity-90 transition" style="background-color: var(--accent-primary);">
-                    ▶ Play Miles
-                  </button>
-                  <button onclick="stepMilesTrack(1)" class="px-2.5 py-1.5 rounded-lg border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Next session">
-                    ⏭
-                  </button>
+            <!-- PANE B: MILES DAVIS EXPERIENCE CONSOLE -->
+            <div id="homeMilesPane" class="hidden space-y-3">
+              <div class="p-4 apple-subcard space-y-3">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="space-y-0.5 min-w-0">
+                    <span id="homeMilesNowAlbum" class="text-[10px] uppercase tracking-wider font-semibold block truncate" style="color: var(--accent-primary);">
+                      ASCENSEUR POUR L’ÉCHAFAUD • PARIS, DEC 1957
+                    </span>
+                    <div class="flex items-center gap-2">
+                      <span id="homeMilesEqIcon" class="inline-flex items-end gap-[2px] h-3.5 shrink-0">
+                        <span class="miles-eq-bar"></span>
+                        <span class="miles-eq-bar"></span>
+                        <span class="miles-eq-bar"></span>
+                        <span class="miles-eq-bar"></span>
+                      </span>
+                      <h3 id="homeMilesNowTitle" class="font-display text-2xl font-bold leading-tight truncate">
+                        Générique
+                      </h3>
+                    </div>
+                    <p id="homeMilesNowLineup" class="text-xs leading-snug line-clamp-2" style="color: var(--text-secondary);">
+                      Miles Davis (muted trumpet), Barney Wilen, René Urtreger, Pierre Michelot, Kenny Clarke
+                    </p>
+                  </div>
+                  <span id="homeMilesStateBadge" class="font-typewriter text-[10px] uppercase px-2.5 py-0.5 rounded-full border shrink-0" style="border-color: var(--border-color); background-color: var(--bg-card);">
+                    READY
+                  </span>
                 </div>
 
-                <div class="flex items-center gap-1.5">
-                  <label for="homeMilesVolumeSlider" class="font-typewriter text-[10px]" style="color: var(--text-secondary);">Vol</label>
+                <!-- Scrubber -->
+                <div class="space-y-1 font-typewriter text-[11px]">
                   <input
-                    id="homeMilesVolumeSlider"
+                    id="homeMilesSeekSlider"
                     type="range"
                     min="0"
-                    max="100"
-                    value="65"
-                    oninput="setMilesVolume(this.value)"
-                    class="w-16 accent-red-800 cursor-pointer h-1.5"
-                    aria-label="Miles Davis volume" />
-                  <span id="homeMilesVolumeLabel" class="font-typewriter text-[10px] w-7 text-right">65%</span>
+                    max="1000"
+                    value="0"
+                    oninput="seekMilesAudio(this.value)"
+                    class="w-full cursor-pointer"
+                    aria-label="Seek Miles Davis session" />
+                  <div class="flex items-center justify-between" style="color: var(--text-secondary);">
+                    <span id="homeMilesCurrentTime">00:00</span>
+                    <span id="homeMilesDuration">02:50</span>
+                  </div>
+                </div>
+
+                <!-- Transport & Volume -->
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5 font-ui text-xs">
+                  <div class="flex items-center gap-1.5">
+                    <button onclick="stepMilesTrack(-1)" class="apple-pill px-2.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Previous session">
+                      ⏮
+                    </button>
+                    <button id="btnHomeMilesPlay" onclick="toggleMilesPlayback()" class="apple-pill px-4 py-1.5 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+                      ▶ Play Miles
+                    </button>
+                    <button onclick="stepMilesTrack(1)" class="apple-pill px-2.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Next session">
+                      ⏭
+                    </button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <label for="homeMilesVolumeSlider" class="text-[11px]" style="color: var(--text-secondary);">Vol</label>
+                    <input
+                      id="homeMilesVolumeSlider"
+                      type="range"
+                      min="0"
+                      max="100"
+                      value="65"
+                      oninput="setMilesVolume(this.value)"
+                      class="w-16 cursor-pointer"
+                      aria-label="Miles Davis volume" />
+                    <span id="homeMilesVolumeLabel" class="font-typewriter text-[10px] w-7 text-right">65%</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Mood Filter Chips -->
-            <div id="homeMilesMoodFilters" class="flex flex-wrap items-center gap-1 font-ui text-[11px]">
-              <!-- Populated dynamically via JS -->
-            </div>
+              <!-- Mood Filter Chips -->
+              <div id="homeMilesMoodFilters" class="flex flex-wrap items-center gap-1 font-ui text-[11px]">
+                <!-- Populated dynamically via JS -->
+              </div>
 
-            <!-- Compact 13-Session Selector -->
-            <div id="homeMilesTracklist" class="space-y-1.5 max-h-[195px] overflow-y-auto pr-1">
-              <!-- Populated dynamically via JS -->
+              <!-- Compact 13-Session Selector -->
+              <div id="homeMilesTracklist" class="space-y-1.5 max-h-[190px] overflow-y-auto pr-1">
+                <!-- Populated dynamically via JS -->
+              </div>
             </div>
           </div>
 
-          <div class="pt-2.5 border-t font-typewriter text-[11px] flex items-center justify-between gap-2" style="border-color: var(--border-color); color: var(--text-secondary);">
-            <span>13 sessions • plays across all tabs</span>
-            <button id="btnHomeMilesLoop" onclick="toggleMilesLoopMode()" class="underline hover:opacity-80 shrink-0" style="color: var(--accent-primary);">
+          <div class="pt-3 border-t text-xs flex items-center justify-between gap-2" style="border-color: var(--border-color); color: var(--text-secondary);">
+            <span id="studioFooterHint">3 unabridged &amp; companion readings · YouTube stream</span>
+            <button id="btnHomeMilesLoop" onclick="toggleMilesLoopMode()" class="font-medium hover:opacity-80 shrink-0" style="color: var(--accent-primary);">
               Continuous
             </button>
           </div>
@@ -714,124 +884,122 @@
          TAB 1: READING GUIDE & EDITORIAL THEMES
          ========================================== -->
     <section id="tab-curated" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      
+
       <!-- Left Sidebar: Editorial Themes & Verified Scan Annotations -->
-      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-6">
-        
+      <aside class="lg:col-span-4 space-y-5 lg:sticky lg:top-20">
+
         <!-- Editorial Themes Index Card -->
-        <div class="p-5 rounded-xl border shadow-sm space-y-4" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <div class="p-5 apple-card space-y-4">
           <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
             <div>
-              <span class="font-typewriter text-[11px] uppercase tracking-widest block" style="color: var(--accent-primary);">READING GUIDE</span>
+              <span class="text-[11px] uppercase tracking-wider font-semibold block" style="color: var(--accent-primary);">Reading Guide</span>
               <h2 class="font-display text-xl font-bold">Editorial Themes</h2>
             </div>
-            <span class="font-typewriter text-xs uppercase px-2 py-0.5 rounded" style="background-color: var(--bg-secondary);">4 Notes</span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full font-medium" style="background-color: var(--bg-secondary); color: var(--text-secondary);">4 Notes</span>
           </div>
 
-          <div id="movementList" class="space-y-2.5">
+          <div id="movementList" class="space-y-2">
             <!-- Populated dynamically via JS -->
           </div>
 
-          <div class="pt-3 border-t text-xs font-ui flex items-center justify-between" style="border-color: var(--border-color); color: var(--text-secondary);">
-            <span>Click any <span class="literary-note">underlined phrase</span> to inspect scan-verified notes.</span>
+          <div class="pt-3 border-t text-xs font-ui" style="border-color: var(--border-color); color: var(--text-secondary);">
+            Click any <span class="literary-note">highlighted phrase</span> to inspect scan-verified notes.
           </div>
         </div>
 
         <!-- Interactive Annotation & Footnote Inspector -->
-        <div id="annotationCard" class="p-5 rounded-xl border shadow-sm space-y-3 transition-all" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+        <div id="annotationCard" class="p-5 apple-card space-y-2.5 transition-all" style="background-color: var(--bg-secondary);">
           <div class="flex items-center justify-between">
-            <span class="font-typewriter text-xs uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-              ✦ SCAN ANNOTATION (FLAMINGO, 1993)
+            <span class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+              Scan Annotation · Flamingo, 1993
             </span>
-            <span id="annotationRefTag" class="font-typewriter text-xs opacity-70">Note #01 • PDF p. 3</span>
+            <span id="annotationRefTag" class="font-typewriter text-[11px]" style="color: var(--text-secondary);">Note #01 • PDF p. 3</span>
           </div>
           <h3 id="annotationTitle" class="font-display text-lg font-bold">
             Peter Abelard’s Historia Calamitatum
           </h3>
-          <p id="annotationBody" class="text-base leading-relaxed" style="color: var(--text-primary);">
+          <p id="annotationBody" class="text-sm leading-relaxed" style="color: var(--text-primary);">
             <!-- Populated dynamically via JS -->
           </p>
         </div>
 
-        <!-- Typewriter Cadence Preview -->
-        <div class="p-5 rounded-xl border shadow-sm space-y-3" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          <div class="flex items-center justify-between">
-            <span class="font-typewriter text-xs font-bold uppercase tracking-wider">Typewriter Cadence Preview</span>
-            <button id="btnAutoType" onclick="toggleAutoTypewriter()" class="font-ui text-xs px-3 py-1 rounded text-white font-medium transition" style="background-color: var(--accent-primary);">
-              ▶ Type Out Note
-            </button>
-          </div>
-          <p class="text-sm" style="color: var(--text-secondary);">
-            Play out this third-person editorial note on a virtual mechanical typewriter, or open the Automatic Studio tab to type your own stream of consciousness.
-          </p>
-        </div>
-
-        <!-- Miles Davis Reading Companion Card -->
-        <div class="p-5 rounded-xl border shadow-sm space-y-3" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <!-- Audiobooks & Miles Davis Companion Card -->
+        <div class="p-5 apple-card space-y-3">
           <div class="flex items-center justify-between gap-2">
             <div>
-              <span class="font-typewriter text-[10px] uppercase tracking-widest block font-bold" style="color: var(--accent-primary);">READING SOUNDTRACK</span>
-              <h3 class="font-display text-lg font-bold leading-snug">Miles Davis Experience</h3>
+              <span class="text-[11px] uppercase tracking-wider block font-semibold" style="color: var(--accent-primary);">Read &amp; Listen</span>
+              <h3 class="font-display text-lg font-bold leading-snug">Audiobooks &amp; Miles Davis</h3>
             </div>
-            <button id="btnMilesSidebarPlay" onclick="toggleMilesPlayback()" class="font-ui text-xs px-3 py-1.5 rounded text-white font-medium transition hover:opacity-90 shrink-0" style="background-color: var(--accent-primary);">
+            <button id="btnMilesSidebarPlay" onclick="toggleMilesPlayback()" class="apple-pill text-xs px-3.5 py-1.5 text-white font-semibold hover:opacity-90 shrink-0" style="background-color: var(--accent-primary);">
               ▶ Listen
             </button>
           </div>
-          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
-            Pair your reading with full-length Miles Davis sessions—<em>Ascenseur pour l’échafaud</em> (Paris, 1957), <em>Kind of Blue</em>, <em>Blue Haze</em>, and <em>In a Silent Way</em>. Music keeps playing across every tab and the 216-page PDF.
-          </p>
-          <button onclick="openMilesDrawer()" class="font-typewriter text-xs underline hover:opacity-80" style="color: var(--accent-primary);">
-            Browse 13 Sessions &amp; Reading Moods ▾
-          </button>
+          <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+            <button onclick="playAudiobook('capricorn-pt1')" class="apple-pill px-3 py-1.5 border hover:opacity-85" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              🎧 Capricorn Pt. 1
+            </button>
+            <button onclick="playAudiobook('capricorn-pt2')" class="apple-pill px-3 py-1.5 border hover:opacity-85" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              🎧 Capricorn Pt. 2
+            </button>
+            <button onclick="playAudiobook('cancer-full')" class="apple-pill px-3 py-1.5 border hover:opacity-85" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              🎧 Tropic of Cancer
+            </button>
+          </div>
+          <div class="flex items-center justify-between pt-1 text-xs">
+            <button onclick="openMilesDrawer()" class="font-medium hover:opacity-80" style="color: var(--accent-primary);">
+              13 Miles Sessions ▾
+            </button>
+            <button id="btnAutoType" onclick="toggleAutoTypewriter()" class="font-medium hover:opacity-80" style="color: var(--text-secondary);">
+              ▶ Type Out Note
+            </button>
+          </div>
         </div>
 
       </aside>
 
       <!-- Right Column: Editorial Reading Guide Canvas -->
-      <article class="lg:col-span-8 p-6 sm:p-10 md:p-12 rounded-2xl border shadow-md space-y-6 relative" style="background-color: var(--bg-card); border-color: var(--border-color);">
-        
-        <!-- Top Running Header Distinguishing Editorial Commentary from Miller's Scan -->
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b font-typewriter text-xs" style="border-color: var(--border-color); color: var(--text-secondary);">
-          <span id="readerRunningHeader">READING GUIDE • EDITORIAL COMMENTARY (THIRD-PERSON OVERVIEW)</span>
-          <span id="readerPageCite">SCAN: FLAMINGO, 1993 • PDF PAGE 3</span>
+      <article class="lg:col-span-8 p-6 sm:p-10 md:p-12 apple-hero-card space-y-6 relative">
+
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b text-xs font-medium" style="border-color: var(--border-color); color: var(--text-secondary);">
+          <span id="readerRunningHeader">Reading Guide · Third-Person Editorial Overview</span>
+          <span id="readerPageCite" class="font-typewriter text-[11px]">SCAN: FLAMINGO, 1993 • PDF PAGE 3</span>
         </div>
 
-        <!-- Editorial Theme Title Header -->
-        <div class="space-y-2 pt-2">
-          <div id="movementSubtitle" class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
+        <div class="space-y-2 pt-1">
+          <div id="movementSubtitle" class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
             EDITORIAL THEME I
           </div>
-          <h2 id="movementMainTitle" class="font-display text-3xl sm:text-4xl font-black leading-tight">
+          <h2 id="movementMainTitle" class="font-display text-3xl sm:text-4xl font-bold leading-tight">
             Opening of the novel
           </h2>
-          <p id="movementContextDeck" class="italic text-lg" style="color: var(--text-secondary);">
+          <p id="movementContextDeck" class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">
             <!-- Populated dynamically via JS -->
           </p>
         </div>
 
         <!-- Main Third-Person Editorial Note Container -->
-        <div id="literaryProseContainer" class="space-y-6 leading-relaxed pt-2" style="font-size: 21px;">
+        <div id="literaryProseContainer" class="font-prose space-y-6 leading-relaxed pt-2" style="font-size: 21px;">
           <!-- Populated dynamically via JS -->
         </div>
 
         <!-- Direct Read-in-the-PDF Callout Box -->
-        <div id="themePdfLinksBox" class="p-5 rounded-xl border space-y-3" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+        <div id="themePdfLinksBox" class="p-5 apple-subcard space-y-3">
           <!-- Populated dynamically via JS -->
         </div>
 
-        <!-- Bottom Action Bar for Saving Notes & Navigating Themes -->
+        <!-- Bottom Action Bar -->
         <div class="pt-6 mt-6 border-t flex flex-wrap items-center justify-between gap-4" style="border-color: var(--border-color);">
           <div class="flex items-center gap-2">
-            <button onclick="saveCurrentGuideNote()" class="font-ui text-xs sm:text-sm px-4 py-2 rounded-lg border font-medium hover:opacity-80 transition flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              <span>✒ Save Note</span>
+            <button onclick="saveCurrentGuideNote()" class="apple-pill font-ui text-xs sm:text-sm px-4 py-2 border font-medium hover:opacity-80 flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              <span>Save Note</span>
             </button>
           </div>
 
-          <div class="flex items-center gap-2 font-ui text-xs sm:text-sm">
-            <button onclick="stepMovement(-1)" class="px-3.5 py-2 rounded-lg border hover:opacity-80 transition" style="border-color: var(--border-color);">
+          <div class="flex items-center gap-2 font-ui text-xs sm:text-sm font-medium">
+            <button onclick="stepMovement(-1)" class="apple-pill px-4 py-2 border hover:opacity-80" style="border-color: var(--border-color);">
               ← Prev Theme
             </button>
-            <button onclick="stepMovement(1)" class="px-4 py-2 rounded-lg text-white font-medium hover:opacity-90 transition" style="background-color: var(--accent-primary);">
+            <button onclick="stepMovement(1)" class="apple-pill px-4 py-2 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
               Next Theme →
             </button>
           </div>
@@ -844,48 +1012,48 @@
          TAB 2: FULL PDF · 216 PAGES & BOOKMARK READER
          ========================================== -->
     <section id="tab-pdf" class="hidden space-y-6">
-      
+
       <!-- Top Bookmark & Edition Attribution Bar -->
-      <div class="p-6 rounded-2xl border shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6" style="background-color: var(--bg-card); border-color: var(--border-color);">
-        
-        <div class="space-y-1.5 max-w-2xl">
+      <div class="p-6 sm:p-7 apple-card flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+
+        <div class="space-y-2 max-w-2xl">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="px-2 py-0.5 text-xs font-typewriter font-bold uppercase rounded text-white" style="background-color: var(--accent-primary);">
-              FULL PDF · 216 PAGES
+            <span class="px-3 py-0.5 text-[11px] font-semibold uppercase rounded-full text-white" style="background-color: var(--accent-primary);">
+              Full PDF · 216 pages
             </span>
-            <span class="font-typewriter text-xs" style="color: var(--text-secondary);">
-              First published: Obelisk Press, Paris, 1939 • Scanned edition: Flamingo, 1993
+            <span class="text-xs font-medium" style="color: var(--text-secondary);">
+              First published: Obelisk Press, Paris, 1939 · Scanned edition: Flamingo, 1993
             </span>
           </div>
           <h2 class="font-display text-2xl sm:text-3xl font-bold">
-            Unabridged PDF Reader &amp; Bookmark Tracker
+            Unabridged PDF Reader &amp; Read-Along Audio
           </h2>
-          <p class="text-base" style="color: var(--text-secondary);">
-            Read Henry Miller’s original text directly in the scanned <strong>Flamingo Modern Classic (1993)</strong> paperback edition (with an introduction by Robert Nye on PDF page 2; Miller’s novel opens on PDF page 3 and concludes with the Villa Seurat dateline on PDF page 216). All page numbers across this site use exact PDF viewer pages (`1–216`).
+          <p class="text-sm sm:text-base leading-relaxed" style="color: var(--text-secondary);">
+            Read Henry Miller’s original text in the scanned <strong>Flamingo Modern Classic (1993)</strong> paperback (Robert Nye introduction on PDF page 2; Miller’s novel opens on PDF page 3 and closes with the Villa Seurat dateline on PDF page 216). Launch an audiobook or Miles Davis below to listen while you read.
           </p>
         </div>
 
         <!-- Interactive Page Bookmark Controls -->
-        <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto p-4 rounded-xl border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+        <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto p-4 apple-subcard">
           <div class="flex flex-col">
-            <label for="pdfPageInput" class="font-typewriter text-[11px] uppercase tracking-wider" style="color: var(--text-secondary);">PDF Viewer Page (1–216)</label>
-            <div class="flex items-center gap-1.5 mt-1">
-              <button onclick="changePdfPage(-1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Previous PDF page">-</button>
-              <input id="pdfPageInput" type="number" min="1" max="216" value="3" onchange="jumpToPdfPage(this.value)" class="w-20 text-center font-typewriter font-bold py-1.5 rounded border text-base" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
-              <button onclick="changePdfPage(1)" class="px-2.5 py-1.5 rounded border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Next PDF page">+</button>
+            <label for="pdfPageInput" class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--text-secondary);">PDF Page (1–216)</label>
+            <div class="flex items-center gap-1.5 mt-1.5">
+              <button onclick="changePdfPage(-1)" class="apple-pill px-3 py-1.5 border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Previous PDF page">−</button>
+              <input id="pdfPageInput" type="number" min="1" max="216" value="3" onchange="jumpToPdfPage(this.value)" class="w-20 text-center font-typewriter font-semibold py-1.5 rounded-xl border text-sm" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
+              <button onclick="changePdfPage(1)" class="apple-pill px-3 py-1.5 border font-bold text-sm hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Next PDF page">+</button>
             </div>
           </div>
 
-          <div class="flex flex-col gap-1.5 pt-3 sm:pt-0">
+          <div class="flex flex-col gap-1.5 pt-2 sm:pt-0">
             <div class="flex items-center gap-1.5">
-              <button onclick="saveReadingBookmark()" class="font-ui text-xs px-3.5 py-2 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
-                ★ Save Bookmark
+              <button onclick="saveReadingBookmark()" class="apple-pill font-ui text-xs px-4 py-2 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+                Save Bookmark
               </button>
-              <button id="btnRestoreBookmark" onclick="restoreSavedBookmark()" class="font-ui text-xs px-3 py-2 rounded-lg border font-medium transition hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Jump to saved bookmark">
+              <button id="btnRestoreBookmark" onclick="restoreSavedBookmark()" class="apple-pill font-ui text-xs px-3.5 py-2 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Jump to saved bookmark">
                 ↺ Saved (Pg. 3)
               </button>
             </div>
-            <a id="directPageLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="font-typewriter text-xs text-center underline hover:opacity-80" style="color: var(--text-primary);">
+            <a id="directPageLink" href="./tropic-of-capricorn.pdf#page=3" target="_blank" rel="noopener noreferrer" class="text-xs text-center font-medium underline hover:opacity-80" style="color: var(--accent-primary);">
               Open Direct PDF Link (#page=3) ↗
             </a>
           </div>
@@ -893,24 +1061,29 @@
 
       </div>
 
-      <!-- Quick Jump Landmarks (Populated from Single Source of Truth LANDMARKS) -->
+      <!-- Quick Jump Landmarks -->
       <div id="quickJumpsContainer" class="flex flex-wrap items-center gap-2 font-ui text-xs">
         <!-- Populated dynamically via JS -->
       </div>
 
-      <!-- Embedded PDF Frame -->
-      <div class="rounded-2xl border overflow-hidden shadow-lg" style="background-color: var(--bg-card); border-color: var(--border-color);">
-        <div class="px-4 py-2.5 border-b flex flex-wrap items-center justify-between gap-2 text-xs font-typewriter" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-          <span id="pdfFrameStatus">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
-          <div class="flex flex-wrap items-center gap-3">
-            <button id="btnMilesPdfBar" onclick="toggleMilesPlayback()" class="px-2.5 py-1 rounded border font-bold hover:opacity-85 transition" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--accent-primary);">
+      <!-- Embedded PDF Frame with Read & Listen Bar -->
+      <div class="apple-hero-card overflow-hidden">
+        <div class="px-5 py-3 border-b flex flex-wrap items-center justify-between gap-2 text-xs font-ui" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <span id="pdfFrameStatus" class="font-typewriter text-[11px] font-medium">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="playAudiobook('capricorn-pt1')" class="apple-pill px-3 py-1 border font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
+              🎧 Audiobook Pt. 1
+            </button>
+            <button onclick="playAudiobook('capricorn-pt2')" class="apple-pill px-3 py-1 border font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
+              🎧 Audiobook Pt. 2
+            </button>
+            <button id="btnMilesPdfBar" onclick="toggleMilesPlayback()" class="apple-pill px-3 py-1 border font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--accent-primary);">
               ▶ Pair with Miles Davis
             </button>
-            <span>On mobile, tap "Open Direct PDF Link" above for native full-page reading.</span>
           </div>
         </div>
-        <div id="pdfFrameMount" class="w-full h-[720px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
-          <!-- Mounted on demand when Full PDF tab opens so initial page load stays lightweight on mobile and desktop -->
+        <div id="pdfFrameMount" class="w-full h-[740px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
+          <!-- Mounted on demand when Full PDF tab opens -->
         </div>
       </div>
 
@@ -921,23 +1094,21 @@
          ========================================== -->
     <section id="tab-map" class="hidden space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Left 7 Cols: Interactive SVG Map of 1920s Manhattan & Brooklyn -->
-        <div class="lg:col-span-7 p-6 rounded-2xl border shadow-md space-y-4" style="background-color: var(--bg-card); border-color: var(--border-color);">
+
+        <!-- Left 7 Cols: Interactive SVG Map -->
+        <div class="lg:col-span-7 p-6 sm:p-7 apple-card space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
-              <span class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">CARTOGRAPHY OF THE NOVEL</span>
-              <h2 class="font-display text-2xl sm:text-3xl font-bold">1920s Brooklyn &amp; Manhattan Psychogeography</h2>
+              <span class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">Cartography of the Novel</span>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold">1920s Brooklyn &amp; Manhattan</h2>
             </div>
-            <span class="font-typewriter text-xs px-2.5 py-1 rounded border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              Click any node on the map
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background-color: var(--bg-secondary); color: var(--text-secondary);">
+              Tap any landmark node
             </span>
           </div>
 
-          <!-- Custom Stylized 1920s Blueprint / Literary SVG Map -->
-          <div class="relative w-full overflow-hidden rounded-xl border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          <div class="relative w-full overflow-hidden rounded-2xl border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
             <svg viewBox="0 0 800 540" class="w-full h-auto select-none">
-              <!-- Grid Lines -->
               <defs>
                 <pattern id="literaryGrid" width="40" height="40" patternUnits="userSpaceOnUse">
                   <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" class="opacity-15" />
@@ -945,83 +1116,72 @@
               </defs>
               <rect width="800" height="540" fill="url(#literaryGrid)" />
 
-              <!-- East River & New York Harbor Watercourses -->
               <path d="M 310,0 C 320,120 275,210 265,310 C 255,390 190,460 140,540 L 235,540 C 285,465 340,390 355,305 C 370,210 410,120 420,0 Z"
                     fill="currentColor" class="opacity-10" />
               <text x="305" y="255" transform="rotate(-72 305 255)" class="font-typewriter text-[11px] tracking-widest opacity-40" fill="currentColor">
                 THE EAST RIVER • SPAN OF THE BRIDGES
               </text>
 
-              <!-- Manhattan Island Mass (Left) -->
               <path d="M 40,0 L 295,0 C 305,115 260,205 250,305 C 240,375 190,430 145,460 C 100,430 60,340 40,220 Z"
                     fill="currentColor" class="opacity-5" stroke="currentColor" stroke-width="1.5" />
               <text x="70" y="45" class="font-display text-lg font-bold opacity-30" fill="currentColor">MANHATTAN</text>
 
-              <!-- Brooklyn Mass (Right & South) -->
               <path d="M 435,0 L 780,0 L 780,520 L 260,520 C 305,450 355,380 370,300 C 385,205 425,115 435,0 Z"
                     fill="currentColor" class="opacity-5" stroke="currentColor" stroke-width="1.5" />
               <text x="580" y="60" class="font-display text-lg font-bold opacity-30" fill="currentColor">BROOKLYN</text>
 
-              <!-- Williamsburg Bridge & Brooklyn Bridge Dashed Lines ("The Ovarian Trolley" Track) -->
               <line x1="252" y1="295" x2="372" y2="305" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6,4" />
-              <line x1="268" y1="220" x2="395" y2="235" stroke="#991b1b" stroke-width="2.5" stroke-dasharray="5,5" />
+              <line x1="268" y1="220" x2="395" y2="235" stroke="#a11d24" stroke-width="2.5" stroke-dasharray="5,5" />
 
-              <!-- Connecting Psychogeographic Trajectory Line -->
               <polyline points="465,225 330,300 205,295 185,155 510,365 560,485"
-                        fill="none" stroke="#991b1b" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6" />
+                        fill="none" stroke="#a11d24" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6" />
 
-              <!-- NODE 1: Fillmore Place & 14th Ward Williamsburg -->
               <g class="cursor-pointer" onclick="selectMapNode(0)">
-                <circle cx="465" cy="225" r="18" fill="#991b1b" class="map-pulse" />
-                <circle cx="465" cy="225" r="9" fill="#991b1b" stroke="#fff" stroke-width="2" />
-                <text x="485" y="230" class="font-typewriter text-xs font-bold" fill="currentColor">01. Fillmore Place (14th Ward)</text>
+                <circle cx="465" cy="225" r="18" fill="#a11d24" class="map-pulse" />
+                <circle cx="465" cy="225" r="9" fill="#a11d24" stroke="#fff" stroke-width="2" />
+                <text x="485" y="230" class="font-ui text-xs font-semibold" fill="currentColor">01. Fillmore Place (14th Ward)</text>
               </g>
 
-              <!-- NODE 2: Cosmodemonic Telegraph Co. (Sunset Place, Lower Manhattan) -->
               <g class="cursor-pointer" onclick="selectMapNode(1)">
                 <circle cx="205" cy="295" r="18" fill="#b45309" class="map-pulse" />
                 <circle cx="205" cy="295" r="9" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="46" y="325" class="font-typewriter text-xs font-bold" fill="currentColor">02. Cosmodemonic HQ (Sunset Pl.)</text>
+                <text x="46" y="325" class="font-ui text-xs font-semibold" fill="currentColor">02. Cosmodemonic HQ (Sunset Pl.)</text>
               </g>
 
-              <!-- NODE 3: Broadway Dance Hall (Mara) -->
               <g class="cursor-pointer" onclick="selectMapNode(2)">
-                <circle cx="185" cy="155" r="18" fill="#991b1b" class="map-pulse" />
-                <circle cx="185" cy="155" r="9" fill="#991b1b" stroke="#fff" stroke-width="2" />
-                <text x="48" y="135" class="font-typewriter text-xs font-bold" fill="currentColor">03. Broadway Dance Hall (Mara)</text>
+                <circle cx="185" cy="155" r="18" fill="#a11d24" class="map-pulse" />
+                <circle cx="185" cy="155" r="9" fill="#a11d24" stroke="#fff" stroke-width="2" />
+                <text x="48" y="135" class="font-ui text-xs font-semibold" fill="currentColor">03. Broadway Dance Hall (Mara)</text>
               </g>
 
-              <!-- NODE 4: Brooklyn Bridge Trolley Ride with Hymie -->
               <g class="cursor-pointer" onclick="selectMapNode(3)">
                 <circle cx="330" cy="300" r="16" fill="#b45309" class="map-pulse" />
                 <circle cx="330" cy="300" r="8" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="348" y="322" class="font-typewriter text-xs font-bold" fill="currentColor">04. Brooklyn Bridge Trolley</text>
+                <text x="348" y="322" class="font-ui text-xs font-semibold" fill="currentColor">04. Brooklyn Bridge Trolley</text>
               </g>
 
-              <!-- NODE 5: Prospect Park (Walks with Ulric) -->
               <g class="cursor-pointer" onclick="selectMapNode(4)">
-                <circle cx="510" cy="365" r="16" fill="#991b1b" class="map-pulse" />
-                <circle cx="510" cy="365" r="8" fill="#991b1b" stroke="#fff" stroke-width="2" />
-                <text x="530" y="370" class="font-typewriter text-xs font-bold" fill="currentColor">05. Prospect Park (Ulric)</text>
+                <circle cx="510" cy="365" r="16" fill="#a11d24" class="map-pulse" />
+                <circle cx="510" cy="365" r="8" fill="#a11d24" stroke="#fff" stroke-width="2" />
+                <text x="530" y="370" class="font-ui text-xs font-semibold" fill="currentColor">05. Prospect Park (Ulric)</text>
               </g>
 
-              <!-- NODE 6: Atlantic Horizon & Villa Seurat Dateline -->
               <g class="cursor-pointer" onclick="selectMapNode(5)">
                 <circle cx="560" cy="485" r="16" fill="#b45309" class="map-pulse" />
                 <circle cx="560" cy="485" r="8" fill="#b45309" stroke="#fff" stroke-width="2" />
-                <text x="415" y="510" class="font-typewriter text-xs font-bold" fill="currentColor">06. Coda &amp; Departure to Villa Seurat</text>
+                <text x="415" y="510" class="font-ui text-xs font-semibold" fill="currentColor">06. Coda &amp; Departure to Villa Seurat</text>
               </g>
             </svg>
           </div>
         </div>
 
-        <!-- Right 5 Cols: Selected Map Node Editorial Dossier (NO Imitation Quotes) -->
-        <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl border shadow-md space-y-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <!-- Right 5 Cols: Selected Map Node Editorial Dossier -->
+        <div class="lg:col-span-5 p-6 sm:p-8 apple-card space-y-5">
           <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
-            <span id="mapNodeCoord" class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
+            <span id="mapNodeCoord" class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
               LOCUS 01
             </span>
-            <span id="mapNodePdfPages" class="font-typewriter text-xs px-2 py-0.5 rounded" style="background-color: var(--bg-secondary);">
+            <span id="mapNodePdfPages" class="font-typewriter text-xs px-2.5 py-0.5 rounded-full" style="background-color: var(--bg-secondary);">
               PDF page 132
             </span>
           </div>
@@ -1030,28 +1190,27 @@
             <!-- Populated dynamically via JS -->
           </h3>
 
-          <p id="mapNodeDescription" class="text-lg leading-relaxed" style="color: var(--text-secondary);">
+          <p id="mapNodeDescription" class="text-base leading-relaxed" style="color: var(--text-secondary);">
             <!-- Populated dynamically via JS -->
           </p>
 
-          <!-- Clearly Labeled Editorial Scene Note (Replacing Former Imitation Excerpt) -->
-          <div class="p-4 rounded-xl border-l-4 space-y-2" style="background-color: var(--bg-secondary); border-color: var(--accent-primary);">
-            <div class="font-typewriter text-[11px] uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-              EDITORIAL NOTE • IN THE SCAN
+          <div class="p-4 apple-subcard space-y-2">
+            <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+              Editorial Note · In the Scan
             </div>
-            <p id="mapNodeEditorialNote" class="text-base leading-relaxed" style="color: var(--text-primary);">
+            <p id="mapNodeEditorialNote" class="text-sm sm:text-base leading-relaxed" style="color: var(--text-primary);">
               <!-- Populated dynamically via JS -->
             </p>
-            <div id="mapNodeDirectLinks" class="pt-1 flex flex-wrap items-center gap-3 text-xs font-typewriter">
+            <div id="mapNodeDirectLinks" class="pt-1 flex flex-wrap items-center gap-3 text-xs font-medium">
               <!-- Populated dynamically via JS -->
             </div>
           </div>
 
           <div class="pt-2 flex flex-wrap items-center justify-between gap-2">
-            <button onclick="jumpFromMapToPdf()" class="font-ui text-xs px-4 py-2 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
+            <button onclick="jumpFromMapToPdf()" class="apple-pill font-ui text-xs px-4 py-2 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
               Open in Site PDF Viewer →
             </button>
-            <button onclick="saveMapNoteToNotebook()" class="font-ui text-xs px-3.5 py-2 rounded-lg border font-medium transition hover:opacity-80" style="border-color: var(--border-color);">
+            <button onclick="saveMapNoteToNotebook()" class="apple-pill font-ui text-xs px-4 py-2 border font-medium hover:opacity-80" style="border-color: var(--border-color);">
               + Save Note
             </button>
           </div>
@@ -1065,78 +1224,76 @@
          ========================================== -->
     <section id="tab-studio" class="hidden space-y-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         <!-- Left 6 Cols: Stream-of-Consciousness Automatic Writing Studio -->
-        <div class="lg:col-span-6 p-6 sm:p-8 rounded-2xl border shadow-md space-y-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <div class="lg:col-span-6 p-6 sm:p-8 apple-card space-y-5">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
-              <span class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
-                THE VILLA SEURAT METHOD
+              <span class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+                The Villa Seurat Method
               </span>
               <h2 class="font-display text-2xl sm:text-3xl font-bold">
                 Stream-of-Consciousness Studio
               </h2>
             </div>
-            <div class="font-typewriter text-xs px-3 py-1 rounded border" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-              Cadence: <strong id="wpmCounter">0 WPM</strong> • <strong id="wordCountStudio">0 words</strong>
+            <div class="font-typewriter text-xs px-3 py-1 rounded-full" style="background-color: var(--bg-secondary); color: var(--text-secondary);">
+              <strong id="wpmCounter" style="color: var(--text-primary);">0 WPM</strong> · <strong id="wordCountStudio" style="color: var(--text-primary);">0 words</strong>
             </div>
           </div>
 
-          <p class="text-base" style="color: var(--text-secondary);">
-            Miller drafted long stretches of <em>Tropic of Capricorn</em> in associative sprints. Pick a writing spark below—or write unprompted—and let your keyboard clack without pausing to edit.
+          <p class="text-sm sm:text-base leading-relaxed" style="color: var(--text-secondary);">
+            Miller drafted long stretches of <em>Tropic of Capricorn</em> in associative sprints. Pick a writing spark below—or write unprompted—while listening to Miles Davis or the audiobooks.
           </p>
 
-          <!-- Prompt Generator Bar -->
-          <div class="p-3.5 rounded-xl border flex items-center justify-between gap-3" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-            <p id="studioPromptText" class="italic text-sm sm:text-base flex-1">
+          <div class="p-3.5 apple-subcard flex items-center justify-between gap-3">
+            <p id="studioPromptText" class="italic font-prose text-base sm:text-lg flex-1">
               Prompt: "Begin with a street corner you walked down ten years ago when everything seemed impossible..."
             </p>
-            <button onclick="cycleStudioPrompt()" class="font-ui text-xs px-3 py-1.5 rounded border shrink-0 font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">
+            <button onclick="cycleStudioPrompt()" class="apple-pill font-ui text-xs px-3.5 py-1.5 border shrink-0 font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">
               ↻ New Spark
             </button>
           </div>
 
-          <!-- Typewriter Textarea -->
           <textarea
             id="automaticStudioInput"
             rows="9"
             oninput="handleStudioTyping(event)"
-            placeholder="Start typing without pausing... (Turn on 'Telegraph Key' at the top for mechanical typewriter audio)"
-            class="w-full p-4 rounded-xl border font-typewriter text-base leading-relaxed focus:outline-none focus:ring-2"
+            placeholder="Start typing without pausing..."
+            class="w-full p-4 rounded-2xl border font-prose text-lg leading-relaxed focus:outline-none focus:ring-2"
             style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);"></textarea>
 
           <div class="flex flex-wrap items-center justify-between gap-3">
-            <button onclick="saveStudioEntryToNotebook()" class="font-ui text-xs sm:text-sm px-4 py-2.5 rounded-lg text-white font-medium transition hover:opacity-90" style="background-color: var(--accent-primary);">
-              ✒ Save Studio Entry to Notebook
+            <button onclick="saveStudioEntryToNotebook()" class="apple-pill font-ui text-xs sm:text-sm px-5 py-2.5 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+              Save Entry to Notebook
             </button>
-            <button onclick="clearStudioInput()" class="font-ui text-xs px-3 py-2 rounded-lg border hover:opacity-80" style="border-color: var(--border-color);">
-              Clear Page
+            <button onclick="clearStudioInput()" class="apple-pill font-ui text-xs px-4 py-2 border font-medium hover:opacity-80" style="border-color: var(--border-color);">
+              Clear
             </button>
           </div>
         </div>
 
         <!-- Right 6 Cols: Saved Notes & Marginalia -->
-        <div class="lg:col-span-6 p-6 sm:p-8 rounded-2xl border shadow-md space-y-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <div class="lg:col-span-6 p-6 sm:p-8 apple-card space-y-5">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
-              <span class="font-typewriter text-xs uppercase tracking-widest" style="color: var(--accent-primary);">
-                LOCALSTORAGE ARCHIVE
+              <span class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+                Personal Reading Archive
               </span>
               <h2 class="font-display text-2xl sm:text-3xl font-bold">
                 Contraband Marginalia Notebook
               </h2>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="copyNotebookToClipboard()" class="font-ui text-xs px-3 py-1.5 rounded border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              <button onclick="copyNotebookToClipboard()" class="apple-pill font-ui text-xs px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
                 Copy All
               </button>
-              <button onclick="exportNotebookFile()" class="font-ui text-xs px-3 py-1.5 rounded border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              <button onclick="exportNotebookFile()" class="apple-pill font-ui text-xs px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
                 ↓ Export .TXT
               </button>
             </div>
           </div>
 
-          <div id="notebookEntriesList" class="space-y-4 max-h-[480px] overflow-y-auto pr-1">
+          <div id="notebookEntriesList" class="space-y-3.5 max-h-[480px] overflow-y-auto pr-1">
             <!-- Populated dynamically via JS -->
           </div>
         </div>
@@ -1146,55 +1303,113 @@
 
   </main>
 
-  <!-- PUBLICATION & EDITION HISTORY MODAL -->
-  <div id="contrabandModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-    <div class="max-w-xl w-full p-6 sm:p-8 rounded-2xl border shadow-2xl space-y-4 relative" style="background-color: var(--bg-card); border-color: var(--border-color);">
-      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
-        <span class="contraband-stamp px-2.5 py-0.5 text-xs font-typewriter font-bold">
-          EDITION &amp; CENSORSHIP DOSSIER
+  <!-- PERSISTENT APPLE GLASS FLOATING AUDIOBOOK PLAYER (READ & LISTEN ACROSS ALL TABS) -->
+  <aside id="audiobookDock" class="fixed bottom-5 right-5 z-40 hidden w-[calc(100vw-2.5rem)] sm:w-[410px] apple-glass border shadow-2xl rounded-3xl p-4 space-y-3 transition-all" style="border-color: var(--border-strong);">
+    <!-- Dock Header -->
+    <div class="flex items-center justify-between gap-2.5">
+      <div class="min-w-0">
+        <span id="audiobookDockPartBadge" class="text-[10px] uppercase tracking-wider font-semibold block truncate" style="color: var(--accent-primary);">
+          AUDIOBOOK · READ &amp; LISTEN
         </span>
-        <button onclick="closeContrabandModal()" class="font-typewriter text-sm px-2.5 py-1 rounded border hover:opacity-80" style="border-color: var(--border-color);">
-          ✕ Close
+        <h3 id="audiobookDockTitle" class="font-display text-base font-bold truncate">
+          Tropic of Capricorn · Part 1
+        </h3>
+      </div>
+      <div class="flex items-center gap-1.5 shrink-0 text-xs font-medium">
+        <button id="btnAudiobookMinimize" onclick="toggleAudiobookCompact()" class="apple-pill px-2.5 py-1 border hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Switch between compact corner player and full player">
+          Compact
+        </button>
+        <button onclick="closeAudiobookDock()" class="apple-pill w-7 h-7 border flex items-center justify-center hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Close audiobook player">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- 3-Part Quick Segmented Switcher -->
+    <div id="audiobookDockTabs" class="grid grid-cols-3 gap-1 apple-segmented text-[11px] font-semibold">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <!-- Embedded YouTube Frame (Never reparented; stays mounted across tab switches) -->
+    <div id="audiobookPlayerWrap" class="w-full aspect-video rounded-2xl overflow-hidden bg-black border" style="border-color: var(--border-color);">
+      <iframe
+        id="audiobookIframe"
+        src="about:blank"
+        title="Henry Miller Audiobook Player"
+        class="w-full h-full border-0"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Dock Footer: Read PDF + Layer Miles Davis + Direct YouTube Link -->
+    <div id="audiobookDockFooter" class="flex flex-wrap items-center justify-between gap-2 pt-0.5 text-[11px]">
+      <div class="flex items-center gap-1.5">
+        <button id="audiobookDockReadBtn" onclick="openPairedAudiobookPdf()" class="apple-pill px-2.5 py-1 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);" title="Open matching PDF page while listening">
+          Read PDF
+        </button>
+        <button id="audiobookDockMilesBtn" onclick="layerMilesBehindAudiobook()" class="apple-pill px-2.5 py-1 border font-medium hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);">
+          🎺 + Soft Miles (22%)
+        </button>
+      </div>
+      <a id="audiobookExternalLink" href="https://youtu.be/edgKZVHbXIE?is=q7IRBRrpRdF4wgAX" target="_blank" rel="noopener noreferrer" class="font-medium underline hover:opacity-80" style="color: var(--text-secondary);">
+        YouTube ↗
+      </a>
+    </div>
+  </aside>
+
+  <!-- PUBLICATION & EDITION HISTORY MODAL -->
+  <div id="contrabandModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-md">
+    <div class="max-w-xl w-full p-6 sm:p-8 apple-hero-card space-y-4 relative">
+      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold" style="background-color: var(--accent-soft); color: var(--accent-primary);">
+          Edition &amp; Censorship Dossier
+        </span>
+        <button onclick="closeContrabandModal()" class="apple-pill text-xs font-medium px-3.5 py-1.5 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          Done
         </button>
       </div>
       <h3 class="font-display text-2xl sm:text-3xl font-bold">
         From Obelisk Press (Paris, 1939) to Flamingo (London, 1993)
       </h3>
-      <div class="space-y-3 text-base leading-relaxed" style="color: var(--text-secondary);">
+      <div class="space-y-3 text-sm sm:text-base leading-relaxed" style="color: var(--text-secondary);">
         <p>
-          <strong>Original Publication (1939):</strong> Completed at Villa Seurat in September 1938, <em>Tropic of Capricorn</em> was first published in Paris by Jack Kahane’s <strong>Obelisk Press</strong> (16 Place Vendôme) in February 1939 with the cover warning: <em>"NOT TO BE IMPORTED INTO GREAT BRITAIN OR U.S.A."</em>
+          <strong style="color: var(--text-primary);">Original Publication (1939):</strong> Completed at Villa Seurat in September 1938, <em>Tropic of Capricorn</em> was first published in Paris by Jack Kahane’s <strong>Obelisk Press</strong> (16 Place Vendôme) in February 1939 with the cover warning: <em>"NOT TO BE IMPORTED INTO GREAT BRITAIN OR U.S.A."</em>
         </p>
         <p>
-          <strong>Censorship &amp; Legal Editions (1962–1964):</strong> Customs bans kept the novel out of English-speaking bookstores for over two decades until <strong>Grove Press</strong> published it in the United States in September 1962 and <strong>John Calder</strong> issued the first British edition in 1964.
+          <strong style="color: var(--text-primary);">Censorship &amp; Legal Editions (1962–1964):</strong> Customs bans kept the novel out of English-speaking bookstores for over two decades until <strong>Grove Press</strong> published it in the United States in September 1962 and <strong>John Calder</strong> issued the first British edition in 1964.
         </p>
         <p>
-          <strong>Edition Scanned on This Site (1993):</strong> The 216-page PDF hosted here reproduces the unabridged <strong>Flamingo Modern Classic</strong> paperback (HarperCollins, London, 1993, ISBN `0-00-654584-X`), featuring an introduction by <strong>Robert Nye</strong> on PDF page 2, Miller’s opening text on PDF page 3, and the final Villa Seurat dateline on PDF page 216.
+          <strong style="color: var(--text-primary);">Edition Scanned on This Site (1993):</strong> The 216-page PDF hosted here reproduces the unabridged <strong>Flamingo Modern Classic</strong> paperback (HarperCollins, London, 1993, ISBN <code>0-00-654584-X</code>), featuring an introduction by <strong>Robert Nye</strong> on PDF page 2, Miller’s opening text on PDF page 3, and the final Villa Seurat dateline on PDF page 216.
         </p>
       </div>
       <div class="pt-2 flex justify-end">
-        <button onclick="closeContrabandModal()" class="font-ui text-xs px-4 py-2 rounded-lg text-white font-medium" style="background-color: var(--accent-primary);">
-          Return to Reading Guide
+        <button onclick="closeContrabandModal()" class="apple-pill font-ui text-xs px-5 py-2 text-white font-semibold" style="background-color: var(--accent-primary);">
+          Done
         </button>
       </div>
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION BANNER -->
-  <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl border shadow-lg font-ui text-xs sm:text-sm items-center gap-2 transition-all" style="background-color: var(--bg-card); border-color: var(--accent-primary); color: var(--text-primary);">
-    <span class="w-2 h-2 rounded-full" style="background-color: var(--accent-primary);"></span>
-    <span id="toastMessage">Saved note to Contraband Notebook</span>
+  <!-- APPLE CAPSULE TOAST NOTIFICATION (BOTTOM-LEFT SO IT NEVER COVERS FLOATING AUDIOBOOK PLAYER) -->
+  <div id="toastBanner" class="fixed bottom-5 left-5 z-50 hidden px-4 py-2.5 rounded-full border shadow-xl apple-glass font-ui text-xs sm:text-sm items-center gap-2.5 transition-all" style="border-color: var(--border-strong); color: var(--text-primary);">
+    <span class="w-2 h-2 rounded-full shrink-0" style="background-color: var(--accent-primary);"></span>
+    <span id="toastMessage" class="font-medium">Saved note to Contraband Notebook</span>
   </div>
 
   <!-- FOOTER -->
-  <footer class="border-t py-6 px-4 sm:px-8 mt-12 text-xs font-typewriter" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-secondary);">
+  <footer class="border-t py-7 px-4 sm:px-8 mt-14 text-xs font-ui" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-secondary);">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span>HENRY MILLER • <em>TROPIC OF CAPRICORN</em> — FIRST PUBLISHED: OBELISK PRESS, PARIS, 1939 • SCAN: FLAMINGO, 1993</span>
+        <span>Henry Miller · <em>Tropic of Capricorn</em> — First published: Obelisk Press, Paris, 1939 · Scan: Flamingo, 1993</span>
       </div>
-      <div class="flex items-center gap-4">
-        <button onclick="switchTab('pdf')" class="underline hover:opacity-80">Full PDF · 216 pages</button>
-        <span>•</span>
-        <button onclick="openContrabandModal()" class="underline hover:opacity-80">Edition &amp; Ban History</button>
+      <div class="flex flex-wrap items-center gap-4 font-medium">
+        <button onclick="playAudiobook('capricorn-pt1')" class="hover:opacity-80" style="color: var(--text-primary);">Audiobooks</button>
+        <span class="opacity-30">·</span>
+        <button onclick="switchTab('pdf')" class="hover:opacity-80" style="color: var(--text-primary);">Full PDF · 216 pages</button>
+        <span class="opacity-30">·</span>
+        <button onclick="openContrabandModal()" class="hover:opacity-80" style="color: var(--text-primary);">Edition History</button>
       </div>
     </div>
   </footer>
@@ -1623,6 +1838,7 @@
       renderNotebook();
       updatePdfBookmarkUI();
       initMilesPlayer();
+      initAudiobooksStudio();
       initHomeWire();
 
       document.addEventListener("keydown", (e) => {
@@ -1686,11 +1902,11 @@
       }
       if (locusEl) locusEl.textContent = w.locus;
       if (quoteEl) {
-        quoteEl.className = "font-display text-2xl sm:text-3xl md:text-[33px] leading-[1.38] italic transition-opacity duration-200";
+        quoteEl.className = "font-display text-2xl sm:text-3xl md:text-[32px] leading-[1.38] italic transition-opacity duration-200";
         quoteEl.textContent = w.quote;
       }
       if (citeEl) {
-        citeEl.innerHTML = `Henry Miller, <em>Tropic of Capricorn</em> • Flamingo (1993), PDF page ${w.pdfPage}`;
+        citeEl.innerHTML = `Henry Miller, <em>Tropic of Capricorn</em> · Flamingo (1993), PDF page ${w.pdfPage}`;
       }
       if (progEl) {
         const pct = ((currentWireIndex + 1) / COSMODEMONIC_WIRES.length) * 100;
@@ -1711,7 +1927,7 @@
           const active = idx === currentWireIndex;
           return `
             <button onclick="selectHomeWire(${idx})"
-              class="px-2 py-1 rounded border text-[11px] font-bold transition ${active ? 'text-white shadow-xs' : 'opacity-75 hover:opacity-100'}"
+              class="apple-pill px-2.5 py-1 border text-[11px] font-typewriter font-semibold transition ${active ? 'text-white shadow-xs' : 'opacity-70 hover:opacity-100'}"
               style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};"
               title="Dispatch ${item.num} (PDF page ${item.pdfPage})">
               ${item.num}
@@ -1755,7 +1971,7 @@
 
       quoteEl.className = "font-typewriter text-xl sm:text-2xl leading-relaxed";
       quoteEl.textContent = "";
-      if (btn) btn.textContent = "⏹ Stop Teletype";
+      if (btn) btn.textContent = "⏹ Stop";
 
       let i = 0;
       wireTeletypeInterval = setInterval(() => {
@@ -1777,12 +1993,15 @@
         wireTeletypeInterval = null;
       }
       const btn = document.getElementById("btnWireTeletype");
-      if (btn) btn.textContent = "⚡ Teletype Wire";
+      if (btn) btn.textContent = "⚡ Teletype";
     }
 
     function playWirePairedMiles() {
       const w = COSMODEMONIC_WIRES[currentWireIndex];
       if (!w) return;
+      if (typeof setListeningStudioTab === "function") {
+        setListeningStudioTab("miles");
+      }
       const idx = MILES_TRACKS.findIndex(t => t.id === w.milesTrackId);
       if (idx >= 0) {
         selectMilesTrack(idx, true);
@@ -1803,15 +2022,15 @@
       const container = document.getElementById("quickJumpsContainer");
       if (!container) return;
       const buttonsHtml = QUICK_JUMPS.map(j => `
-        <button onclick="jumpToPdfPage(${j.page})" class="px-3 py-1.5 rounded-lg border hover:opacity-80 transition" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <button onclick="jumpToPdfPage(${j.page})" class="apple-pill px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">
           ${escapeHtml(j.label)}
         </button>
       `).join("");
-      container.innerHTML = `<span class="font-typewriter uppercase tracking-wider mr-1" style="color: var(--text-secondary);">Quick Page Jumps:</span>${buttonsHtml}`;
+      container.innerHTML = `<span class="text-[11px] uppercase tracking-wider font-semibold mr-1" style="color: var(--text-secondary);">Landmarks:</span>${buttonsHtml}`;
     }
 
     const SECTION_BREADCRUMBS = {
-      home: "Home • Cosmodemonic Wire",
+      home: "Home · Wire & Audio",
       curated: "I. Reading Guide",
       pdf: "II. Full PDF · 216 pages",
       map: "III. 1920s NYC Map",
@@ -1840,7 +2059,7 @@
             btn.style.color = "#ffffff";
             btn.style.borderColor = "var(--accent-primary)";
           } else {
-            btn.style.backgroundColor = "var(--bg-secondary)";
+            btn.style.backgroundColor = "var(--bg-card)";
             btn.style.color = "var(--text-primary)";
             btn.style.borderColor = "var(--border-color)";
           }
@@ -1848,7 +2067,7 @@
       });
 
       const crumb = document.getElementById("activeSectionBreadcrumb");
-      if (crumb) crumb.textContent = SECTION_BREADCRUMBS[tabName] || "Home • Cosmodemonic Wire";
+      if (crumb) crumb.textContent = SECTION_BREADCRUMBS[tabName] || "Home · Wire & Audio";
 
       const backHomeBtn = document.getElementById("btnBackHomeTop");
       if (backHomeBtn) {
@@ -1871,9 +2090,9 @@
       const badge = document.getElementById("savedPageBadge");
       if (badge) {
         if (tabName === "pdf") {
-          badge.className = "text-[11px] font-typewriter px-2 py-0.5 rounded bg-white/20 text-white shrink-0";
+          badge.className = "text-[11px] font-typewriter px-2.5 py-0.5 rounded-full bg-white/20 text-white shrink-0";
         } else {
-          badge.className = "text-[11px] font-typewriter px-2 py-0.5 rounded bg-amber-500/20 text-amber-800 shrink-0";
+          badge.className = "text-[11px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-700 shrink-0";
         }
       }
 
@@ -1892,7 +2111,7 @@
       showToast(`Opened PDF viewer at page ${currentPdfPage} of ${TOTAL_PDF_PAGES}`);
     }
 
-    // Switch Aesthetic Theme
+    // Switch Aesthetic Theme (Apple Segmented Control)
     function setTheme(themeKey) {
       if (themeKey === "obelisk") {
         document.documentElement.removeAttribute("data-theme");
@@ -1902,14 +2121,13 @@
 
       ["obelisk", "midnight", "watercolor"].forEach(k => {
         const btn = document.getElementById(`themeBtn-${k}`);
+        if (!btn) return;
         if (k === themeKey) {
-          btn.style.backgroundColor = "var(--bg-card)";
+          btn.classList.add("apple-seg-btn-active");
           btn.classList.remove("opacity-70");
-          btn.classList.add("shadow-sm");
         } else {
-          btn.style.backgroundColor = "transparent";
+          btn.classList.remove("apple-seg-btn-active");
           btn.classList.add("opacity-70");
-          btn.classList.remove("shadow-sm");
         }
       });
       if (telegraphSoundEnabled) playTelegraphClick(640, 0.03);
@@ -1931,13 +2149,13 @@
       listEl.innerHTML = MOVEMENTS.map((m, idx) => {
         const active = idx === currentMovementIndex;
         return `
-          <button onclick="loadMovement(${idx})" class="w-full text-left p-3.5 rounded-xl border transition flex flex-col gap-1 ${active ? 'shadow-sm' : 'opacity-80 hover:opacity-100'}"
+          <button onclick="loadMovement(${idx})" class="w-full text-left p-3.5 rounded-2xl border transition flex flex-col gap-1 ${active ? 'shadow-sm' : 'opacity-80 hover:opacity-100'}"
             style="background-color: ${active ? 'var(--bg-secondary)' : 'transparent'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
-            <div class="flex items-center justify-between text-[11px] font-typewriter uppercase" style="color: var(--accent-primary);">
+            <div class="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider" style="color: var(--accent-primary);">
               <span>Theme 0${idx + 1}</span>
-              <span>${escapeHtml(m.pdfRangeLabel)}</span>
+              <span class="font-typewriter">${escapeHtml(m.pdfRangeLabel)}</span>
             </div>
-            <div class="font-display font-bold text-lg leading-snug">${escapeHtml(m.title)}</div>
+            <div class="font-display font-bold text-base sm:text-lg leading-snug">${escapeHtml(m.title)}</div>
           </button>
         `;
       }).join("");
@@ -1967,25 +2185,25 @@
         <button onclick="openInPdfTab(${link.page})" class="underline hover:opacity-80" style="color: var(--text-secondary);">
           [View in tab]
         </button>
-      `).join('<span class="opacity-40">•</span>');
+      `).join('<span class="opacity-40">·</span>');
 
       pdfLinksBox.innerHTML = `
-        <div class="font-typewriter text-[11px] uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-          READ HENRY MILLER’S ORIGINAL TEXT IN THE SCANNED EDITION
+        <div class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+          Read Henry Miller’s Original Text in the Scanned Edition
         </div>
-        <div class="flex flex-wrap items-center gap-3 pt-0.5">
+        <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
           <a href="${getDirectPdfHref(m.pdfPage)}" target="_blank" rel="noopener noreferrer"
-             class="font-ui text-xs sm:text-sm px-4 py-2 rounded-lg text-white font-medium transition hover:opacity-90 inline-flex items-center gap-1.5"
+             class="apple-pill font-ui text-xs sm:text-sm px-4 py-2 text-white font-semibold hover:opacity-90 inline-flex items-center gap-1.5"
              style="background-color: var(--accent-primary);">
             <span>${escapeHtml(m.primaryLinkLabel)} ↗</span>
           </a>
           <button onclick="openInPdfTab(${m.pdfPage})"
-                  class="font-ui text-xs sm:text-sm px-3.5 py-2 rounded-lg border font-medium transition hover:opacity-80"
+                  class="apple-pill font-ui text-xs sm:text-sm px-4 py-2 border font-medium hover:opacity-80"
                   style="background-color: var(--bg-card); border-color: var(--border-color);">
             Open in Site PDF Tab (Pg. ${m.pdfPage}) →
           </button>
         </div>
-        ${secondaryHtml ? `<div class="pt-1 flex flex-wrap items-center gap-2 text-xs font-typewriter">${secondaryHtml}</div>` : ""}
+        ${secondaryHtml ? `<div class="pt-1 flex flex-wrap items-center gap-2 text-xs font-medium">${secondaryHtml}</div>` : ""}
       `;
 
       renderMovementSidebar();
@@ -2242,8 +2460,8 @@
 
       if (savedNotebook.length === 0) {
         listEl.innerHTML = `
-          <div class="p-6 rounded-xl border text-center italic" style="border-color: var(--border-color); color: var(--text-secondary);">
-            Your notebook has no saved entries yet. Click "Save Note" in the Reading Guide or Map (each note includes a direct PDF page link), or write your own entry in the Automatic Studio.
+          <div class="p-6 apple-subcard text-center italic font-prose text-lg" style="color: var(--text-secondary);">
+            Your notebook has no saved entries yet. Click “Save Note” in the Reading Guide or Map (each note includes a direct PDF page link), or write your own entry in the Automatic Studio.
           </div>
         `;
         return;
@@ -2253,24 +2471,24 @@
         const pageNum = item.pdfPage ? parseInt(item.pdfPage, 10) : null;
         const linkHref = pageNum ? getDirectPdfHref(pageNum) : (item.pdfUrl || null);
         const linkHtml = linkHref ? `
-          <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-typewriter">
-            <a href="${escapeHtml(linkHref)}" target="_blank" rel="noopener noreferrer" class="underline font-bold hover:opacity-80" style="color: var(--accent-primary);">
+          <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-ui">
+            <a href="${escapeHtml(linkHref)}" target="_blank" rel="noopener noreferrer" class="underline font-semibold hover:opacity-80" style="color: var(--accent-primary);">
               Read the original passage${pageNum ? ` · PDF page ${pageNum}` : ""} ↗
             </a>
-            ${pageNum ? `<button onclick="openInPdfTab(${pageNum})" class="underline hover:opacity-80" style="color: var(--text-secondary);">[Open in site PDF tab]</button>` : ""}
+            ${pageNum ? `<button onclick="openInPdfTab(${pageNum})" class="underline hover:opacity-80" style="color: var(--text-secondary);">Open in site PDF tab</button>` : ""}
           </div>
         ` : "";
 
         return `
-          <div class="p-4 rounded-xl border space-y-2 transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-            <div class="flex items-center justify-between gap-2 text-xs font-typewriter" style="color: var(--accent-primary);">
-              <span class="font-bold">${escapeHtml(item.source)}</span>
-              <div class="flex items-center gap-2 shrink-0">
-                <span class="opacity-70">${escapeHtml(item.date)}</span>
-                <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline text-red-600">Remove</button>
+          <div class="p-4 apple-subcard space-y-2 transition">
+            <div class="flex items-center justify-between gap-2 text-xs font-ui" style="color: var(--accent-primary);">
+              <span class="font-semibold">${escapeHtml(item.source)}</span>
+              <div class="flex items-center gap-2.5 shrink-0">
+                <span class="opacity-70" style="color: var(--text-secondary);">${escapeHtml(item.date)}</span>
+                <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline font-medium text-red-600">Remove</button>
               </div>
             </div>
-            <p class="text-base leading-relaxed font-serif">${escapeHtml(item.text)}</p>
+            <p class="text-lg leading-relaxed font-prose">${escapeHtml(item.text)}</p>
             ${linkHtml}
           </div>
         `;
@@ -2749,6 +2967,7 @@
 
     function handleTopMilesLoungeClick() {
       if (activeTab === "home") {
+        setListeningStudioTab("miles");
         const card = document.getElementById("homeMilesCard");
         if (card) {
           card.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -2805,7 +3024,7 @@
           const active = m.id === milesActiveMood;
           return `
             <button onclick="setMilesMood('${m.id}')"
-              class="px-3 py-1 rounded-full border font-medium transition ${active ? 'text-white shadow-sm' : 'hover:opacity-80'}"
+              class="apple-pill px-3 py-1 border font-medium transition ${active ? 'text-white shadow-sm' : 'hover:opacity-80'}"
               style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
               ${escapeHtml(m.label)}
             </button>
@@ -2819,7 +3038,7 @@
           const active = m.id === milesActiveMood;
           return `
             <button onclick="setMilesMood('${m.id}')"
-              class="px-2.5 py-0.5 rounded-full border font-medium transition ${active ? 'text-white shadow-xs' : 'hover:opacity-80'}"
+              class="apple-pill px-2.5 py-0.5 border font-medium transition ${active ? 'text-white shadow-xs' : 'hover:opacity-80'}"
               style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
               ${escapeHtml(m.shortLabel)}
             </button>
@@ -2837,13 +3056,13 @@
           const active = idx === milesCurrentIndex;
           return `
             <button onclick="selectMilesTrack(${idx}, true)"
-              class="p-2.5 rounded-xl border text-left transition flex items-start justify-between gap-2 ${active ? 'shadow-sm' : 'opacity-85 hover:opacity-100'}"
+              class="p-3 rounded-2xl border text-left transition flex items-start justify-between gap-2 ${active ? 'shadow-sm' : 'opacity-85 hover:opacity-100'}"
               style="background-color: ${active ? 'var(--bg-secondary)' : 'var(--bg-primary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
               <div class="min-w-0">
                 <div class="font-display font-bold text-base leading-snug truncate">
                   ${active && milesIsPlaying ? '▶ ' : ''}${escapeHtml(t.title)}
                 </div>
-                <div class="font-typewriter text-[10px] truncate" style="color: var(--text-secondary);">
+                <div class="text-[11px] truncate" style="color: var(--text-secondary);">
                   ${escapeHtml(t.album)}
                 </div>
               </div>
@@ -2862,13 +3081,13 @@
           const active = idx === milesCurrentIndex;
           return `
             <button onclick="selectMilesTrack(${idx}, true)"
-              class="w-full px-3 py-2 rounded-lg border text-left transition flex items-center justify-between gap-2 ${active ? 'shadow-xs' : 'opacity-85 hover:opacity-100'}"
+              class="w-full px-3.5 py-2 rounded-2xl border text-left transition flex items-center justify-between gap-2 ${active ? 'shadow-xs' : 'opacity-85 hover:opacity-100'}"
               style="background-color: ${active ? 'var(--bg-secondary)' : 'var(--bg-primary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
               <div class="min-w-0">
                 <div class="font-display font-bold text-sm leading-tight truncate">
                   ${active && milesIsPlaying ? '▶ ' : ''}${escapeHtml(t.title)}
                 </div>
-                <div class="font-typewriter text-[10px] truncate" style="color: var(--text-secondary);">
+                <div class="text-[11px] truncate" style="color: var(--text-secondary);">
                   ${escapeHtml(t.album)}
                 </div>
               </div>
@@ -2922,7 +3141,7 @@
         pairingBox.innerHTML = `
           <span style="color: var(--text-secondary);">${escapeHtml(track.pairingLabel)}</span>
           <div class="flex items-center gap-2">
-            <button onclick="openInPdfTab(${track.pairingPage})" class="underline font-bold hover:opacity-80" style="color: var(--accent-primary);">
+            <button onclick="openInPdfTab(${track.pairingPage})" class="underline font-semibold hover:opacity-80" style="color: var(--accent-primary);">
               Read PDF p. ${track.pairingPage} →
             </button>
             <a href="${getDirectPdfHref(track.pairingPage)}" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80" style="color: var(--text-secondary);">
@@ -3050,6 +3269,8 @@
       const pdfBarBtn = document.getElementById("btnMilesPdfBar");
       const stateBadge = document.getElementById("milesStateBadge");
       const homeStateBadge = document.getElementById("homeMilesStateBadge");
+      const layerBtn = document.getElementById("btnLayerMilesBacking");
+      const dockMilesBtn = document.getElementById("audiobookDockMilesBtn");
 
       if (stateBadge) stateBadge.textContent = statusLabel;
       if (homeStateBadge) homeStateBadge.textContent = statusLabel;
@@ -3057,22 +3278,324 @@
       if (milesIsPlaying) {
         if (eq) eq.classList.add("miles-playing");
         if (homeEq) homeEq.classList.add("miles-playing");
-        if (topLabel) topLabel.textContent = "⏸ Miles Davis";
+        if (topLabel) topLabel.textContent = "⏸ Miles";
         if (mainBtn) mainBtn.textContent = "⏸ Pause Miles";
         if (homeMainBtn) homeMainBtn.textContent = "⏸ Pause Miles";
         if (sideBtn) sideBtn.textContent = "⏸ Playing";
         if (pdfBarBtn) pdfBarBtn.textContent = `⏸ Miles: ${track.title}`;
+        if (layerBtn) layerBtn.textContent = `⏸ Miles (${milesVolume}%)`;
+        if (dockMilesBtn) dockMilesBtn.textContent = `⏸ Miles (${milesVolume}%)`;
       } else {
         if (eq) eq.classList.remove("miles-playing");
         if (homeEq) homeEq.classList.remove("miles-playing");
-        if (topLabel) topLabel.textContent = "▶ Miles Davis";
+        if (topLabel) topLabel.textContent = "▶ Miles";
         if (mainBtn) mainBtn.textContent = "▶ Play Miles";
         if (homeMainBtn) homeMainBtn.textContent = "▶ Play Miles";
         if (sideBtn) sideBtn.textContent = "▶ Listen";
         if (pdfBarBtn) pdfBarBtn.textContent = "▶ Pair with Miles Davis";
+        if (layerBtn) layerBtn.textContent = "+ Layer Miles";
+        if (dockMilesBtn) dockMilesBtn.textContent = "🎺 + Soft Miles (22%)";
       }
 
       renderMilesTracklist();
+    }
+
+    // =========================================================================
+    // 11C. AUDIOBOOKS STUDIO & PERSISTENT READ-AND-LISTEN GLASS DOCK
+    // =========================================================================
+    const AUDIOBOOKS = [
+      {
+        id: "capricorn-pt1",
+        shortTab: "Capricorn I",
+        badge: "TROPIC OF CAPRICORN · PART 1",
+        title: "Tropic of Capricorn — Part 1",
+        subtitle: "Henry Miller (1939) · Opening & Cosmodemonic Wire",
+        duration: "26:22",
+        videoId: "edgKZVHbXIE",
+        youtubeUrl: "https://youtu.be/edgKZVHbXIE?is=q7IRBRrpRdF4wgAX",
+        thumb: "https://i.ytimg.com/vi/edgKZVHbXIE/hqdefault.jpg",
+        pairedPdfPage: LANDMARKS.opening,
+        pairedLabel: `Read & Listen · PDF p. ${LANDMARKS.opening}`
+      },
+      {
+        id: "capricorn-pt2",
+        shortTab: "Capricorn II",
+        badge: "TROPIC OF CAPRICORN · PART 2",
+        title: "Tropic of Capricorn — Part 2",
+        subtitle: "Henry Miller (1939) · Brooklyn Bridge & Coda",
+        duration: "46:05",
+        videoId: "QzRuFQf55lA",
+        youtubeUrl: "https://youtu.be/QzRuFQf55lA?is=__ZrUNm8pk394mFC",
+        thumb: "https://i.ytimg.com/vi/QzRuFQf55lA/hqdefault.jpg",
+        pairedPdfPage: LANDMARKS.ovarianTrolley,
+        pairedLabel: `Read & Listen · PDF p. ${LANDMARKS.ovarianTrolley}`
+      },
+      {
+        id: "cancer-full",
+        shortTab: "Cancer",
+        badge: "COMPANION NOVEL · PARIS, 1934",
+        title: "Tropic of Cancer",
+        subtitle: "Henry Miller · Companion Villa Seurat Reading",
+        duration: "1:18:11",
+        videoId: "3trPxteJCxs",
+        youtubeUrl: "https://youtu.be/3trPxteJCxs?is=RfnUeicKVA5EUPLV",
+        thumb: "https://i.ytimg.com/vi/3trPxteJCxs/hqdefault.jpg",
+        pairedPdfPage: null,
+        pairedLabel: null
+      }
+    ];
+
+    let listeningStudioMode = "audiobooks";
+    let currentAudiobookId = "capricorn-pt1";
+    let audiobookIsOpen = false;
+    let audiobookCompact = false;
+
+    function initAudiobooksStudio() {
+      renderAudiobooksStudio();
+      renderAudiobookDockTabs();
+    }
+
+    function setListeningStudioTab(mode) {
+      listeningStudioMode = mode === "miles" ? "miles" : "audiobooks";
+      const segAudio = document.getElementById("segBtnAudiobooks");
+      const segMiles = document.getElementById("segBtnMiles");
+      const paneAudio = document.getElementById("homeAudiobooksPane");
+      const paneMiles = document.getElementById("homeMilesPane");
+      const footerHint = document.getElementById("studioFooterHint");
+      const loopBtn = document.getElementById("btnHomeMilesLoop");
+
+      if (listeningStudioMode === "audiobooks") {
+        if (segAudio) {
+          segAudio.classList.add("apple-seg-btn-active");
+          segAudio.classList.remove("opacity-75");
+          segAudio.setAttribute("aria-selected", "true");
+        }
+        if (segMiles) {
+          segMiles.classList.remove("apple-seg-btn-active");
+          segMiles.classList.add("opacity-75");
+          segMiles.setAttribute("aria-selected", "false");
+        }
+        if (paneAudio) paneAudio.classList.remove("hidden");
+        if (paneMiles) paneMiles.classList.add("hidden");
+        if (footerHint) footerHint.textContent = "3 unabridged & companion readings · YouTube stream";
+        if (loopBtn) loopBtn.classList.add("hidden");
+      } else {
+        if (segMiles) {
+          segMiles.classList.add("apple-seg-btn-active");
+          segMiles.classList.remove("opacity-75");
+          segMiles.setAttribute("aria-selected", "true");
+        }
+        if (segAudio) {
+          segAudio.classList.remove("apple-seg-btn-active");
+          segAudio.classList.add("opacity-75");
+          segAudio.setAttribute("aria-selected", "false");
+        }
+        if (paneMiles) paneMiles.classList.remove("hidden");
+        if (paneAudio) paneAudio.classList.add("hidden");
+        if (footerHint) footerHint.textContent = "13 Miles Davis sessions · continuous reading flow";
+        if (loopBtn) loopBtn.classList.remove("hidden");
+      }
+    }
+
+    function renderAudiobooksStudio() {
+      const listEl = document.getElementById("homeAudiobooksList");
+      if (!listEl) return;
+
+      listEl.innerHTML = AUDIOBOOKS.map(book => {
+        const isActive = audiobookIsOpen && currentAudiobookId === book.id;
+        const readBtnHtml = book.pairedPdfPage
+          ? `<button onclick="readAndListenAudiobook('${book.id}')" class="apple-pill px-3 py-1 border text-[11px] font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
+               ${escapeHtml(book.pairedLabel)}
+             </button>`
+          : "";
+
+        return `
+          <div class="p-3 rounded-2xl border transition flex flex-col gap-2.5 ${isActive ? 'shadow-sm' : ''}"
+               style="background-color: ${isActive ? 'var(--bg-secondary)' : 'var(--bg-primary)'}; border-color: ${isActive ? 'var(--accent-primary)' : 'var(--border-color)'};">
+            <div class="flex items-center gap-3">
+              <button onclick="playAudiobook('${book.id}', true)" class="relative w-16 h-12 rounded-xl overflow-hidden shrink-0 bg-black group border" style="border-color: var(--border-color);" title="Play ${escapeHtml(book.title)}">
+                <img src="${escapeHtml(book.thumb)}" alt="${escapeHtml(book.title)}" loading="lazy" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-200" />
+                <span class="absolute inset-0 flex items-center justify-center bg-black/35 text-white text-xs font-bold">
+                  ${isActive ? "🔊" : "▶"}
+                </span>
+              </button>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="text-[10px] uppercase tracking-wider font-semibold truncate" style="color: var(--accent-primary);">
+                    ${escapeHtml(book.badge)}
+                  </span>
+                  <span class="font-typewriter text-[10px] px-2 py-0.5 rounded-full shrink-0" style="background-color: var(--bg-card); color: var(--text-secondary);">
+                    ${escapeHtml(book.duration)}
+                  </span>
+                </div>
+                <div class="font-display font-bold text-base leading-snug truncate">
+                  ${escapeHtml(book.title)}
+                </div>
+                <div class="text-[11px] truncate" style="color: var(--text-secondary);">
+                  ${escapeHtml(book.subtitle)}
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-1.5 pt-0.5">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <button onclick="playAudiobook('${book.id}', true)" class="apple-pill px-3.5 py-1 text-white text-[11px] font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+                  ${isActive ? "Listening · Dock Open" : "▶ Listen"}
+                </button>
+                ${readBtnHtml}
+              </div>
+              <a href="${escapeHtml(book.youtubeUrl)}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-medium underline hover:opacity-80 px-1" style="color: var(--text-secondary);">
+                YouTube ↗
+              </a>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderAudiobookDockTabs() {
+      const tabsEl = document.getElementById("audiobookDockTabs");
+      if (!tabsEl) return;
+      tabsEl.innerHTML = AUDIOBOOKS.map(book => {
+        const active = book.id === currentAudiobookId;
+        return `
+          <button onclick="playAudiobook('${book.id}', true)"
+            class="apple-seg-btn py-1.5 px-2 truncate text-center ${active ? 'apple-seg-btn-active' : 'opacity-70 hover:opacity-100'}">
+            ${escapeHtml(book.shortTab)}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function getEmbedUrlForAudiobook(book, autoPlay = true) {
+      const ap = autoPlay ? "1" : "0";
+      return `https://www.youtube.com/embed/${encodeURIComponent(book.videoId)}?autoplay=${ap}&rel=0&modestbranding=1&playsinline=1`;
+    }
+
+    function playAudiobook(bookId, autoPlay = true) {
+      const book = AUDIOBOOKS.find(b => b.id === bookId) || AUDIOBOOKS[0];
+      if (!book) return;
+
+      const dock = document.getElementById("audiobookDock");
+      const iframe = document.getElementById("audiobookIframe");
+      const badgeEl = document.getElementById("audiobookDockPartBadge");
+      const titleEl = document.getElementById("audiobookDockTitle");
+      const extLink = document.getElementById("audiobookExternalLink");
+      const readBtn = document.getElementById("audiobookDockReadBtn");
+      const topLabel = document.getElementById("topAudiobookLabel");
+
+      const targetSrc = getEmbedUrlForAudiobook(book, autoPlay);
+      const alreadySameStream = audiobookIsOpen && currentAudiobookId === book.id && iframe && iframe.src === targetSrc;
+
+      currentAudiobookId = book.id;
+      audiobookIsOpen = true;
+
+      if (dock) dock.classList.remove("hidden");
+      if (iframe && !alreadySameStream) {
+        iframe.src = targetSrc;
+      }
+      if (badgeEl) badgeEl.textContent = book.badge;
+      if (titleEl) titleEl.textContent = book.title;
+      if (extLink) extLink.href = book.youtubeUrl;
+      if (readBtn) {
+        if (book.pairedPdfPage) {
+          readBtn.textContent = `Read PDF p. ${book.pairedPdfPage}`;
+          readBtn.classList.remove("hidden");
+        } else {
+          readBtn.textContent = "Capricorn PDF";
+          readBtn.classList.remove("hidden");
+        }
+      }
+      if (topLabel) {
+        topLabel.textContent = `🎧 ${book.shortTab}`;
+      }
+
+      renderAudiobooksStudio();
+      renderAudiobookDockTabs();
+      showToast(`Audiobook ready — ${book.title}`);
+    }
+
+    function readAndListenAudiobook(bookId) {
+      const book = AUDIOBOOKS.find(b => b.id === bookId) || AUDIOBOOKS[0];
+      playAudiobook(book.id, true);
+      if (book.pairedPdfPage) {
+        openInPdfTab(book.pairedPdfPage);
+      } else {
+        openInPdfTab(LANDMARKS.opening);
+      }
+    }
+
+    function openPairedAudiobookPdf() {
+      const book = AUDIOBOOKS.find(b => b.id === currentAudiobookId) || AUDIOBOOKS[0];
+      const targetPage = (book && book.pairedPdfPage) ? book.pairedPdfPage : LANDMARKS.opening;
+      openInPdfTab(targetPage);
+    }
+
+    function toggleAudiobookCompact() {
+      const dock = document.getElementById("audiobookDock");
+      const btn = document.getElementById("btnAudiobookMinimize");
+      if (!dock) return;
+      audiobookCompact = !audiobookCompact;
+      if (audiobookCompact) {
+        dock.classList.add("audiobook-dock-compact");
+        dock.classList.remove("sm:w-[410px]");
+        dock.classList.add("sm:w-[260px]");
+        if (btn) btn.textContent = "Expand";
+      } else {
+        dock.classList.remove("audiobook-dock-compact");
+        dock.classList.remove("sm:w-[260px]");
+        dock.classList.add("sm:w-[410px]");
+        if (btn) btn.textContent = "Compact";
+      }
+    }
+
+    function closeAudiobookDock() {
+      const dock = document.getElementById("audiobookDock");
+      const iframe = document.getElementById("audiobookIframe");
+      const topLabel = document.getElementById("topAudiobookLabel");
+      audiobookIsOpen = false;
+      if (iframe) iframe.src = "about:blank";
+      if (dock) dock.classList.add("hidden");
+      if (topLabel) topLabel.textContent = "Audiobooks";
+      renderAudiobooksStudio();
+    }
+
+    function handleTopAudiobookClick() {
+      if (audiobookIsOpen) {
+        if (audiobookCompact) {
+          toggleAudiobookCompact();
+        } else {
+          const dock = document.getElementById("audiobookDock");
+          if (dock) {
+            dock.style.borderColor = "var(--accent-primary)";
+            setTimeout(() => { dock.style.borderColor = "var(--border-strong)"; }, 650);
+          }
+        }
+        return;
+      }
+
+      if (activeTab === "home") {
+        setListeningStudioTab("audiobooks");
+        const card = document.getElementById("homeMilesCard");
+        if (card) {
+          card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          card.style.borderColor = "var(--accent-primary)";
+          setTimeout(() => { card.style.borderColor = "var(--border-color)"; }, 700);
+        }
+      } else {
+        playAudiobook(currentAudiobookId, true);
+      }
+    }
+
+    function layerMilesBehindAudiobook() {
+      const audio = document.getElementById("milesAudioPlayer");
+      if (!audio) return;
+      if (!audio.paused) {
+        toggleMilesPlayback(false);
+        return;
+      }
+      setMilesVolume(22);
+      toggleMilesPlayback(true);
     }
 
     // =========================================================================
