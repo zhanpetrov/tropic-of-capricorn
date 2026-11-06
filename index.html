@@ -288,12 +288,20 @@
         </button>
       </div>
 
-      <!-- Right: Persistent Audiobooks Pill, Miles Davis Pill & Clean Menu Pill -->
-      <div class="flex items-center gap-2 shrink-0">
+      <!-- Right: Persistent Notes Pill, Audiobooks Pill, Miles Davis Pill & Clean Menu Pill -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <!-- NOTES QUICK WORKSPACE PILL -->
+        <button id="btnTopNotes" onclick="handleTopNotesClick()" class="apple-pill px-3 py-1.5 border flex items-center gap-1.5 font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);" title="Open Reading Notes &amp; Scratchpad (⌘J)">
+          <span style="color: var(--accent-primary);">✎</span>
+          <span>Notes</span>
+          <span id="topNotesCount" class="font-typewriter text-[10px] px-1.5 py-0.2 rounded-full" style="background-color: var(--bg-secondary); color: var(--text-secondary);">0</span>
+        </button>
+
         <!-- AUDIOBOOKS QUICK PILL -->
         <button id="btnTopAudiobook" onclick="handleTopAudiobookClick()" class="apple-pill px-3 py-1.5 border flex items-center gap-1.5 font-medium hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" title="Open Audiobooks — Tropic of Capricorn &amp; Tropic of Cancer">
           <span id="topAudiobookDot" class="w-1.5 h-1.5 rounded-full" style="background-color: var(--accent-primary);"></span>
-          <span id="topAudiobookLabel">Audiobooks</span>
+          <span id="topAudiobookLabel" class="hidden sm:inline">Audiobooks</span>
+          <span class="sm:hidden">🎧</span>
         </button>
 
         <!-- MILES DAVIS PERSISTENT APPLE MUSIC PILL -->
@@ -310,8 +318,8 @@
           <button id="btnMilesNextTop" onclick="stepMilesTrack(1)" class="px-2 py-1.5 border-l hover:opacity-75 transition hidden sm:inline-block text-[11px]" style="border-color: var(--border-color); color: var(--text-secondary);" title="Next Miles Davis session">
             ⏭
           </button>
-          <button id="btnMilesDrawerToggle" onclick="handleTopMilesLoungeClick()" class="px-2.5 py-1.5 border-l hidden lg:flex items-center gap-1 hover:opacity-80 transition text-[11px] font-medium" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary);" title="Open Miles Davis Session Selector">
-            <span id="milesTopTrackShort" class="max-w-[110px] truncate">Générique</span>
+          <button id="btnMilesDrawerToggle" onclick="handleTopMilesLoungeClick()" class="px-2.5 py-1.5 border-l hidden xl:flex items-center gap-1 hover:opacity-80 transition text-[11px] font-medium" style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary);" title="Open Miles Davis Session Selector">
+            <span id="milesTopTrackShort" class="max-w-[105px] truncate">Générique</span>
             <span id="milesDrawerChevron" class="opacity-60">▾</span>
           </button>
         </div>
@@ -621,11 +629,15 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto shrink-0 text-xs font-medium">
-            <button onclick="openInPdfTab(3)" class="apple-pill px-4 py-2 text-white font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm" style="background-color: var(--accent-primary);">
-              <span>Read Full PDF · 216 pp.</span>
+            <button onclick="launchImmersionPdfDesk()" class="apple-pill px-4 py-2 text-white font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm" style="background-color: var(--accent-primary);">
+              <span>Read &amp; Take Notes · PDF</span>
             </button>
-            <button onclick="openSiteMenu()" class="apple-pill px-4 py-2 border font-medium hover:opacity-80 flex items-center gap-1.5" style="background-color: var(--bg-card); border-color: var(--border-strong);">
-              <span>☰ Guide, Map &amp; Notebook</span>
+            <button onclick="scrollToHomeNotes()" class="apple-pill px-4 py-2 border font-semibold hover:opacity-85 flex items-center gap-1.5" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
+              <span style="color: var(--accent-primary);">✎</span>
+              <span>Notes Desk</span>
+            </button>
+            <button onclick="openSiteMenu()" class="apple-pill px-3.5 py-2 border font-medium hover:opacity-80 flex items-center gap-1.5" style="background-color: var(--bg-card); border-color: var(--border-color);">
+              <span>☰ Guide &amp; Map</span>
             </button>
           </div>
         </div>
@@ -870,13 +882,160 @@
 
           <div class="pt-3 border-t text-xs flex items-center justify-between gap-2" style="border-color: var(--border-color); color: var(--text-secondary);">
             <span id="studioFooterHint">3 unabridged &amp; companion readings · YouTube stream</span>
-            <button id="btnHomeMilesLoop" onclick="toggleMilesLoopMode()" class="font-medium hover:opacity-80 shrink-0" style="color: var(--accent-primary);">
+            <button id="btnHomeMilesLoop" onclick="toggleMilesLoopMode()" class="hidden font-medium hover:opacity-80 shrink-0" style="color: var(--accent-primary);">
               Continuous
             </button>
           </div>
         </aside>
 
       </div>
+
+      <!-- ==========================================================
+           IMMERSION READING NOTES & WORKING DESK (DIRECTLY ON HOME)
+           ========================================================== -->
+      <section id="homeNotesWorkspace" class="apple-card p-6 sm:p-8 space-y-6 transition-all">
+        <!-- Workspace Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b" style="border-color: var(--border-color);">
+          <div class="space-y-0.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
+                Immersion Working Desk · Auto-Saved Locally
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium" style="background-color: var(--bg-secondary); color: var(--text-secondary);">
+                Synced Across Home, PDF Split View &amp; Studio
+              </span>
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold leading-tight">
+              Reading Notes, Marginalia &amp; Scratchpad
+            </h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs font-medium shrink-0">
+            <button onclick="launchImmersionPdfDesk()" class="apple-pill px-3.5 py-1.5 border font-semibold hover:opacity-85 flex items-center gap-1.5" style="background-color: var(--accent-soft); border-color: transparent; color: var(--accent-primary);">
+              <span>📖 Side-by-Side PDF + Notes →</span>
+            </button>
+            <button onclick="switchTab('studio')" class="apple-pill px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              Full Writing Studio ↗
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+          <!-- Left 7 Cols: Live Auto-Saving Composer -->
+          <div class="lg:col-span-7 space-y-4">
+            <!-- Book Context + PDF Page Linker -->
+            <div class="flex flex-wrap items-center justify-between gap-2.5">
+              <div id="noteBookContextSeg" class="inline-grid grid-cols-3 apple-segmented text-[11px] font-semibold">
+                <button onclick="setNoteBookContext('capricorn')" id="noteCtxBtn-capricorn" class="apple-seg-btn apple-seg-btn-active px-3 py-1.5">
+                  Capricorn
+                </button>
+                <button onclick="setNoteBookContext('cancer')" id="noteCtxBtn-cancer" class="apple-seg-btn px-3 py-1.5 opacity-75 hover:opacity-100">
+                  Cancer
+                </button>
+                <button onclick="setNoteBookContext('reflection')" id="noteCtxBtn-reflection" class="apple-seg-btn px-3 py-1.5 opacity-75 hover:opacity-100">
+                  Reflection
+                </button>
+              </div>
+
+              <!-- Optional PDF Page Anchor -->
+              <div id="homeNotePageAnchorWrap" class="flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                <input id="homeNoteAttachPage" type="checkbox" checked onchange="toggleNoteAttachPage(this.checked)" class="accent-red-800 cursor-pointer" />
+                <label for="homeNoteAttachPage" class="text-[11px] font-medium cursor-pointer" style="color: var(--text-secondary);">PDF p.</label>
+                <input id="homeNotePageInput" type="number" min="1" max="216" value="3" onchange="syncComposerPageNum(this.value)" class="w-12 text-center font-typewriter text-xs font-semibold py-0.5 rounded-lg border" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
+              </div>
+            </div>
+
+            <!-- Tag Category Selector + Writing Spark -->
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div id="homeNoteTagSelector" class="flex flex-wrap items-center gap-1.5">
+                <!-- Populated dynamically via JS -->
+              </div>
+              <button onclick="insertCurrentWireIntoDraft()" class="text-[11px] font-medium underline hover:opacity-80" style="color: var(--text-secondary);" title="Quote current Cosmodemonic Wire into your draft">
+                + Quote Current Wire
+              </button>
+            </div>
+
+            <!-- Live Synced Scratchpad Textarea -->
+            <div class="space-y-2">
+              <input
+                id="homeNoteTitleInput"
+                type="text"
+                oninput="handleSyncedTitleInput(this.value)"
+                placeholder="Optional note title or theme (e.g., Ovarian Trolley & Associative Memory)..."
+                class="w-full px-4 py-2.5 rounded-2xl border font-ui text-sm font-semibold focus:outline-none focus:ring-2"
+                style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+
+              <textarea
+                id="homeNoteInput"
+                rows="5"
+                oninput="handleSyncedDraftInput(this.value, 'homeNoteInput')"
+                onkeydown="handleComposerKeydown(event, 'home')"
+                placeholder="Write thoughts, page marginalia, quotes, or ideas while listening to the audiobooks or Miles Davis... (Draft auto-saves on every keystroke · Press ⌘Enter to save card)"
+                class="w-full p-4 rounded-2xl border font-prose text-xl leading-relaxed focus:outline-none focus:ring-2"
+                style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);"></textarea>
+            </div>
+
+            <!-- Composer Footer -->
+            <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2" style="color: var(--text-secondary);">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                <span id="homeDraftStatus" class="font-typewriter text-[11px]">Draft ready · 0 words</span>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button onclick="clearSyncedDraft()" class="apple-pill px-3.5 py-2 border font-medium hover:opacity-80" style="border-color: var(--border-color);">
+                  Clear Draft
+                </button>
+                <button id="btnHomeSaveNote" onclick="commitComposerNote('home')" class="apple-pill px-5 py-2 text-white font-semibold hover:opacity-90 shadow-sm" style="background-color: var(--accent-primary);">
+                  Save Note · ⌘↵
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 Cols: Saved Notes Stream, Search & Export -->
+          <div class="lg:col-span-5 space-y-3.5">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <h3 class="font-display text-xl font-bold">Saved Notes</h3>
+                <span id="homeNotesCountPill" class="font-typewriter text-[11px] px-2.5 py-0.5 rounded-full" style="background-color: var(--bg-secondary); color: var(--text-secondary);">0</span>
+              </div>
+
+              <div class="flex items-center gap-1.5 text-[11px] font-medium">
+                <button onclick="copyNotebookToClipboard()" class="apple-pill px-2.5 py-1 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                  Copy
+                </button>
+                <button onclick="exportNotebookMarkdown()" class="apple-pill px-2.5 py-1 border font-semibold hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--accent-primary);">
+                  ↓ .MD
+                </button>
+                <button onclick="exportNotebookFile()" class="apple-pill px-2.5 py-1 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                  ↓ .TXT
+                </button>
+              </div>
+            </div>
+
+            <!-- Search + Filter Bar -->
+            <div class="space-y-2">
+              <input
+                id="homeNotesSearch"
+                type="search"
+                oninput="setNotesSearchQuery(this.value, 'homeNotesSearch')"
+                placeholder="Search your notes, pages, or tags..."
+                class="w-full px-3.5 py-2 rounded-2xl border text-xs font-ui focus:outline-none focus:ring-2"
+                style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+
+              <div id="homeNotesFilterBar" class="flex flex-wrap items-center gap-1 text-[11px] font-medium">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </div>
+
+            <!-- Scrollable Notes Stream -->
+            <div id="homeNotebookList" class="space-y-2.5 max-h-[340px] overflow-y-auto pr-1">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
 
     </section>
 
@@ -1066,11 +1225,14 @@
         <!-- Populated dynamically via JS -->
       </div>
 
-      <!-- Embedded PDF Frame with Read & Listen Bar -->
+      <!-- Embedded PDF Frame with Side-by-Side Margin Notes Immersion Desk -->
       <div class="apple-hero-card overflow-hidden">
         <div class="px-5 py-3 border-b flex flex-wrap items-center justify-between gap-2 text-xs font-ui" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
           <span id="pdfFrameStatus" class="font-typewriter text-[11px] font-medium">FLAMINGO (1993) SCAN VIEWER — PDF PAGE 3 OF 216</span>
-          <div class="flex flex-wrap items-center gap-2">
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <button id="btnPdfSplitToggle" onclick="togglePdfSplitNotes()" class="apple-pill px-3 py-1 border font-semibold hover:opacity-90 text-white" style="background-color: var(--accent-primary); border-color: var(--accent-primary);" title="Toggle side-by-side Margin Notes Desk beside the PDF">
+              ✎ Margin Notes: ON
+            </button>
             <button onclick="playAudiobook('capricorn-pt1')" class="apple-pill px-3 py-1 border font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
               🎧 Audiobook Pt. 1
             </button>
@@ -1082,8 +1244,87 @@
             </button>
           </div>
         </div>
-        <div id="pdfFrameMount" class="w-full h-[740px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
-          <!-- Mounted on demand when Full PDF tab opens -->
+
+        <!-- Split Grid: 8 Cols PDF Scan + 4 Cols Page-Synced Margin Notes -->
+        <div id="pdfSplitGrid" class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          <div id="pdfFrameCol" class="lg:col-span-8">
+            <div id="pdfFrameMount" class="w-full h-[760px] bg-stone-900 flex items-center justify-center text-stone-400 font-typewriter text-xs">
+              <!-- Mounted on demand when Full PDF tab opens -->
+            </div>
+          </div>
+
+          <!-- Side-by-Side Margin Notes Desk -->
+          <aside id="pdfNotesPanel" class="lg:col-span-4 h-[760px] flex flex-col justify-between border-t lg:border-t-0 lg:border-l p-4 sm:p-5" style="background-color: var(--bg-card); border-color: var(--border-color);">
+            <div class="space-y-3">
+              <!-- Margin Desk Header -->
+              <div class="flex items-center justify-between gap-2 pb-2.5 border-b" style="border-color: var(--border-color);">
+                <div class="min-w-0">
+                  <span id="pdfMarginPageBadge" class="text-[10px] uppercase tracking-wider font-semibold block" style="color: var(--accent-primary);">
+                    MARGINALIA · SYNCED TO PDF PAGE 3
+                  </span>
+                  <h3 class="font-display text-lg font-bold leading-tight truncate">
+                    Book Margin Notes
+                  </h3>
+                </div>
+                <button onclick="togglePdfSplitNotes()" class="apple-pill px-2.5 py-1 border text-[11px] font-medium hover:opacity-80 shrink-0" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Expand PDF to full width">
+                  Full PDF ↔
+                </button>
+              </div>
+
+              <!-- Tag Selector -->
+              <div id="pdfNoteTagSelector" class="flex flex-wrap items-center gap-1 text-[11px]">
+                <!-- Populated dynamically via JS -->
+              </div>
+
+              <!-- Synced Title + Draft Composer -->
+              <div class="space-y-2">
+                <input
+                  id="pdfNoteTitleInput"
+                  type="text"
+                  oninput="handleSyncedTitleInput(this.value)"
+                  placeholder="Optional margin heading..."
+                  class="w-full px-3 py-1.5 rounded-xl border font-ui text-xs font-semibold focus:outline-none focus:ring-2"
+                  style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+
+                <textarea
+                  id="pdfNoteInput"
+                  rows="4"
+                  oninput="handleSyncedDraftInput(this.value, 'pdfNoteInput')"
+                  onkeydown="handleComposerKeydown(event, 'pdf')"
+                  placeholder="Jot notes right beside the page while reading &amp; listening... (Auto-saved · ⌘Enter saves to this page)"
+                  class="w-full p-3 rounded-2xl border font-prose text-lg leading-snug focus:outline-none focus:ring-2"
+                  style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);"></textarea>
+              </div>
+
+              <div class="flex items-center justify-between gap-2 text-[11px]">
+                <span id="pdfDraftStatus" class="font-typewriter text-[10px] truncate" style="color: var(--text-secondary);">Auto-saved · 0 words</span>
+                <button id="btnPdfSaveNote" onclick="commitComposerNote('pdf')" class="apple-pill px-3.5 py-1.5 text-white font-semibold hover:opacity-90 shrink-0" style="background-color: var(--accent-primary);">
+                  Save to Pg. 3 · ⌘↵
+                </button>
+              </div>
+            </div>
+
+            <!-- Saved Margin Notes Filter + Scrollable List -->
+            <div class="flex-1 min-h-0 flex flex-col pt-3 mt-3 border-t space-y-2.5" style="border-color: var(--border-color);">
+              <div class="flex items-center justify-between gap-2 text-[11px]">
+                <div class="inline-grid grid-cols-2 apple-segmented text-[10px] font-semibold">
+                  <button id="pdfScopeBtn-all" onclick="setPdfNotesScope('all')" class="apple-seg-btn apple-seg-btn-active px-2.5 py-1">
+                    All Notes
+                  </button>
+                  <button id="pdfScopeBtn-page" onclick="setPdfNotesScope('page')" class="apple-seg-btn px-2.5 py-1 opacity-75 hover:opacity-100">
+                    This Page
+                  </button>
+                </div>
+                <button onclick="exportNotebookMarkdown()" class="font-semibold underline hover:opacity-80" style="color: var(--accent-primary);">
+                  ↓ Export .MD
+                </button>
+              </div>
+
+              <div id="pdfNotebookList" class="flex-1 overflow-y-auto space-y-2 pr-1 pb-6">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
 
@@ -1273,27 +1514,51 @@
         </div>
 
         <!-- Right 6 Cols: Saved Notes & Marginalia -->
-        <div class="lg:col-span-6 p-6 sm:p-8 apple-card space-y-5">
+        <div class="lg:col-span-6 p-6 sm:p-8 apple-card space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-color);">
             <div>
               <span class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">
                 Personal Reading Archive
               </span>
               <h2 class="font-display text-2xl sm:text-3xl font-bold">
-                Contraband Marginalia Notebook
+                Reading &amp; Marginalia Notebook
               </h2>
             </div>
-            <div class="flex items-center gap-2">
-              <button onclick="copyNotebookToClipboard()" class="apple-pill font-ui text-xs px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-                Copy All
+            <div class="flex flex-wrap items-center gap-1.5 font-ui text-xs">
+              <button onclick="copyNotebookToClipboard()" class="apple-pill px-3 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                Copy
               </button>
-              <button onclick="exportNotebookFile()" class="apple-pill font-ui text-xs px-3.5 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
-                ↓ Export .TXT
+              <button onclick="exportNotebookMarkdown()" class="apple-pill px-3 py-1.5 border font-semibold hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--accent-primary);">
+                ↓ .MD
               </button>
+              <button onclick="exportNotebookFile()" class="apple-pill px-3 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+                ↓ .TXT
+              </button>
+              <button onclick="exportNotebookJson()" class="apple-pill px-3 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Download full JSON backup of your notes">
+                Backup
+              </button>
+              <button onclick="document.getElementById('importNotesFileInput').click()" class="apple-pill px-3 py-1.5 border font-medium hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);" title="Import notes from JSON backup">
+                Import
+              </button>
+              <input id="importNotesFileInput" type="file" accept=".json,application/json" class="hidden" onchange="importNotebookJson(event)" />
             </div>
           </div>
 
-          <div id="notebookEntriesList" class="space-y-3.5 max-h-[480px] overflow-y-auto pr-1">
+          <div class="space-y-2">
+            <input
+              id="studioNotesSearch"
+              type="search"
+              oninput="setNotesSearchQuery(this.value, 'studioNotesSearch')"
+              placeholder="Search notes, quotes, PDF pages, or tags..."
+              class="w-full px-3.5 py-2 rounded-2xl border text-xs font-ui focus:outline-none focus:ring-2"
+              style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+
+            <div id="studioNotesFilterBar" class="flex flex-wrap items-center gap-1 text-[11px] font-medium">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+
+          <div id="notebookEntriesList" class="space-y-3 max-h-[460px] overflow-y-auto pr-1">
             <!-- Populated dynamically via JS -->
           </div>
         </div>
@@ -1315,7 +1580,10 @@
           Tropic of Capricorn · Part 1
         </h3>
       </div>
-      <div class="flex items-center gap-1.5 shrink-0 text-xs font-medium">
+      <div class="flex items-center gap-1 shrink-0 text-xs font-medium">
+        <button id="btnAudiobookDockSide" onclick="toggleAudiobookDockSide()" class="apple-pill px-2 py-1 border hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Move floating player between left and right corner">
+          ⇄
+        </button>
         <button id="btnAudiobookMinimize" onclick="toggleAudiobookCompact()" class="apple-pill px-2.5 py-1 border hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" title="Switch between compact corner player and full player">
           Compact
         </button>
@@ -1359,6 +1627,93 @@
     </div>
   </aside>
 
+  <!-- FLOATING APPLE GLASS QUICK NOTES SHEET (FOR READING GUIDE, NYC MAP & ANYWHERE VIA ⌘J) -->
+  <aside id="quickNotesDrawer" class="fixed top-16 right-5 z-40 hidden w-[calc(100vw-2.5rem)] sm:w-[400px] max-h-[calc(100vh-5.5rem)] flex-col apple-glass border shadow-2xl rounded-3xl p-5 space-y-3.5 transition-all" style="border-color: var(--border-strong);">
+    <div class="flex items-center justify-between gap-2 pb-2.5 border-b" style="border-color: var(--border-color);">
+      <div>
+        <span class="text-[10px] uppercase tracking-wider font-semibold block" style="color: var(--accent-primary);">
+          QUICK IMMERSION NOTES · AUTO-SAVED
+        </span>
+        <h3 class="font-display text-lg font-bold leading-tight">
+          Scratchpad &amp; Notebook
+        </h3>
+      </div>
+      <div class="flex items-center gap-1.5 text-xs font-medium">
+        <button onclick="closeQuickNotes(); switchTab('studio');" class="apple-pill px-2.5 py-1 border hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);">
+          Studio ↗
+        </button>
+        <button onclick="closeQuickNotes()" class="apple-pill w-7 h-7 border flex items-center justify-center hover:opacity-80" style="background-color: var(--bg-card); border-color: var(--border-color);" aria-label="Close quick notes">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <div id="quickNoteTagSelector" class="flex flex-wrap items-center gap-1 text-[11px]">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <div class="space-y-2">
+      <input
+        id="quickNoteTitleInput"
+        type="text"
+        oninput="handleSyncedTitleInput(this.value)"
+        placeholder="Optional note heading..."
+        class="w-full px-3 py-1.5 rounded-xl border font-ui text-xs font-semibold focus:outline-none focus:ring-2"
+        style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);" />
+
+      <textarea
+        id="quickNoteInput"
+        rows="4"
+        oninput="handleSyncedDraftInput(this.value, 'quickNoteInput')"
+        onkeydown="handleComposerKeydown(event, 'quick')"
+        placeholder="Capture an idea or quote without leaving what you're reading... (⌘Enter to save)"
+        class="w-full p-3 rounded-2xl border font-prose text-lg leading-snug focus:outline-none focus:ring-2"
+        style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);"></textarea>
+    </div>
+
+    <div class="flex items-center justify-between gap-2 text-xs">
+      <span id="quickDraftStatus" class="font-typewriter text-[10px]" style="color: var(--text-secondary);">Auto-saved · 0 words</span>
+      <button onclick="commitComposerNote('quick')" class="apple-pill px-4 py-1.5 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+        Save Note · ⌘↵
+      </button>
+    </div>
+
+    <div class="pt-2.5 border-t flex-1 min-h-0 flex flex-col space-y-2" style="border-color: var(--border-color);">
+      <div class="flex items-center justify-between text-[11px]">
+        <span class="font-semibold" style="color: var(--text-secondary);">Recent Saved Notes</span>
+        <button onclick="exportNotebookMarkdown()" class="font-semibold underline hover:opacity-80" style="color: var(--accent-primary);">↓ .MD</button>
+      </div>
+      <div id="quickNotebookList" class="overflow-y-auto space-y-2 max-h-[210px] pr-1">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- EDIT NOTE MODAL -->
+  <div id="editNoteModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/45 backdrop-blur-md">
+    <div class="max-w-lg w-full p-6 apple-hero-card space-y-4">
+      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
+        <span class="text-xs uppercase tracking-wider font-semibold" style="color: var(--accent-primary);">Edit Saved Note</span>
+        <button onclick="closeEditNoteModal()" class="apple-pill text-xs font-medium px-3 py-1 border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+          Cancel
+        </button>
+      </div>
+      <div class="space-y-3">
+        <input id="editNoteTitleField" type="text" placeholder="Optional heading..." class="w-full px-3.5 py-2 rounded-2xl border font-ui text-sm font-semibold focus:outline-none focus:ring-2" style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+        <textarea id="editNoteTextField" rows="6" class="w-full p-3.5 rounded-2xl border font-prose text-xl leading-relaxed focus:outline-none focus:ring-2" style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);"></textarea>
+        <div class="flex items-center justify-between gap-2 text-xs">
+          <label class="flex items-center gap-2 font-medium" style="color: var(--text-secondary);">
+            <span>PDF Page (optional):</span>
+            <input id="editNotePageField" type="number" min="1" max="216" placeholder="—" class="w-16 text-center font-typewriter py-1 rounded-xl border" style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-primary);" />
+          </label>
+          <button onclick="saveEditedNote()" class="apple-pill px-5 py-2 text-white font-semibold hover:opacity-90" style="background-color: var(--accent-primary);">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- PUBLICATION & EDITION HISTORY MODAL -->
   <div id="contrabandModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-md">
     <div class="max-w-xl w-full p-6 sm:p-8 apple-hero-card space-y-4 relative">
@@ -1392,10 +1747,10 @@
     </div>
   </div>
 
-  <!-- APPLE CAPSULE TOAST NOTIFICATION (BOTTOM-LEFT SO IT NEVER COVERS FLOATING AUDIOBOOK PLAYER) -->
-  <div id="toastBanner" class="fixed bottom-5 left-5 z-50 hidden px-4 py-2.5 rounded-full border shadow-xl apple-glass font-ui text-xs sm:text-sm items-center gap-2.5 transition-all" style="border-color: var(--border-strong); color: var(--text-primary);">
+  <!-- APPLE DYNAMIC-ISLAND CAPSULE TOAST NOTIFICATION -->
+  <div id="toastBanner" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2 rounded-full border shadow-xl apple-glass font-ui text-xs sm:text-sm items-center gap-2.5 transition-all" style="border-color: var(--border-strong); color: var(--text-primary);">
     <span class="w-2 h-2 rounded-full shrink-0" style="background-color: var(--accent-primary);"></span>
-    <span id="toastMessage" class="font-medium">Saved note to Contraband Notebook</span>
+    <span id="toastMessage" class="font-medium">Saved note to Notebook</span>
   </div>
 
   <!-- FOOTER -->
@@ -1835,16 +2190,23 @@
       renderMovementSidebar();
       loadMovement(0);
       selectMapNode(0);
-      renderNotebook();
-      updatePdfBookmarkUI();
       initMilesPlayer();
       initAudiobooksStudio();
+      initNotesWorkspace();
+      updatePdfBookmarkUI();
       initHomeWire();
 
       document.addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey && e.key.toLowerCase() === "j") {
+          e.preventDefault();
+          handleTopNotesClick();
+          return;
+        }
         if (e.key === "Escape") {
           closeSiteMenu();
           closeContrabandModal();
+          closeEditNoteModal();
+          closeQuickNotes();
           const lounge = document.getElementById("milesLoungeDrawer");
           if (lounge && !lounge.classList.contains("hidden")) {
             toggleMilesDrawer();
@@ -2096,8 +2458,16 @@
         }
       }
 
+      if (tabName === "home" || tabName === "pdf" || tabName === "studio") {
+        if (typeof closeQuickNotes === "function") closeQuickNotes();
+      }
+
       if (tabName === "pdf") {
         mountPdfIframe(currentPdfPage);
+      }
+
+      if (typeof syncAudiobookDockAutoPosition === "function") {
+        syncAudiobookDockAutoPosition();
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2109,6 +2479,17 @@
       updatePdfBookmarkUI();
       switchTab("pdf");
       showToast(`Opened PDF viewer at page ${currentPdfPage} of ${TOTAL_PDF_PAGES}`);
+    }
+
+    function launchImmersionPdfDesk() {
+      if (typeof pdfSplitNotesOpen !== "undefined" && !pdfSplitNotesOpen) {
+        togglePdfSplitNotes(true);
+      }
+      openInPdfTab(currentPdfPage);
+      setTimeout(() => {
+        const pdfInput = document.getElementById("pdfNoteInput");
+        if (pdfInput) pdfInput.focus();
+      }, 180);
     }
 
     // Switch Aesthetic Theme (Apple Segmented Control)
@@ -2342,17 +2723,29 @@
       const statusEl = document.getElementById("pdfFrameStatus");
       const directLink = document.getElementById("directPageLink");
       const headerLink = document.getElementById("headerDirectPdfLink");
+      const marginBadge = document.getElementById("pdfMarginPageBadge");
+      const pdfSaveBtn = document.getElementById("btnPdfSaveNote");
+      const homePageInput = document.getElementById("homeNotePageInput");
 
       if (inputEl) inputEl.value = currentPdfPage;
       if (badgeEl) badgeEl.textContent = `Pg. ${savedBookmarkPage}`;
       if (restoreBtn) restoreBtn.textContent = `↺ Saved (Pg. ${savedBookmarkPage})`;
       if (statusEl) statusEl.textContent = `FLAMINGO (1993) SCAN VIEWER — PDF PAGE ${currentPdfPage} OF ${TOTAL_PDF_PAGES}`;
+      if (marginBadge) marginBadge.textContent = `MARGINALIA · SYNCED TO PDF PAGE ${currentPdfPage}`;
+      if (pdfSaveBtn) pdfSaveBtn.textContent = `Save to Pg. ${currentPdfPage} · ⌘↵`;
+      if (homePageInput && typeof noteDraftState !== "undefined" && noteDraftState.bookContext === "capricorn") {
+        noteDraftState.pageNum = currentPdfPage;
+        homePageInput.value = currentPdfPage;
+      }
       if (directLink) {
         directLink.href = getDirectPdfHref(currentPdfPage);
         directLink.textContent = `Open Direct PDF Link (#page=${currentPdfPage}) ↗`;
       }
       if (headerLink) {
         headerLink.href = getDirectPdfHref(currentPdfPage);
+      }
+      if (typeof renderPdfMarginNotesList === "function") {
+        renderPdfMarginNotesList();
       }
     }
 
@@ -2405,21 +2798,305 @@
     }
 
     // =========================================================================
-    // 10. CONTRABAND MARGINALIA NOTEBOOK & AUTOMATIC STUDIO
+    // 10. BOOK IMMERSION NOTES, AUTO-SAVED SCRATCHPAD & MARGINALIA STUDIO
     // =========================================================================
-    function addNotebookEntry(sourceLabel, noteText, pdfPage = null) {
+    const NOTE_TAGS = [
+      { id: "insight", label: "Insight", icon: "💡" },
+      { id: "passage", label: "Passage", icon: "📖" },
+      { id: "idea", label: "Idea / Draft", icon: "✍️" },
+      { id: "question", label: "Question", icon: "❓" }
+    ];
+
+    const NOTE_FILTERS = [
+      { id: "all", label: "All" },
+      { id: "pinned", label: "★ Pinned" },
+      { id: "insight", label: "💡 Insight" },
+      { id: "passage", label: "📖 Passage" },
+      { id: "idea", label: "✍️ Idea" },
+      { id: "question", label: "❓ Question" }
+    ];
+
+    let noteDraftState = {
+      title: "",
+      text: "",
+      tag: "insight",
+      bookContext: "capricorn",
+      attachPage: true,
+      pageNum: LANDMARKS.opening
+    };
+
+    let notesSearchQuery = "";
+    let notesActiveFilter = "all";
+    let pdfSplitNotesOpen = true;
+    let pdfNotesScope = "all"; // "all" | "page"
+    let editingNoteId = null;
+
+    function initNotesWorkspace() {
+      try {
+        const rawDraft = localStorage.getItem("capricorn_scratchpad_v1");
+        if (rawDraft) {
+          const parsedDraft = JSON.parse(rawDraft);
+          if (parsedDraft && typeof parsedDraft === "object") {
+            noteDraftState = {
+              title: String(parsedDraft.title || ""),
+              text: String(parsedDraft.text || ""),
+              tag: NOTE_TAGS.some(t => t.id === parsedDraft.tag) ? parsedDraft.tag : "insight",
+              bookContext: ["capricorn", "cancer", "reflection"].includes(parsedDraft.bookContext) ? parsedDraft.bookContext : "capricorn",
+              attachPage: parsedDraft.attachPage !== false,
+              pageNum: Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(parsedDraft.pageNum, 10) || currentPdfPage))
+            };
+          }
+        } else {
+          noteDraftState.pageNum = currentPdfPage;
+        }
+      } catch (e) {}
+
+      syncAllDraftInputs(null);
+      renderNoteTagSelectors();
+      renderNoteFilterBars();
+      setNoteBookContext(noteDraftState.bookContext, true);
+      renderNotebook();
+    }
+
+    function persistDraftState() {
+      try {
+        localStorage.setItem("capricorn_scratchpad_v1", JSON.stringify(noteDraftState));
+      } catch (e) {}
+    }
+
+    function countWords(str) {
+      const trimmed = String(str || "").trim();
+      return trimmed ? trimmed.split(/\s+/).length : 0;
+    }
+
+    function updateDraftStatusLabels(justSaved = false) {
+      const words = countWords(noteDraftState.text);
+      const msg = noteDraftState.text.trim()
+        ? `${justSaved ? "✓ Auto-saved" : "Draft saved"} · ${words} word${words === 1 ? "" : "s"}`
+        : "Draft ready · 0 words";
+      ["homeDraftStatus", "pdfDraftStatus", "quickDraftStatus"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = msg;
+      });
+    }
+
+    function syncAllDraftInputs(skipInputId = null) {
+      ["homeNoteInput", "pdfNoteInput", "quickNoteInput"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (id === skipInputId && document.activeElement === el) return;
+        if (el.value !== noteDraftState.text) {
+          el.value = noteDraftState.text;
+        }
+      });
+      ["homeNoteTitleInput", "pdfNoteTitleInput", "quickNoteTitleInput"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && document.activeElement !== el && el.value !== noteDraftState.title) {
+          el.value = noteDraftState.title;
+        }
+      });
+      const attachCheck = document.getElementById("homeNoteAttachPage");
+      if (attachCheck) attachCheck.checked = !!noteDraftState.attachPage;
+      const pageInput = document.getElementById("homeNotePageInput");
+      if (pageInput) pageInput.value = noteDraftState.pageNum || currentPdfPage;
+      updateDraftStatusLabels(Boolean(skipInputId));
+    }
+
+    function handleSyncedDraftInput(val, sourceId) {
+      noteDraftState.text = val;
+      persistDraftState();
+      syncAllDraftInputs(sourceId);
+      if (telegraphSoundEnabled) {
+        playTelegraphClick(520 + Math.random() * 240, 0.02);
+      }
+    }
+
+    function handleSyncedTitleInput(val) {
+      noteDraftState.title = val;
+      persistDraftState();
+      syncAllDraftInputs(null);
+    }
+
+    function clearSyncedDraft() {
+      noteDraftState.title = "";
+      noteDraftState.text = "";
+      persistDraftState();
+      syncAllDraftInputs(null);
+      showToast("Cleared scratchpad draft");
+    }
+
+    function setNoteBookContext(ctx, silent = false) {
+      noteDraftState.bookContext = ["capricorn", "cancer", "reflection"].includes(ctx) ? ctx : "capricorn";
+      if (noteDraftState.bookContext === "capricorn") {
+        noteDraftState.attachPage = true;
+        noteDraftState.pageNum = currentPdfPage;
+      } else {
+        noteDraftState.attachPage = false;
+      }
+      ["capricorn", "cancer", "reflection"].forEach(k => {
+        const btn = document.getElementById(`noteCtxBtn-${k}`);
+        if (!btn) return;
+        if (k === noteDraftState.bookContext) {
+          btn.classList.add("apple-seg-btn-active");
+          btn.classList.remove("opacity-75");
+        } else {
+          btn.classList.remove("apple-seg-btn-active");
+          btn.classList.add("opacity-75");
+        }
+      });
+      const anchorWrap = document.getElementById("homeNotePageAnchorWrap");
+      if (anchorWrap) {
+        anchorWrap.style.opacity = noteDraftState.bookContext === "capricorn" ? "1" : "0.55";
+      }
+      if (!silent) persistDraftState();
+      syncAllDraftInputs(null);
+    }
+
+    function toggleNoteAttachPage(checked) {
+      noteDraftState.attachPage = Boolean(checked);
+      persistDraftState();
+    }
+
+    function syncComposerPageNum(val) {
+      const clean = Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(val, 10) || currentPdfPage));
+      noteDraftState.pageNum = clean;
+      noteDraftState.attachPage = true;
+      const checkEl = document.getElementById("homeNoteAttachPage");
+      if (checkEl) checkEl.checked = true;
+      persistDraftState();
+      syncAllDraftInputs(null);
+    }
+
+    function setActiveNoteTag(tagId) {
+      noteDraftState.tag = NOTE_TAGS.some(t => t.id === tagId) ? tagId : "insight";
+      persistDraftState();
+      renderNoteTagSelectors();
+    }
+
+    function renderNoteTagSelectors() {
+      ["homeNoteTagSelector", "pdfNoteTagSelector", "quickNoteTagSelector"].forEach(containerId => {
+        const el = document.getElementById(containerId);
+        if (!el) return;
+        el.innerHTML = NOTE_TAGS.map(t => {
+          const active = t.id === noteDraftState.tag;
+          return `
+            <button type="button" onclick="setActiveNoteTag('${t.id}')"
+              class="apple-pill px-2.5 py-1 border font-medium transition ${active ? 'text-white shadow-xs' : 'opacity-80 hover:opacity-100'}"
+              style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
+              ${t.icon} ${escapeHtml(t.label)}
+            </button>
+          `;
+        }).join("");
+      });
+    }
+
+    function insertCurrentWireIntoDraft() {
+      const w = COSMODEMONIC_WIRES[currentWireIndex];
+      if (!w) return;
+      const snippet = `${w.quote} (PDF p. ${w.pdfPage})`;
+      noteDraftState.text = noteDraftState.text.trim()
+        ? `${noteDraftState.text.trim()}\n\n${snippet}\n`
+        : `${snippet}\n`;
+      noteDraftState.bookContext = "capricorn";
+      noteDraftState.attachPage = true;
+      noteDraftState.pageNum = w.pdfPage;
+      noteDraftState.tag = "passage";
+      persistDraftState();
+      setNoteBookContext("capricorn", true);
+      renderNoteTagSelectors();
+      syncAllDraftInputs(null);
+      const homeInput = document.getElementById("homeNoteInput");
+      if (homeInput) homeInput.focus();
+    }
+
+    function handleComposerKeydown(e, origin) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+        e.preventDefault();
+        commitComposerNote(origin);
+      }
+    }
+
+    function getActiveAudioSnapshot() {
+      const snap = { audiobookId: null, audiobookLabel: null, milesTrackId: null, milesLabel: null };
+      if (typeof audiobookIsOpen !== "undefined" && audiobookIsOpen && typeof AUDIOBOOKS !== "undefined") {
+        const ab = AUDIOBOOKS.find(b => b.id === currentAudiobookId);
+        if (ab) {
+          snap.audiobookId = ab.id;
+          snap.audiobookLabel = ab.shortTab;
+        }
+      }
+      if (typeof milesIsPlaying !== "undefined" && milesIsPlaying && typeof MILES_TRACKS !== "undefined") {
+        const mt = MILES_TRACKS[milesCurrentIndex];
+        if (mt) {
+          snap.milesTrackId = mt.id;
+          snap.milesLabel = mt.title;
+        }
+      }
+      return snap;
+    }
+
+    function commitComposerNote(origin = "home") {
+      const bodyText = noteDraftState.text.trim();
+      if (!bodyText) {
+        showToast("Write a thought or passage first before saving");
+        return;
+      }
+
+      let resolvedPage = null;
+      let sourceLabel = "Tropic of Capricorn · Reading Note";
+
+      if (origin === "pdf") {
+        resolvedPage = currentPdfPage;
+        sourceLabel = `Tropic of Capricorn · Margin Note (Pg. ${currentPdfPage})`;
+      } else if (noteDraftState.bookContext === "cancer") {
+        resolvedPage = null;
+        sourceLabel = "Tropic of Cancer · Companion Reading";
+      } else if (noteDraftState.bookContext === "reflection") {
+        resolvedPage = noteDraftState.attachPage ? (parseInt(noteDraftState.pageNum, 10) || null) : null;
+        sourceLabel = "Personal Literary Reflection";
+      } else {
+        resolvedPage = noteDraftState.attachPage
+          ? Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(noteDraftState.pageNum, 10) || currentPdfPage))
+          : null;
+        sourceLabel = resolvedPage
+          ? `Tropic of Capricorn · PDF p. ${resolvedPage}`
+          : "Tropic of Capricorn · Reading Note";
+      }
+
+      addNotebookEntry(sourceLabel, bodyText, resolvedPage, {
+        title: noteDraftState.title.trim(),
+        tag: noteDraftState.tag,
+        bookContext: origin === "pdf" ? "capricorn" : noteDraftState.bookContext
+      });
+
+      noteDraftState.title = "";
+      noteDraftState.text = "";
+      persistDraftState();
+      syncAllDraftInputs(null);
+    }
+
+    function addNotebookEntry(sourceLabel, noteText, pdfPage = null, meta = {}) {
+      const audioSnap = getActiveAudioSnapshot();
       const entry = {
-        id: Date.now(),
+        id: Date.now() + Math.floor(Math.random() * 1000),
+        title: meta.title ? String(meta.title) : "",
         source: sourceLabel,
+        tag: meta.tag && NOTE_TAGS.some(t => t.id === meta.tag) ? meta.tag : "insight",
+        bookContext: meta.bookContext || "capricorn",
+        pinned: Boolean(meta.pinned),
         text: noteText,
-        pdfPage: pdfPage,
+        pdfPage: pdfPage ? parseInt(pdfPage, 10) : null,
         pdfUrl: pdfPage ? getAbsolutePdfUrl(pdfPage) : null,
+        audiobookId: audioSnap.audiobookId,
+        audiobookLabel: audioSnap.audiobookLabel,
+        milesTrackId: audioSnap.milesTrackId,
+        milesLabel: audioSnap.milesLabel,
         date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
       };
       savedNotebook.unshift(entry);
       persistNotebook();
       renderNotebook();
-      showToast("Saved note to Contraband Notebook");
+      showToast("Saved note to your Reading Notebook");
     }
 
     function saveCurrentGuideNote() {
@@ -2427,17 +3104,80 @@
       const m = MOVEMENTS[currentMovementIndex];
       if (selection.length > 5) {
         addNotebookEntry(
-          `Reading Guide • ${m.title} (Selected Note)`,
+          `Reading Guide • ${m.title}`,
           selection,
-          m.pdfPage
+          m.pdfPage,
+          { tag: "passage", title: m.title }
         );
       } else {
         addNotebookEntry(
           `Reading Guide • ${m.title}`,
           m.summaryForNote,
-          m.pdfPage
+          m.pdfPage,
+          { tag: "insight", title: m.title }
         );
       }
+    }
+
+    function togglePinNote(id) {
+      const target = savedNotebook.find(item => item.id === id);
+      if (!target) return;
+      target.pinned = !target.pinned;
+      persistNotebook();
+      renderNotebook();
+      showToast(target.pinned ? "Pinned note to top" : "Unpinned note");
+    }
+
+    function openEditNoteModal(id) {
+      const target = savedNotebook.find(item => item.id === id);
+      if (!target) return;
+      editingNoteId = id;
+      const modal = document.getElementById("editNoteModal");
+      const titleField = document.getElementById("editNoteTitleField");
+      const textField = document.getElementById("editNoteTextField");
+      const pageField = document.getElementById("editNotePageField");
+      if (titleField) titleField.value = target.title || "";
+      if (textField) textField.value = target.text || "";
+      if (pageField) pageField.value = target.pdfPage ? String(target.pdfPage) : "";
+      if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+      if (textField) setTimeout(() => textField.focus(), 80);
+    }
+
+    function closeEditNoteModal() {
+      editingNoteId = null;
+      const modal = document.getElementById("editNoteModal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function saveEditedNote() {
+      if (editingNoteId === null) return;
+      const target = savedNotebook.find(item => item.id === editingNoteId);
+      if (!target) {
+        closeEditNoteModal();
+        return;
+      }
+      const titleVal = (document.getElementById("editNoteTitleField")?.value || "").trim();
+      const textVal = (document.getElementById("editNoteTextField")?.value || "").trim();
+      const pageRaw = (document.getElementById("editNotePageField")?.value || "").trim();
+      if (!textVal) {
+        showToast("Note text cannot be empty");
+        return;
+      }
+      const pageNum = pageRaw ? Math.max(1, Math.min(TOTAL_PDF_PAGES, parseInt(pageRaw, 10) || 1)) : null;
+      target.title = titleVal;
+      target.text = textVal;
+      target.pdfPage = pageNum;
+      target.pdfUrl = pageNum ? getAbsolutePdfUrl(pageNum) : null;
+      persistNotebook();
+      renderNotebook();
+      closeEditNoteModal();
+      showToast("Updated saved note");
     }
 
     function deleteNotebookEntry(id) {
@@ -2452,47 +3192,314 @@
       } catch (e) {}
     }
 
-    function renderNotebook() {
-      const listEl = document.getElementById("notebookEntriesList");
-      const countBadge = document.getElementById("notesCountBadge");
-      if (countBadge) countBadge.textContent = String(savedNotebook.length);
-      if (!listEl) return;
+    function setNotesSearchQuery(val, sourceInputId = null) {
+      notesSearchQuery = String(val || "");
+      ["homeNotesSearch", "studioNotesSearch"].forEach(id => {
+        if (id === sourceInputId) return;
+        const el = document.getElementById(id);
+        if (el && el.value !== notesSearchQuery) el.value = notesSearchQuery;
+      });
+      renderNotebook();
+    }
 
-      if (savedNotebook.length === 0) {
-        listEl.innerHTML = `
-          <div class="p-6 apple-subcard text-center italic font-prose text-lg" style="color: var(--text-secondary);">
-            Your notebook has no saved entries yet. Click “Save Note” in the Reading Guide or Map (each note includes a direct PDF page link), or write your own entry in the Automatic Studio.
-          </div>
-        `;
-        return;
+    function setNotesFilter(filterId) {
+      notesActiveFilter = filterId;
+      renderNoteFilterBars();
+      renderNotebook();
+    }
+
+    function renderNoteFilterBars() {
+      ["homeNotesFilterBar", "studioNotesFilterBar"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.innerHTML = NOTE_FILTERS.map(f => {
+          const active = f.id === notesActiveFilter;
+          return `
+            <button type="button" onclick="setNotesFilter('${f.id}')"
+              class="apple-pill px-2.5 py-0.5 border transition ${active ? 'text-white shadow-xs' : 'opacity-75 hover:opacity-100'}"
+              style="background-color: ${active ? 'var(--accent-primary)' : 'var(--bg-secondary)'}; border-color: ${active ? 'var(--accent-primary)' : 'var(--border-color)'};">
+              ${escapeHtml(f.label)}
+            </button>
+          `;
+        }).join("");
+      });
+    }
+
+    function getSortedFilteredNotes(options = {}) {
+      const q = notesSearchQuery.trim().toLowerCase();
+      const sorted = [...savedNotebook].sort((a, b) => {
+        if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
+        return (b.id || 0) - (a.id || 0);
+      });
+
+      return sorted.filter(item => {
+        if (options.onlyPage !== undefined && options.onlyPage !== null) {
+          if (parseInt(item.pdfPage, 10) !== options.onlyPage) return false;
+        }
+        if (!options.ignoreTagFilter) {
+          if (notesActiveFilter === "pinned" && !item.pinned) return false;
+          if (["insight", "passage", "idea", "question"].includes(notesActiveFilter)) {
+            const itemTag = item.tag || "insight";
+            if (itemTag !== notesActiveFilter) return false;
+          }
+        }
+        if (q) {
+          const hay = `${item.title || ""} ${item.source || ""} ${item.text || ""} ${item.pdfPage ? "page " + item.pdfPage : ""}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    function resumeNoteAudio(audiobookId, milesTrackId) {
+      if (audiobookId && typeof playAudiobook === "function") {
+        playAudiobook(audiobookId, true);
+      }
+      if (milesTrackId && typeof MILES_TRACKS !== "undefined") {
+        const idx = MILES_TRACKS.findIndex(t => t.id === milesTrackId);
+        if (idx >= 0) {
+          if (audiobookId) setMilesVolume(22);
+          selectMilesTrack(idx, true);
+        }
+      }
+    }
+
+    function buildNoteCardHtml(item, compact = false) {
+      const pageNum = item.pdfPage ? parseInt(item.pdfPage, 10) : null;
+      const linkHref = pageNum ? getDirectPdfHref(pageNum) : (item.pdfUrl || null);
+      const tagObj = NOTE_TAGS.find(t => t.id === (item.tag || "insight")) || NOTE_TAGS[0];
+      const pinStyle = item.pinned ? "color: var(--accent-primary);" : "color: var(--text-secondary);";
+
+      const audioBadges = [];
+      if (item.audiobookId) {
+        audioBadges.push(`
+          <button onclick="resumeNoteAudio('${escapeHtml(item.audiobookId)}', null)" class="apple-pill px-2 py-0.5 border text-[10px] font-medium hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);" title="Resume paired audiobook">
+            🎧 ${escapeHtml(item.audiobookLabel || "Audiobook")}
+          </button>
+        `);
+      }
+      if (item.milesTrackId) {
+        audioBadges.push(`
+          <button onclick="resumeNoteAudio(null, '${escapeHtml(item.milesTrackId)}')" class="apple-pill px-2 py-0.5 border text-[10px] font-medium hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-secondary);" title="Play paired Miles Davis session">
+            🎺 ${escapeHtml(item.milesLabel || "Miles")}
+          </button>
+        `);
       }
 
-      listEl.innerHTML = savedNotebook.map(item => {
-        const pageNum = item.pdfPage ? parseInt(item.pdfPage, 10) : null;
-        const linkHref = pageNum ? getDirectPdfHref(pageNum) : (item.pdfUrl || null);
-        const linkHtml = linkHref ? `
-          <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-ui">
-            <a href="${escapeHtml(linkHref)}" target="_blank" rel="noopener noreferrer" class="underline font-semibold hover:opacity-80" style="color: var(--accent-primary);">
-              Read the original passage${pageNum ? ` · PDF page ${pageNum}` : ""} ↗
-            </a>
-            ${pageNum ? `<button onclick="openInPdfTab(${pageNum})" class="underline hover:opacity-80" style="color: var(--text-secondary);">Open in site PDF tab</button>` : ""}
+      const footerLinksHtml = (linkHref || audioBadges.length > 0) ? `
+        <div class="pt-1 flex flex-wrap items-center justify-between gap-2 text-[11px] font-ui">
+          <div class="flex flex-wrap items-center gap-2">
+            ${pageNum ? `
+              <button onclick="openInPdfTab(${pageNum})" class="apple-pill px-2.5 py-0.5 border font-semibold hover:opacity-85" style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--accent-primary);">
+                PDF p. ${pageNum} →
+              </button>
+            ` : ""}
+            ${linkHref ? `
+              <a href="${escapeHtml(linkHref)}" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80" style="color: var(--text-secondary);">
+                Direct PDF ↗
+              </a>
+            ` : ""}
           </div>
-        ` : "";
+          <div class="flex flex-wrap items-center gap-1">${audioBadges.join("")}</div>
+        </div>
+      ` : "";
 
-        return `
-          <div class="p-4 apple-subcard space-y-2 transition">
-            <div class="flex items-center justify-between gap-2 text-xs font-ui" style="color: var(--accent-primary);">
-              <span class="font-semibold">${escapeHtml(item.source)}</span>
-              <div class="flex items-center gap-2.5 shrink-0">
-                <span class="opacity-70" style="color: var(--text-secondary);">${escapeHtml(item.date)}</span>
-                <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline font-medium text-red-600">Remove</button>
-              </div>
+      return `
+        <div class="${compact ? 'p-3' : 'p-4'} apple-subcard space-y-1.5 transition" style="${item.pinned ? 'border-color: var(--accent-primary);' : ''}">
+          <div class="flex items-start justify-between gap-2 text-[11px] font-ui">
+            <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold" style="background-color: var(--bg-card); color: var(--text-primary);">
+                ${tagObj.icon} ${escapeHtml(tagObj.label)}
+              </span>
+              <span class="font-semibold truncate" style="color: var(--accent-primary);">${escapeHtml(item.source || "Reading Note")}</span>
             </div>
-            <p class="text-lg leading-relaxed font-prose">${escapeHtml(item.text)}</p>
-            ${linkHtml}
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="opacity-65 text-[10px]" style="color: var(--text-secondary);">${escapeHtml(item.date || "")}</span>
+              <button onclick="togglePinNote(${item.id})" class="hover:opacity-80 font-bold" style="${pinStyle}" title="${item.pinned ? 'Unpin note' : 'Pin note to top'}">${item.pinned ? "★" : "☆"}</button>
+              <button onclick="openEditNoteModal(${item.id})" class="hover:underline font-medium" style="color: var(--text-secondary);" title="Edit note">Edit</button>
+              <button onclick="deleteNotebookEntry(${item.id})" class="hover:underline font-medium text-red-600" title="Remove note">✕</button>
+            </div>
+          </div>
+          ${item.title ? `<div class="font-display font-bold ${compact ? 'text-base' : 'text-lg'} leading-snug">${escapeHtml(item.title)}</div>` : ""}
+          <p class="${compact ? 'text-base' : 'text-lg'} leading-relaxed font-prose whitespace-pre-line">${escapeHtml(item.text)}</p>
+          ${footerLinksHtml}
+        </div>
+      `;
+    }
+
+    function renderNotebook() {
+      const total = savedNotebook.length;
+      ["notesCountBadge", "topNotesCount", "homeNotesCountPill"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(total);
+      });
+
+      const filtered = getSortedFilteredNotes();
+      const emptyMsg = total === 0
+        ? "No saved notes yet. Jot an insight, passage, or reflection while reading or listening—each note stays saved in your browser and can link directly to a PDF page."
+        : "No notes match your current search or tag filter.";
+
+      ["homeNotebookList", "notebookEntriesList"].forEach(listId => {
+        const listEl = document.getElementById(listId);
+        if (!listEl) return;
+        if (filtered.length === 0) {
+          listEl.innerHTML = `
+            <div class="p-5 apple-subcard text-center italic font-prose text-lg" style="color: var(--text-secondary);">
+              ${escapeHtml(emptyMsg)}
+            </div>
+          `;
+        } else {
+          listEl.innerHTML = filtered.map(item => buildNoteCardHtml(item, listId === "homeNotebookList")).join("");
+        }
+      });
+
+      const quickList = document.getElementById("quickNotebookList");
+      if (quickList) {
+        const recent = getSortedFilteredNotes({ ignoreTagFilter: true }).slice(0, 10);
+        quickList.innerHTML = recent.length === 0
+          ? `<div class="p-4 apple-subcard text-center italic font-prose text-base" style="color: var(--text-secondary);">Your saved notes will appear here.</div>`
+          : recent.map(item => buildNoteCardHtml(item, true)).join("");
+      }
+
+      renderPdfMarginNotesList();
+    }
+
+    function renderPdfMarginNotesList() {
+      const pdfList = document.getElementById("pdfNotebookList");
+      if (!pdfList) return;
+      const items = pdfNotesScope === "page"
+        ? getSortedFilteredNotes({ onlyPage: currentPdfPage, ignoreTagFilter: true })
+        : getSortedFilteredNotes({ ignoreTagFilter: true });
+
+      if (items.length === 0) {
+        const msg = pdfNotesScope === "page"
+          ? `No margin notes anchored to PDF page ${currentPdfPage} yet. Type above and press ⌘Enter to pin a note to this page.`
+          : "No margin notes saved yet. Write beside the scan while you read and listen.";
+        pdfList.innerHTML = `
+          <div class="p-4 apple-subcard text-center italic font-prose text-base" style="color: var(--text-secondary);">
+            ${escapeHtml(msg)}
           </div>
         `;
-      }).join("");
+      } else {
+        pdfList.innerHTML = items.map(item => buildNoteCardHtml(item, true)).join("");
+      }
+    }
+
+    function setPdfNotesScope(scope) {
+      pdfNotesScope = scope === "page" ? "page" : "all";
+      const allBtn = document.getElementById("pdfScopeBtn-all");
+      const pageBtn = document.getElementById("pdfScopeBtn-page");
+      if (allBtn && pageBtn) {
+        if (pdfNotesScope === "all") {
+          allBtn.classList.add("apple-seg-btn-active");
+          allBtn.classList.remove("opacity-75");
+          pageBtn.classList.remove("apple-seg-btn-active");
+          pageBtn.classList.add("opacity-75");
+        } else {
+          pageBtn.classList.add("apple-seg-btn-active");
+          pageBtn.classList.remove("opacity-75");
+          allBtn.classList.remove("apple-seg-btn-active");
+          allBtn.classList.add("opacity-75");
+        }
+      }
+      renderPdfMarginNotesList();
+    }
+
+    function togglePdfSplitNotes(forceState = null) {
+      pdfSplitNotesOpen = forceState !== null ? Boolean(forceState) : !pdfSplitNotesOpen;
+      const panel = document.getElementById("pdfNotesPanel");
+      const frameCol = document.getElementById("pdfFrameCol");
+      const toggleBtn = document.getElementById("btnPdfSplitToggle");
+
+      if (pdfSplitNotesOpen) {
+        if (panel) panel.classList.remove("hidden");
+        if (frameCol) {
+          frameCol.classList.remove("lg:col-span-12");
+          frameCol.classList.add("lg:col-span-8");
+        }
+        if (toggleBtn) {
+          toggleBtn.textContent = "✎ Margin Notes: ON";
+          toggleBtn.style.backgroundColor = "var(--accent-primary)";
+          toggleBtn.style.color = "#ffffff";
+          toggleBtn.style.borderColor = "var(--accent-primary)";
+        }
+      } else {
+        if (panel) panel.classList.add("hidden");
+        if (frameCol) {
+          frameCol.classList.remove("lg:col-span-8");
+          frameCol.classList.add("lg:col-span-12");
+        }
+        if (toggleBtn) {
+          toggleBtn.textContent = "✎ Open Margin Notes";
+          toggleBtn.style.backgroundColor = "var(--bg-card)";
+          toggleBtn.style.color = "var(--text-primary)";
+          toggleBtn.style.borderColor = "var(--border-strong)";
+        }
+      }
+      if (typeof syncAudiobookDockAutoPosition === "function") {
+        syncAudiobookDockAutoPosition();
+      }
+    }
+
+    function scrollToHomeNotes() {
+      if (activeTab !== "home") {
+        switchTab("home");
+      }
+      const desk = document.getElementById("homeNotesWorkspace");
+      const input = document.getElementById("homeNoteInput");
+      if (desk) {
+        desk.scrollIntoView({ behavior: "smooth", block: "start" });
+        desk.style.borderColor = "var(--accent-primary)";
+        setTimeout(() => { desk.style.borderColor = "var(--border-color)"; }, 750);
+      }
+      if (input) {
+        setTimeout(() => input.focus(), 250);
+      }
+    }
+
+    function openQuickNotes() {
+      const drawer = document.getElementById("quickNotesDrawer");
+      if (!drawer) return;
+      drawer.classList.remove("hidden");
+      drawer.classList.add("flex");
+      const input = document.getElementById("quickNoteInput");
+      if (input) setTimeout(() => input.focus(), 100);
+    }
+
+    function closeQuickNotes() {
+      const drawer = document.getElementById("quickNotesDrawer");
+      if (!drawer) return;
+      drawer.classList.add("hidden");
+      drawer.classList.remove("flex");
+    }
+
+    function handleTopNotesClick() {
+      if (activeTab === "home") {
+        scrollToHomeNotes();
+        return;
+      }
+      if (activeTab === "pdf") {
+        if (!pdfSplitNotesOpen) {
+          togglePdfSplitNotes(true);
+        }
+        const pdfInput = document.getElementById("pdfNoteInput");
+        if (pdfInput) {
+          pdfInput.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          pdfInput.focus();
+        }
+        return;
+      }
+      if (activeTab === "studio") {
+        const studioInput = document.getElementById("automaticStudioInput");
+        if (studioInput) studioInput.focus();
+        return;
+      }
+      const drawer = document.getElementById("quickNotesDrawer");
+      if (drawer && !drawer.classList.contains("hidden")) {
+        closeQuickNotes();
+      } else {
+        openQuickNotes();
+      }
     }
 
     // Automatic Studio Typing Cadence & Clack
@@ -2531,7 +3538,7 @@
         showToast("Type a passage first before saving to your notebook");
         return;
       }
-      addNotebookEntry("Personal Automatic Writing Studio", text, null);
+      addNotebookEntry("Personal Automatic Writing Studio", text, null, { tag: "idea" });
       input.value = "";
       studioStartTime = null;
       document.getElementById("wordCountStudio").textContent = "0 words";
@@ -2548,11 +3555,44 @@
     function formatNotebookForExport() {
       if (savedNotebook.length === 0) return "No saved notes yet.";
       return savedNotebook.map(n => {
+        const tagObj = NOTE_TAGS.find(t => t.id === (n.tag || "insight")) || NOTE_TAGS[0];
+        const titleLine = n.title ? `${n.title}\n` : "";
         const linkLine = n.pdfUrl
           ? `\nRead in the PDF${n.pdfPage ? ` (PDF page ${n.pdfPage})` : ""}: ${n.pdfUrl}`
           : (n.pdfPage ? `\nRead in the PDF (PDF page ${n.pdfPage}): ${getAbsolutePdfUrl(n.pdfPage)}` : "");
-        return `[${n.source} — ${n.date}]\n${n.text}${linkLine}`;
+        return `[${tagObj.label.toUpperCase()} • ${n.source} — ${n.date}]\n${titleLine}${n.text}${linkLine}`;
       }).join("\n\n---\n\n");
+    }
+
+    function formatNotebookAsMarkdown() {
+      const header = [
+        "# Henry Miller — Reading & Marginalia Notebook",
+        "",
+        "- **Edition:** *Tropic of Capricorn* (First published: Obelisk Press, Paris, 1939 · Scan: Flamingo, 1993, 216 PDF pages)",
+        `- **Exported:** ${new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`,
+        "",
+        "---",
+        ""
+      ].join("\n");
+
+      if (savedNotebook.length === 0) {
+        return header + "_No saved notes yet._\n";
+      }
+
+      const body = savedNotebook.map(n => {
+        const tagObj = NOTE_TAGS.find(t => t.id === (n.tag || "insight")) || NOTE_TAGS[0];
+        const heading = n.title ? `## ${n.pinned ? "★ " : ""}${n.title}` : `## ${n.pinned ? "★ " : ""}${n.source}`;
+        const metaParts = [`**${tagObj.icon} ${tagObj.label}**`, n.source, n.date];
+        if (n.audiobookLabel) metaParts.push(`Audiobook: *${n.audiobookLabel}*`);
+        if (n.milesLabel) metaParts.push(`Miles Davis: *${n.milesLabel}*`);
+        const pdfUrl = n.pdfPage ? getAbsolutePdfUrl(n.pdfPage) : n.pdfUrl;
+        const linkMd = pdfUrl
+          ? `\n\n- [Read original passage${n.pdfPage ? ` · PDF page ${n.pdfPage}` : ""}](${pdfUrl})`
+          : "";
+        return `${heading}\n_${metaParts.join(" · ")}_\n\n${n.text}${linkMd}`;
+      }).join("\n\n---\n\n");
+
+      return header + body + "\n";
     }
 
     function copyNotebookToClipboard() {
@@ -2576,8 +3616,20 @@
       showToast("Copied all notebook entries to clipboard");
     }
 
+    function exportNotebookMarkdown() {
+      const md = formatNotebookAsMarkdown();
+      const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "tropic-of-capricorn-notes.md";
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Downloaded Markdown Notebook (.MD)");
+    }
+
     function exportNotebookFile() {
-      const formatted = "HENRY MILLER • TROPIC OF CAPRICORN — CONTRABAND NOTEBOOK\nFirst published: Obelisk Press, Paris, 1939 | Site scan: Flamingo, 1993 (216 PDF pages)\n=======================================================================================\n\n" +
+      const formatted = "HENRY MILLER • TROPIC OF CAPRICORN — READING & MARGINALIA NOTEBOOK\nFirst published: Obelisk Press, Paris, 1939 | Site scan: Flamingo, 1993 (216 PDF pages)\n=======================================================================================\n\n" +
         formatNotebookForExport();
       const blob = new Blob([formatted], { type: "text/plain;charset=utf-8" });
       const url = URL.createObjectURL(blob);
@@ -2586,7 +3638,68 @@
       a.download = "tropic-of-capricorn-notes.txt";
       a.click();
       URL.revokeObjectURL(url);
-      showToast("Downloaded Contraband Notebook (.TXT)");
+      showToast("Downloaded Reading Notebook (.TXT)");
+    }
+
+    function exportNotebookJson() {
+      const payload = {
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        scratchpad: noteDraftState,
+        notes: savedNotebook
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "tropic-of-capricorn-notebook-backup.json";
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Downloaded JSON backup of your notebook");
+    }
+
+    function importNotebookJson(event) {
+      const file = event.target?.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(String(reader.result || "{}"));
+          const incoming = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.notes) ? parsed.notes : []);
+          const existingIds = new Set(savedNotebook.map(n => n.id));
+          let added = 0;
+          incoming.forEach(item => {
+            if (item && typeof item.text === "string" && item.text.trim()) {
+              const cleanId = existingIds.has(item.id) ? Date.now() + Math.floor(Math.random() * 100000) : (item.id || Date.now());
+              existingIds.add(cleanId);
+              savedNotebook.push({
+                id: cleanId,
+                title: item.title || "",
+                source: item.source || "Imported Note",
+                tag: item.tag || "insight",
+                bookContext: item.bookContext || "capricorn",
+                pinned: Boolean(item.pinned),
+                text: item.text,
+                pdfPage: item.pdfPage ? parseInt(item.pdfPage, 10) : null,
+                pdfUrl: item.pdfUrl || (item.pdfPage ? getAbsolutePdfUrl(item.pdfPage) : null),
+                audiobookId: item.audiobookId || null,
+                audiobookLabel: item.audiobookLabel || null,
+                milesTrackId: item.milesTrackId || null,
+                milesLabel: item.milesLabel || null,
+                date: item.date || new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+              });
+              added++;
+            }
+          });
+          persistNotebook();
+          renderNotebook();
+          showToast(`Imported ${added} note${added === 1 ? "" : "s"} into your notebook`);
+        } catch (err) {
+          showToast("Could not read JSON backup file");
+        }
+        event.target.value = "";
+      };
+      reader.readAsText(file);
     }
 
     // =========================================================================
@@ -3510,9 +4623,40 @@
         topLabel.textContent = `🎧 ${book.shortTab}`;
       }
 
+      syncAudiobookDockAutoPosition();
       renderAudiobooksStudio();
       renderAudiobookDockTabs();
       showToast(`Audiobook ready — ${book.title}`);
+    }
+
+    let audiobookDockSide = "right";
+    let audiobookDockPinnedManually = false;
+
+    function applyAudiobookDockSide(side) {
+      audiobookDockSide = side === "left" ? "left" : "right";
+      const dock = document.getElementById("audiobookDock");
+      if (!dock) return;
+      if (audiobookDockSide === "left") {
+        dock.classList.remove("right-5");
+        dock.classList.add("left-5");
+      } else {
+        dock.classList.remove("left-5");
+        dock.classList.add("right-5");
+      }
+    }
+
+    function syncAudiobookDockAutoPosition() {
+      if (audiobookDockPinnedManually) return;
+      if (activeTab === "pdf" && typeof pdfSplitNotesOpen !== "undefined" && pdfSplitNotesOpen) {
+        applyAudiobookDockSide("left");
+      } else {
+        applyAudiobookDockSide("right");
+      }
+    }
+
+    function toggleAudiobookDockSide() {
+      audiobookDockPinnedManually = true;
+      applyAudiobookDockSide(audiobookDockSide === "right" ? "left" : "right");
     }
 
     function readAndListenAudiobook(bookId) {
